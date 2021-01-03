@@ -9,14 +9,14 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>With docker &mdash; OctoBot</title>
+  <title>Developer installation &mdash; OctoBot</title>
   
 
   
   
   
   
-    <link rel="canonical" href="https://github.com/Drakkar-Software/OctoBotpages/With-Docker.html"/>
+    <link rel="canonical" href="https://github.com/Drakkar-Software/OctoBotpages/For-Developers.html"/>
   
 
   
@@ -31,8 +31,8 @@
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="With Python index package (pip)" href="With-PIP.html" />
-    <link rel="prev" title="Welcome to OctoBot’s documentation!" href="../index.html" /> 
+    <link rel="next" title="Troubleshoot" href="Installation-Troubleshoot.html" />
+    <link rel="prev" title="With python only" href="With-Python-only.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -167,10 +167,10 @@
             
               <p class="caption"><span class="caption-text">Installation</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">With docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="With-Docker.html">With docker</a></li>
 <li class="toctree-l1"><a class="reference internal" href="With-PIP.html">With Python index package (pip)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="With-Python-only.html">With python only</a></li>
-<li class="toctree-l1"><a class="reference internal" href="For-Developers.html">Developer installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Developer installation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Installation-Troubleshoot.html">Troubleshoot</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Configuration</span></p>
@@ -251,13 +251,13 @@
       </li>
 
         
-      <li>With docker</li>
+      <li>Developer installation</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
         
             
-            <a href="../_sources/pages/With-Docker.rst.txt" rel="nofollow"><img src="../_static/images/view-page-source-icon.svg"></a>
+            <a href="../_sources/pages/For-Developers.rst.txt" rel="nofollow"><img src="../_static/images/view-page-source-icon.svg"></a>
           
         
       </li>
@@ -283,87 +283,45 @@
             <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
              <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
               
-  <div class="section" id="with-docker">
-<h1>With docker<a class="headerlink" href="#with-docker" title="Permalink to this headline">¶</a></h1>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>For unix distribution only</p>
-</div>
-<div class="section" id="installing-docker">
-<h2>Installing docker<a class="headerlink" href="#installing-docker" title="Permalink to this headline">¶</a></h2>
-<p>Please follow the instructions <a class="reference external" href="https://docs.docker.com/install/linux/docker-ce/debian/">here</a> for a debian computer.</p>
-<p>For a raspberry installation please follow <a class="reference external" href="https://phoenixnap.com/kb/docker-on-raspberry-pi">this guide</a>.</p>
-</div>
-<div class="section" id="running-last-release-octobot-image">
-<h2>Running last release Octobot image<a class="headerlink" href="#running-last-release-octobot-image" title="Permalink to this headline">¶</a></h2>
-<p>For linux x64/x86 and raspberry linux arm64/arm32</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">run</span> <span class="o">-</span><span class="n">itd</span> <span class="o">--</span><span class="n">name</span> <span class="n">Octobot</span> <span class="o">-</span><span class="n">p</span> <span class="mi">80</span><span class="p">:</span><span class="mi">5001</span> <span class="n">drakkarsoftware</span><span class="o">/</span><span class="n">octobot</span><span class="p">:</span><span class="n">stable</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="running-lastest-may-be-unstable-octobot-image">
-<h2>Running lastest (may be unstable) Octobot image<a class="headerlink" href="#running-lastest-may-be-unstable-octobot-image" title="Permalink to this headline">¶</a></h2>
-<p>For linux x64/x86 and raspberry linux arm64/arm32</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">run</span> <span class="o">-</span><span class="n">itd</span> <span class="o">--</span><span class="n">name</span> <span class="n">Octobot</span> <span class="o">-</span><span class="n">p</span> <span class="mi">80</span><span class="p">:</span><span class="mi">5001</span> <span class="n">drakkarsoftware</span><span class="o">/</span><span class="n">octobot</span><span class="p">:</span><span class="n">latest</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="running-with-docker-compose">
-<h2>Running with docker-compose<a class="headerlink" href="#running-with-docker-compose" title="Permalink to this headline">¶</a></h2>
-<p>A simple way to run a docker image is to use docker-compose :</p>
-<ul>
-<li><p>Install <a class="reference external" href="https://docs.docker.com/compose/install/">docker-compose</a></p></li>
-<li><p>Download the <a class="reference external" href="https://github.com/Drakkar-Software/OctoBot/blob/master/docker-compose.yml">docker-compose.yml file</a></p></li>
-<li><p>Start OctoBot with docker-compose :
-.. code-block:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span><span class="o">-</span><span class="n">compose</span> <span class="n">up</span> <span class="o">-</span><span class="n">d</span>
-</pre></div>
-</div>
-</li>
-</ul>
-<div class="section" id="how-to-look-at-octobot-logs">
-<h3>How to look at OctoBot logs ?<a class="headerlink" href="#how-to-look-at-octobot-logs" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">logs</span> <span class="n">Octobot</span> <span class="o">-</span><span class="n">f</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="how-to-stop-octobot">
-<h3>How to stop OctoBot ?<a class="headerlink" href="#how-to-stop-octobot" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">stop</span> <span class="n">Octobot</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="how-to-restart-octobot">
-<h3>How to restart OctoBot ?<a class="headerlink" href="#how-to-restart-octobot" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">restart</span> <span class="n">Octobot</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="how-to-update-octobot">
-<h3>How to update OctoBot ?<a class="headerlink" href="#how-to-update-octobot" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">stop</span> <span class="n">Octobot</span>
-<span class="n">docker</span> <span class="n">rm</span> <span class="n">Octobot</span>
-</pre></div>
-</div>
+  <div class="section" id="developer-installation">
+<h1>Developer installation<a class="headerlink" href="#developer-installation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
-<li><p>Then use the <a class="reference external" href="https://github.com/Drakkar-Software/OctoBot/wiki/With-Docker#pulling-octobot-image">pull</a> command above</p></li>
-<li><p>Then use the <a class="reference external" href="https://github.com/Drakkar-Software/OctoBot/wiki/With-Docker#running-octobot-image">run</a> command above</p></li>
+<li><p>Python 3.8 (<a class="reference external" href="https://www.python.org/downloads/">download</a>)</p></li>
+<li><p>Git (<a class="reference external" href="https://git-scm.com/downloads">Download</a>)</p></li>
 </ul>
 </div>
+<div class="section" id="instructions">
+<h2>Instructions<a class="headerlink" href="#instructions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="windows">
+<h3>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h3>
+<p><strong>Python3.8 has to be in environment variable</strong> :</p>
+<p>During <a class="reference external" href="https://www.python.org/downloads">python install</a> check <em>add to environment var</em> checkbox.</p>
+<p>Open a command line and type :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/Drakkar-Software/OctoBot -b dev
+<span class="nb">cd</span> OctoBot
+python3 -m pip install -Ur requirements.txt
+python3 start.py tentacles --install --all
+</pre></div>
 </div>
-<div class="section" id="pulling-octobot-image">
-<h2>Pulling Octobot image<a class="headerlink" href="#pulling-octobot-image" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="last-release-image">
-<h3>last release image<a class="headerlink" href="#last-release-image" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">pull</span> <span class="n">drakkarsoftware</span><span class="o">/</span><span class="n">octobot</span><span class="p">:</span><span class="n">stable</span>
+<p>There <strong>python3</strong> is refering to your <strong>Python3.8.X</strong> installation, just adapt the commands to match your setup if any different (might be python, python3, python3.8, etc: it depends on your environment).</p>
+<p>Note that python3.8 might be available under the name <strong>python3.8</strong> after this installation.</p>
+</div>
+</div>
+<div class="section" id="update-octobot-with-python-only-when-using-octobot-code-directly-from-dev-branch">
+<h2>Update OctoBot with python only when using OctoBot code directly from dev branch<a class="headerlink" href="#update-octobot-with-python-only-when-using-octobot-code-directly-from-dev-branch" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h3>Requirements<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git pull origin dev
+$ python3 -m pip install -Ur requirements.txt
+$ python3 start.py tentacles --install --all
 </pre></div>
 </div>
 </div>
-<div class="section" id="latest-image">
-<h3>latest image<a class="headerlink" href="#latest-image" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">pull</span> <span class="n">drakkarsoftware</span><span class="o">/</span><span class="n">octobot</span><span class="p">:</span><span class="n">latest</span>
-</pre></div>
-</div>
+<div class="section" id="python3">
+<h3>Python3<a class="headerlink" href="#python3" title="Permalink to this headline">¶</a></h3>
+<p>There <strong>python3</strong> is refering to your <strong>Python3.8.X</strong> installation, just adapt the commands to match your setup if any different (might be python, python3, python3.8, etc: it depends on your environment).</p>
 </div>
 </div>
 </div>
@@ -376,10 +334,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="With-PIP.html" class="btn btn-neutral float-right" title="With Python index package (pip)" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="Installation-Troubleshoot.html" class="btn btn-neutral float-right" title="Troubleshoot" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
-        <a href="../index.html" class="btn btn-neutral" title="Welcome to OctoBot’s documentation!" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+        <a href="With-Python-only.html" class="btn btn-neutral" title="With python only" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
       
     </div>
   
@@ -411,20 +369,15 @@
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">With docker</a><ul>
-<li><a class="reference internal" href="#installing-docker">Installing docker</a></li>
-<li><a class="reference internal" href="#running-last-release-octobot-image">Running last release Octobot image</a></li>
-<li><a class="reference internal" href="#running-lastest-may-be-unstable-octobot-image">Running lastest (may be unstable) Octobot image</a></li>
-<li><a class="reference internal" href="#running-with-docker-compose">Running with docker-compose</a><ul>
-<li><a class="reference internal" href="#how-to-look-at-octobot-logs">How to look at OctoBot logs ?</a></li>
-<li><a class="reference internal" href="#how-to-stop-octobot">How to stop OctoBot ?</a></li>
-<li><a class="reference internal" href="#how-to-restart-octobot">How to restart OctoBot ?</a></li>
-<li><a class="reference internal" href="#how-to-update-octobot">How to update OctoBot ?</a></li>
+<li><a class="reference internal" href="#">Developer installation</a><ul>
+<li><a class="reference internal" href="#requirements">Requirements</a></li>
+<li><a class="reference internal" href="#instructions">Instructions</a><ul>
+<li><a class="reference internal" href="#windows">Windows</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#pulling-octobot-image">Pulling Octobot image</a><ul>
-<li><a class="reference internal" href="#last-release-image">last release image</a></li>
-<li><a class="reference internal" href="#latest-image">latest image</a></li>
+<li><a class="reference internal" href="#update-octobot-with-python-only-when-using-octobot-code-directly-from-dev-branch">Update OctoBot with python only when using OctoBot code directly from dev branch</a><ul>
+<li><a class="reference internal" href="#id2">Requirements</a></li>
+<li><a class="reference internal" href="#python3">Python3</a></li>
 </ul>
 </li>
 </ul>
