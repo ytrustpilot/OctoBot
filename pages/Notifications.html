@@ -30,7 +30,9 @@
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Profitability in OctoBot" href="Understanding-profitability.html" />
+    <link rel="prev" title="Exchanges" href="Exchanges.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -175,6 +177,15 @@
 <li class="toctree-l1"><a class="reference internal" href="Configuration.html#evaluator-and-trading-configuration">Evaluator and trading configuration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Configuration.html#specific-evaluator-configuration">Specific evaluator configuration</a></li>
 </ul>
+<p class="caption"><span class="caption-text">Usage</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Trader.html">Trader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Simulator.html">Simulator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Exchanges.html">Exchanges</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Notifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Understanding-profitability.html">Profitability in OctoBot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Frequently-asked-questions-%28FAQ%29.html">Frequently asked questions</a></li>
+</ul>
 <p class="caption"><span class="caption-text">Interfaces</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="Web-interface.html">Web interface</a></li>
@@ -182,6 +193,22 @@
 <li class="toctree-l1"><a class="reference internal" href="Reddit-interface.html">Reddit interface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Twitter-interface.html">Twitter interface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Telegram-interface.html">Telegram interface</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Advanced Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Customize-your-OctoBot.html">OctoBot is customizable !</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tentacle-Manager.html">Tentacle Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Backtesting-and-strategy-optimization.html">Backtesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Backtesting-and-strategy-optimization.html#strategy-optimizer">Strategy optimizer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OctoBot-0.4.html">OctoBot 0.4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tests.html">Tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Contribution.html">Contribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Developer-Guide.html">Developer</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Webhooks</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="TradingView-webhook.html">TradingView webhook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Using-a-webhook-with-OctoBot.html">Using a webhook with OctoBot</a></li>
 </ul>
 
             
@@ -259,9 +286,8 @@
 <p>When notifications are enabled, OctoBot will create notifications on all the given medias. These notifications contain the current evaluations of monitored markets as well as created, filled and cancelled orders.</p>
 <a class="reference external image-reference" href="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/notifications.jpg"><img alt="notifications" src="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/notifications.jpg" /></a>
 <p>Different types of notifications are available, it is possible to use any of them, or even all of them.</p>
-</div>
 <div class="section" id="types-of-notifications">
-<h1>Types of notifications<a class="headerlink" href="#types-of-notifications" title="Permalink to this headline">¶</a></h1>
+<h2>Types of notifications<a class="headerlink" href="#types-of-notifications" title="Permalink to this headline">¶</a></h2>
 <p>Alternatively to using the web interface to configure OctoBot notifications, you can edit your <strong>user/config.json</strong> file and edit this configuration :</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&quot;notification&quot;:{
   &quot;global-info&quot;: true,
@@ -283,7 +309,7 @@
 </div>
 <p>Discord notifications use the Discord service. <a class="reference external" href="https://github.com/Drakkar-Software/OctoBot/wiki/Discord-Interface">See Discord service configuration wiki</a></p>
 <div class="section" id="on-twitter">
-<h2>On Twitter<a class="headerlink" href="#on-twitter" title="Permalink to this headline">¶</a></h2>
+<h3>On Twitter<a class="headerlink" href="#on-twitter" title="Permalink to this headline">¶</a></h3>
 <p>Open your <strong>user/config.json</strong> file and set the notification type value <strong>TwitterService</strong> :</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&quot;notification-type&quot;: [&quot;twitter&quot;]
 </pre></div>
@@ -291,7 +317,7 @@
 <p>Twitter notifications use the Twitter service. <a class="reference external" href="https://github.com/Drakkar-Software/OctoBot/wiki/Twitter-Interface">See Twitter service configuration wiki</a></p>
 </div>
 <div class="section" id="on-telegram">
-<h2>On Telegram<a class="headerlink" href="#on-telegram" title="Permalink to this headline">¶</a></h2>
+<h3>On Telegram<a class="headerlink" href="#on-telegram" title="Permalink to this headline">¶</a></h3>
 <p>Open your <strong>user/config.json</strong> file and set the notification type value <strong>telegram</strong> :</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&quot;notification-type&quot;: [&quot;telegram&quot;]
 </pre></div>
@@ -299,12 +325,13 @@
 <p>Telegram notifications use the Telegram service. <a class="reference external" href="https://github.com/Drakkar-Software/OctoBot/wiki/Telegram-interface">See Telegram service configuration wiki</a></p>
 </div>
 <div class="section" id="on-web-interface">
-<h2>On Web Interface<a class="headerlink" href="#on-web-interface" title="Permalink to this headline">¶</a></h2>
+<h3>On Web Interface<a class="headerlink" href="#on-web-interface" title="Permalink to this headline">¶</a></h3>
 <p>Open your <strong>user/config.json</strong> file and set the notification type value <strong>web</strong> :</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&quot;notification-type&quot;: [&quot;web&quot;]
 </pre></div>
 </div>
 <p>Web notifications use the Web service. <a class="reference external" href="https://github.com/Drakkar-Software/OctoBot/wiki/Web-interface">See Web service configuration wiki</a></p>
+</div>
 </div>
 </div>
 
@@ -313,6 +340,15 @@
              
             </div>
             <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Understanding-profitability.html" class="btn btn-neutral float-right" title="Profitability in OctoBot" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+      
+      
+        <a href="Exchanges.html" class="btn btn-neutral" title="Exchanges" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+      
+    </div>
   
 
   
@@ -342,11 +378,13 @@
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">Notifications</a></li>
+<li><a class="reference internal" href="#">Notifications</a><ul>
 <li><a class="reference internal" href="#types-of-notifications">Types of notifications</a><ul>
 <li><a class="reference internal" href="#on-twitter">On Twitter</a></li>
 <li><a class="reference internal" href="#on-telegram">On Telegram</a></li>
 <li><a class="reference internal" href="#on-web-interface">On Web Interface</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

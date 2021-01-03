@@ -30,7 +30,9 @@
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Tentacle Manager" href="Tentacle-Manager.html" />
+    <link rel="prev" title="Telegram interface" href="Telegram-interface.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -175,6 +177,15 @@
 <li class="toctree-l1"><a class="reference internal" href="Configuration.html#evaluator-and-trading-configuration">Evaluator and trading configuration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Configuration.html#specific-evaluator-configuration">Specific evaluator configuration</a></li>
 </ul>
+<p class="caption"><span class="caption-text">Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Trader.html">Trader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Simulator.html">Simulator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Exchanges.html">Exchanges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Notifications.html">Notifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Understanding-profitability.html">Profitability in OctoBot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Frequently-asked-questions-%28FAQ%29.html">Frequently asked questions</a></li>
+</ul>
 <p class="caption"><span class="caption-text">Interfaces</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="Web-interface.html">Web interface</a></li>
@@ -182,6 +193,22 @@
 <li class="toctree-l1"><a class="reference internal" href="Reddit-interface.html">Reddit interface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Twitter-interface.html">Twitter interface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Telegram-interface.html">Telegram interface</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Advanced Usage</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">OctoBot is customizable !</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tentacle-Manager.html">Tentacle Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Backtesting-and-strategy-optimization.html">Backtesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Backtesting-and-strategy-optimization.html#strategy-optimizer">Strategy optimizer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OctoBot-0.4.html">OctoBot 0.4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tests.html">Tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Contribution.html">Contribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Developer-Guide.html">Developer</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Webhooks</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="TradingView-webhook.html">TradingView webhook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Using-a-webhook-with-OctoBot.html">Using a webhook with OctoBot</a></li>
 </ul>
 
             
@@ -261,21 +288,20 @@
 <a class="reference external image-reference" href="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/tentacles.jpg"><img alt="tentacles" src="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/tentacles.jpg" /></a>
 <p>OctoBot is available for free with <a class="reference external" href="https://github.com/Drakkar-Software/OctoBot-Tentacles">basic implementations of a lot of different evaluators</a>. The very high modularity in OctoBot’s architecture allows it to automatically look for the most advanced version(s) of all the available tentacles and automatically use them in its trading strategies.</p>
 <p>Therefore, anyone can implement its own version of any evaluator, strategy, analysis tool and trading modes. It’s even possible to use another version provided by someone else !</p>
-</div>
 <div class="section" id="tentacle-installation-octobot-v0-4">
-<h1>Tentacle installation (OctoBot v0.4)<a class="headerlink" href="#tentacle-installation-octobot-v0-4" title="Permalink to this headline">¶</a></h1>
+<h2>Tentacle installation (OctoBot v0.4)<a class="headerlink" href="#tentacle-installation-octobot-v0-4" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="default-tentacles">
-<h2>Default tentacles<a class="headerlink" href="#default-tentacles" title="Permalink to this headline">¶</a></h2>
+<h3>Default tentacles<a class="headerlink" href="#default-tentacles" title="Permalink to this headline">¶</a></h3>
 <p>OctoBot default tentacles are automatically installed when first starting your OctoBot.<span class="raw-html-m2r"><br></span>
 You can re-install them anytime using the following command options to your OctoBot binary or python version:
 <code class="docutils literal notranslate"><span class="pre">tentacles</span> <span class="pre">--install</span> <span class="pre">--all</span></code></p>
 <p>It is also possible to install a tentacles package using the web interface Tentacles tab.</p>
 </div>
 <div class="section" id="installing-a-tentacles">
-<h2>Installing a tentacles<a class="headerlink" href="#installing-a-tentacles" title="Permalink to this headline">¶</a></h2>
+<h3>Installing a tentacles<a class="headerlink" href="#installing-a-tentacles" title="Permalink to this headline">¶</a></h3>
 <p>To install tentacles, OctoBot can either install a tentacle package (zipped bundle of tentacles) or a single tentacle from a local folder.</p>
 <div class="section" id="tentacle-packages">
-<h3>Tentacle packages<a class="headerlink" href="#tentacle-packages" title="Permalink to this headline">¶</a></h3>
+<h4>Tentacle packages<a class="headerlink" href="#tentacle-packages" title="Permalink to this headline">¶</a></h4>
 <p>To install a package, use the following options:
 <code class="docutils literal notranslate"><span class="pre">tentacles</span> <span class="pre">--install</span> <span class="pre">--all</span> <span class="pre">--location</span> <span class="pre">&quot;path/to/your/package/package_name.zip&quot;</span></code></p>
 <p>To create a tentacles package from a local folder:</p>
@@ -287,13 +313,13 @@ You can re-install them anytime using the following command options to your Octo
 <p>Installing a tentacle package will replace any existing source file taht share the same name. It can be used to update sources without changing the version number.</p>
 </div>
 <div class="section" id="single-tentacles">
-<h3>Single tentacles<a class="headerlink" href="#single-tentacles" title="Permalink to this headline">¶</a></h3>
+<h4>Single tentacles<a class="headerlink" href="#single-tentacles" title="Permalink to this headline">¶</a></h4>
 <p>It is also possible to install a single tentacle from a local folder using the following options: <code class="docutils literal notranslate"><span class="pre">tentacles</span> <span class="pre">--single-tentacle-install</span> <span class="pre">&quot;path/to/your/tentacle/to/install&quot;</span> <span class="pre">Evaluator/TA</span></code>. Please note that in this command, you also need to provide the type of the tentacle (<code class="docutils literal notranslate"><span class="pre">Evaluator/TA</span></code> in this example) for OctoBot to know how to handle it.</p>
 </div>
 </div>
 </div>
 <div class="section" id="tentacle-customization-octobot-v0-3">
-<h1>Tentacle customization (OctoBot v0.3)<a class="headerlink" href="#tentacle-customization-octobot-v0-3" title="Permalink to this headline">¶</a></h1>
+<h2>Tentacle customization (OctoBot v0.3)<a class="headerlink" href="#tentacle-customization-octobot-v0-3" title="Permalink to this headline">¶</a></h2>
 <p>All you need to do, to improve a tentacle, is to extend the existing one you want to improve and re-implement the methods you want to change.</p>
 <p>Examples:</p>
 <ol class="arabic simple">
@@ -378,7 +404,7 @@ To install tentacles via an **OctoBot tentacles package**, 2 steps only:
 </pre></div>
 </div>
 <div class="section" id="manual-installation">
-<h2>Manual installation<a class="headerlink" href="#manual-installation" title="Permalink to this headline">¶</a></h2>
+<h3>Manual installation<a class="headerlink" href="#manual-installation" title="Permalink to this headline">¶</a></h3>
 <p>Only 3 steps are necessary to install a new tentacle:</p>
 <ol class="arabic">
 <li><p>Store the tentacle in the <code class="docutils literal notranslate"><span class="pre">Advanced</span></code> folder contained in the folder of the basic version of the tentacle</p></li>
@@ -430,7 +456,7 @@ To install tentacles via an **OctoBot tentacles package**, 2 steps only:
 </div>
 </div>
 <div class="section" id="advanced-evaluator-and-strategy-creation-octobot-v0-3">
-<h1>Advanced: Evaluator and Strategy creation (OctoBot v0.3)<a class="headerlink" href="#advanced-evaluator-and-strategy-creation-octobot-v0-3" title="Permalink to this headline">¶</a></h1>
+<h2>Advanced: Evaluator and Strategy creation (OctoBot v0.3)<a class="headerlink" href="#advanced-evaluator-and-strategy-creation-octobot-v0-3" title="Permalink to this headline">¶</a></h2>
 <p>With OctoBot, everyone can create it’s own evaluators and strategies, even if it’s not already existing already in a simple version.</p>
 <p>In order to add a new type of evaluator, you need to respect the following rules:</p>
 <ul class="simple">
@@ -453,9 +479,10 @@ To install tentacles via an **OctoBot tentacles package**, 2 steps only:
 <p>Including a new evaluator or strategy will automatically tell OctoBot to load this evaluator or strategy.</p>
 </div>
 <div class="section" id="join-the-octobot-community">
-<h1>Join the OctoBot community !<a class="headerlink" href="#join-the-octobot-community" title="Permalink to this headline">¶</a></h1>
+<h2>Join the OctoBot community !<a class="headerlink" href="#join-the-octobot-community" title="Permalink to this headline">¶</a></h2>
 <p>After creating your own evaluators, strategies, utilitary tools, or trading modes you can share them with the OctoBot community !</p>
 <p>The OctoBot team will be delighted to add new tentacles to the project and update the <a class="reference external" href="https://github.com/Drakkar-Software/OctoBot-Tentacles">default OctoBot evaluation and strategies tentacles package</a> !</p>
+</div>
 </div>
 
 
@@ -463,6 +490,15 @@ To install tentacles via an **OctoBot tentacles package**, 2 steps only:
              
             </div>
             <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Tentacle-Manager.html" class="btn btn-neutral float-right" title="Tentacle Manager" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+      
+      
+        <a href="Telegram-interface.html" class="btn btn-neutral" title="Telegram interface" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+      
+    </div>
   
 
   
@@ -492,7 +528,7 @@ To install tentacles via an **OctoBot tentacles package**, 2 steps only:
           <div class="pytorch-right-menu" id="pytorch-right-menu">
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
-<li><a class="reference internal" href="#">OctoBot is customizable !</a></li>
+<li><a class="reference internal" href="#">OctoBot is customizable !</a><ul>
 <li><a class="reference internal" href="#tentacle-installation-octobot-v0-4">Tentacle installation (OctoBot v0.4)</a><ul>
 <li><a class="reference internal" href="#default-tentacles">Default tentacles</a></li>
 <li><a class="reference internal" href="#installing-a-tentacles">Installing a tentacles</a><ul>
@@ -508,6 +544,8 @@ To install tentacles via an **OctoBot tentacles package**, 2 steps only:
 </li>
 <li><a class="reference internal" href="#advanced-evaluator-and-strategy-creation-octobot-v0-3">Advanced: Evaluator and Strategy creation (OctoBot v0.3)</a></li>
 <li><a class="reference internal" href="#join-the-octobot-community">Join the OctoBot community !</a></li>
+</ul>
+</li>
 </ul>
 
             </div>

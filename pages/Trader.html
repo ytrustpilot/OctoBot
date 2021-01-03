@@ -30,7 +30,9 @@
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Simulator" href="Simulator.html" />
+    <link rel="prev" title="Global configuration" href="Configuration.html" /> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -175,6 +177,15 @@
 <li class="toctree-l1"><a class="reference internal" href="Configuration.html#evaluator-and-trading-configuration">Evaluator and trading configuration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Configuration.html#specific-evaluator-configuration">Specific evaluator configuration</a></li>
 </ul>
+<p class="caption"><span class="caption-text">Usage</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Trader</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Simulator.html">Simulator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Exchanges.html">Exchanges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Notifications.html">Notifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Understanding-profitability.html">Profitability in OctoBot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Frequently-asked-questions-%28FAQ%29.html">Frequently asked questions</a></li>
+</ul>
 <p class="caption"><span class="caption-text">Interfaces</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="Web-interface.html">Web interface</a></li>
@@ -182,6 +193,22 @@
 <li class="toctree-l1"><a class="reference internal" href="Reddit-interface.html">Reddit interface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Twitter-interface.html">Twitter interface</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Telegram-interface.html">Telegram interface</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Advanced Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Customize-your-OctoBot.html">OctoBot is customizable !</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tentacle-Manager.html">Tentacle Manager</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Backtesting-and-strategy-optimization.html">Backtesting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Backtesting-and-strategy-optimization.html#strategy-optimizer">Strategy optimizer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OctoBot-0.4.html">OctoBot 0.4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tests.html">Tests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Contribution.html">Contribution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Developer-Guide.html">Developer</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Webhooks</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="TradingView-webhook.html">TradingView webhook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Using-a-webhook-with-OctoBot.html">Using a webhook with OctoBot</a></li>
 </ul>
 
             
@@ -267,16 +294,16 @@
 <h2>Enabled<a class="headerlink" href="#enabled" title="Permalink to this headline">¶</a></h2>
 <p>The <strong>Enabled</strong> parameter is to be set at <strong>true</strong> when OctoBot should trade real cryptocurrencies.
 When <strong>false</strong> OctoBot will never any create a real trade. This <strong>false</strong> value can be used to make OctoBot only use its simulation mode on real market conditions.</p>
-</div>
-</div>
 <div class="section" id="trading-settings">
-<h1>Trading settings<a class="headerlink" href="#trading-settings" title="Permalink to this headline">¶</a></h1>
+<h3>Trading settings<a class="headerlink" href="#trading-settings" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;trading&quot;</span><span class="p">:{</span>
   <span class="s2">&quot;multi-session-profitability&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
   <span class="s2">&quot;reference-market&quot;</span><span class="p">:</span> <span class="s2">&quot;BTC&quot;</span><span class="p">,</span>
   <span class="s2">&quot;risk&quot;</span><span class="p">:</span> <span class="mf">0.8</span>
 <span class="p">}</span>
 </pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="multi-session-profitability">
 <h2>Multi-session-profitability<a class="headerlink" href="#multi-session-profitability" title="Permalink to this headline">¶</a></h2>
@@ -308,6 +335,15 @@ When <strong>false</strong> OctoBot will never any create a real trade. This <st
             </div>
             <footer>
   
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Simulator.html" class="btn btn-neutral float-right" title="Simulator" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+      
+      
+        <a href="Configuration.html" class="btn btn-neutral" title="Global configuration" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+      
+    </div>
+  
 
   
 
@@ -337,10 +373,10 @@ When <strong>false</strong> OctoBot will never any create a real trade. This <st
             <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
               <ul>
 <li><a class="reference internal" href="#">Trader</a><ul>
-<li><a class="reference internal" href="#enabled">Enabled</a></li>
+<li><a class="reference internal" href="#enabled">Enabled</a><ul>
+<li><a class="reference internal" href="#trading-settings">Trading settings</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#trading-settings">Trading settings</a><ul>
 <li><a class="reference internal" href="#multi-session-profitability">Multi-session-profitability</a></li>
 <li><a class="reference internal" href="#reference-market">Reference-market</a></li>
 <li><a class="reference internal" href="#risk">Risk</a><ul>
