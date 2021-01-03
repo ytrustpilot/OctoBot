@@ -1,0 +1,724 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>OctoBot is customizable ! &mdash; OctoBot</title>
+  
+
+  
+  
+  
+  
+    <link rel="canonical" href="https://github.com/Drakkar-Software/OctoBotpages/Customize-your-OctoBot.html"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+  <!-- Preload the theme fonts -->
+
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-book.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium-italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+<!-- Preload the katex fonts -->
+
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Math-Italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size1-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size4-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size2-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size3-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Caligraphic-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+</head>
+
+<div class="container-fluid header-holder tutorials-header" id="header-holder">
+  <div class="container">
+    <div class="header-container">
+      <a class="header-logo" href="https://drakkar-software.github.io/OctoBot" aria-label="PyTorch">
+       <!-- <img class="call-to-action-img" src="../_static/images/asteroid_logo_dark.png"/> -->
+      </a>
+
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="https://github.com/Drakkar-Software/OctoBot/wiki">Get Started</a>
+          </li>
+
+          <li>
+            <a href="https://drakkar-software.github.io/OctoBot">Blog</a>
+          </li>
+
+          <li>
+            <a href="">Tutorials</a>
+          </li>
+
+          <li>
+            <a href="https://drakkar-software.github.io/OctoBot">Docs</a>
+          </li>
+
+          <li>
+            <div class="resources-dropdown">
+              <a id="resourcesDropdownButton" data-toggle="resources-dropdown">
+                Resources
+              </a>
+              <div class="resources-dropdown-menu">
+                <a class="nav-dropdown-item" href="https://drakkar-software.github.io/OctoBot"">
+                  <span class=dropdown-title>Developer Resources</span>
+                  <p>Find resources and get questions answered</p>
+                </a>
+                <!--
+                <a class="nav-dropdown-item" href="https://drakkar-software.github.io/OctoBot">
+                  <span class=dropdown-title>About</span>
+                  <p>Learn about PyTorch’s features and capabilities</p>
+                </a>
+                -->
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <a href="https://github.com/Drakkar-Software/OctoBot">Github</a>
+          </li>
+        </ul>
+      </div>
+
+      <a class="main-menu-open-button" href="#" data-behavior="open-mobile-menu"></a>
+    </div>
+
+  </div>
+</div>
+
+
+<body class="pytorch-body">
+
+   
+
+    
+
+    <div class="table-of-contents-link-wrapper">
+      <span>Table of Contents</span>
+      <a href="#" class="toggle-table-of-contents" data-behavior="toggle-table-of-contents"></a>
+    </div>
+
+    <nav data-toggle="wy-nav-shift" class="pytorch-left-menu" id="pytorch-left-menu">
+      <div class="pytorch-side-scroll">
+        <div class="pytorch-menu pytorch-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          <div class="pytorch-left-menu-search">
+            
+
+            
+              
+              
+                <div class="version">
+                  0.4.0b2
+                </div>
+              
+            
+
+            
+
+
+  
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search Docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+            
+          </div>
+
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="With-Docker.html">With docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="With-PIP.html">With Python index package (pip)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="With-Python-only.html">With python only</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Configuration.html">Global configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Configuration.html#evaluator-and-trading-configuration">Evaluator and trading configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Configuration.html#specific-evaluator-configuration">Specific evaluator configuration</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Interfaces</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Web-interface.html">Web interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Discord-interface.html">Discord interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Reddit-interface.html">Reddit interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Twitter-interface.html">Twitter interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Telegram-interface.html">Telegram interface</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <div class="pytorch-container">
+      <div class="pytorch-page-level-bar" id="pytorch-page-level-bar">
+        <div class="pytorch-breadcrumbs-wrapper">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="pytorch-breadcrumbs">
+    
+      <li>
+        <a href="../index.html">
+          
+            Docs
+          
+        </a> &gt;
+      </li>
+
+        
+      <li>OctoBot is customizable !</li>
+    
+    
+      <li class="pytorch-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/pages/Customize-your-OctoBot.rst.txt" rel="nofollow"><img src="../_static/images/view-page-source-icon.svg"></a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+</div>
+        </div>
+
+        <div class="pytorch-shortcuts-wrapper" id="pytorch-shortcuts-wrapper">
+          Shortcuts
+        </div>
+      </div>
+
+      <section data-toggle="wy-nav-shift" id="pytorch-content-wrap" class="pytorch-content-wrap">
+        <div class="pytorch-content-left">
+
+        
+          
+          <div class="rst-content">
+          
+            <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
+             <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
+              
+  <div class="section" id="octobot-is-customizable">
+<h1>OctoBot is customizable !<a class="headerlink" href="#octobot-is-customizable" title="Permalink to this headline">¶</a></h1>
+<p>You can easily create or add existing tentacles to your OctoBot.</p>
+<p>Tentacles are evaluators (using social media, trend analysis, news, …), strategies (interpretations of evaluator’s evaluations), analysis tools (implementation of a bollinger bands in depth analysis, twitter posts reader, …) and trading modes.</p>
+<a class="reference external image-reference" href="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/tentacles.jpg"><img alt="tentacles" src="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/tentacles.jpg" /></a>
+<p>OctoBot is available for free with <a class="reference external" href="https://github.com/Drakkar-Software/OctoBot-Tentacles">basic implementations of a lot of different evaluators</a>. The very high modularity in OctoBot’s architecture allows it to automatically look for the most advanced version(s) of all the available tentacles and automatically use them in its trading strategies.</p>
+<p>Therefore, anyone can implement its own version of any evaluator, strategy, analysis tool and trading modes. It’s even possible to use another version provided by someone else !</p>
+</div>
+<div class="section" id="tentacle-installation-octobot-v0-4">
+<h1>Tentacle installation (OctoBot v0.4)<a class="headerlink" href="#tentacle-installation-octobot-v0-4" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="default-tentacles">
+<h2>Default tentacles<a class="headerlink" href="#default-tentacles" title="Permalink to this headline">¶</a></h2>
+<p>OctoBot default tentacles are automatically installed when first starting your OctoBot.<span class="raw-html-m2r"><br></span>
+You can re-install them anytime using the following command options to your OctoBot binary or python version:
+<code class="docutils literal notranslate"><span class="pre">tentacles</span> <span class="pre">--install</span> <span class="pre">--all</span></code></p>
+<p>It is also possible to install a tentacles package using the web interface Tentacles tab.</p>
+</div>
+<div class="section" id="installing-a-tentacles">
+<h2>Installing a tentacles<a class="headerlink" href="#installing-a-tentacles" title="Permalink to this headline">¶</a></h2>
+<p>To install tentacles, OctoBot can either install a tentacle package (zipped bundle of tentacles) or a single tentacle from a local folder.</p>
+<div class="section" id="tentacle-packages">
+<h3>Tentacle packages<a class="headerlink" href="#tentacle-packages" title="Permalink to this headline">¶</a></h3>
+<p>To install a package, use the following options:
+<code class="docutils literal notranslate"><span class="pre">tentacles</span> <span class="pre">--install</span> <span class="pre">--all</span> <span class="pre">--location</span> <span class="pre">&quot;path/to/your/package/package_name.zip&quot;</span></code></p>
+<p>To create a tentacles package from a local folder:</p>
+<ol class="arabic simple">
+<li><p>Make sure it follows the <a class="reference external" href="https://github.com/Drakkar-Software/OctoBot-Tentacles/tree/0.4.0">OctoBot-Tentacles folder architecture</a></p></li>
+<li><p>Call OctoBot with the following options: <code class="docutils literal notranslate"><span class="pre">tentacles</span> <span class="pre">-p</span> <span class="pre">&quot;path/to/your/packed/tentacles/pack_name.zip&quot;</span> <span class="pre">-d</span> <span class="pre">&quot;path/to/your/local/tentacles/folder&quot;</span></code></p></li>
+</ol>
+<p>Once your package is created, you can install it using the <code class="docutils literal notranslate"><span class="pre">tentacles</span> <span class="pre">--install</span> <span class="pre">--all</span> <span class="pre">--location</span> <span class="pre">&quot;path/to/your/packed/tentacles/pack_name.zip&quot;</span></code> command. You can also make it available from an URL and later install it via: <code class="docutils literal notranslate"><span class="pre">tentacles</span> <span class="pre">--install</span> <span class="pre">--all</span> <span class="pre">--location</span> <span class="pre">&quot;https://my.tentacles.com/pack_name&quot;</span></code> for example.</p>
+<p>Installing a tentacle package will replace any existing source file taht share the same name. It can be used to update sources without changing the version number.</p>
+</div>
+<div class="section" id="single-tentacles">
+<h3>Single tentacles<a class="headerlink" href="#single-tentacles" title="Permalink to this headline">¶</a></h3>
+<p>It is also possible to install a single tentacle from a local folder using the following options: <code class="docutils literal notranslate"><span class="pre">tentacles</span> <span class="pre">--single-tentacle-install</span> <span class="pre">&quot;path/to/your/tentacle/to/install&quot;</span> <span class="pre">Evaluator/TA</span></code>. Please note that in this command, you also need to provide the type of the tentacle (<code class="docutils literal notranslate"><span class="pre">Evaluator/TA</span></code> in this example) for OctoBot to know how to handle it.</p>
+</div>
+</div>
+</div>
+<div class="section" id="tentacle-customization-octobot-v0-3">
+<h1>Tentacle customization (OctoBot v0.3)<a class="headerlink" href="#tentacle-customization-octobot-v0-3" title="Permalink to this headline">¶</a></h1>
+<p>All you need to do, to improve a tentacle, is to extend the existing one you want to improve and re-implement the methods you want to change.</p>
+<p>Examples:</p>
+<ol class="arabic simple">
+<li><p><strong>TwitterNewsEvaluator</strong> is a simple Twitter evaluator available by default in <code class="docutils literal notranslate"><span class="pre">tentacles/Evaluator/Social/Default/new_evaluator.py</span></code>. To improve it, all you need to do is to create a file, let’s say <code class="docutils literal notranslate"><span class="pre">advanced_twitter_news_evaluator.py</span></code> containing a class extending the simple evaluator:
+<a href="#id1"><span class="problematic" id="id2">``</span></a><a href="#id3"><span class="problematic" id="id4">`</span></a>python
+from tentacles.Evaluator.Social import TwitterNewsEvaluator</p></li>
+</ol>
+<dl class="simple">
+<dt>class AdvancedTwitterNewsEvaluator(TwitterNewsEvaluator):</dt><dd><dl class="simple">
+<dt>def <strong>init</strong>(self):</dt><dd><p>super().<strong>init</strong>()</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># let&#39;s say we want to change this method</span>
+<span class="k">def</span> <span class="nf">get_tweet_sentiment</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tweet</span><span class="p">):</span>
+    <span class="n">sentiment</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="c1"># some advanced tweet analysis to set sentiment value</span>
+    <span class="k">return</span> <span class="n">sentiment</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>2. **StatisticAnalysis** is a simple Statistic analysis tool available by default in ```tentacles/Evaluator/Util/Default/statistics_analysis.py```. To improve it, all you need to do is to create a file, let&#39;s say ```advanced_statistics_analysis.py``` containing a class extending the simple analyser:
+```python
+from tentacles.Evaluator.Util import StatisticAnalysis
+
+
+class AdvancedStatisticAnalysis(StatisticAnalysis):
+
+    # let&#39;s say we want to change this method
+    @staticmethod
+    def analyse_recent_trend_changes(data_frame, delta_function):
+        changes = 1
+        # some advanced trend change detection here
+        return changes
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p><strong>InstantSocialReactionMixedStrategiesEvaluator</strong> is a simple strategy tool available by default in <code class="docutils literal notranslate"><span class="pre">tentacles/Evaluator/Strategies/Default/mixed_strategies_evaluator.py</span></code>. To improve it, all you need to do is to create a file, let’s say <code class="docutils literal notranslate"><span class="pre">advanced_instant_strategy_evaluator.py</span></code> containing a class extending the simple strategy:
+<a href="#id5"><span class="problematic" id="id6">``</span></a><a href="#id7"><span class="problematic" id="id8">`</span></a>python
+from tentacles.Evaluator.Strategies import InstantSocialReactionMixedStrategiesEvaluator</p></li>
+</ol>
+<p>class AdvancedInstantSocialReactionMixedStrategiesEvaluator(InstantSocialReactionMixedStrategiesEvaluator):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># eval_impl is the methods called when OctoBot is asking for a strategy evaluation</span>
+<span class="k">async</span> <span class="k">def</span> <span class="nf">eval_impl</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">final_evaluation</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="c1"># some advanced computations to set final_evaluation value</span>
+
+    <span class="c1"># finally, update self.eval_note to store the strategy result</span>
+    <span class="bp">self</span><span class="o">.</span><span class="n">eval_note</span> <span class="o">=</span> <span class="n">final_evaluation</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>## Tentacle installation (OctoBot v0.3)
+
+There are 3 ways to install a tentacle without web interface:
+* Web interface installation that is handling **OctoBot tentacles** following the [OctoBot Tentacle Template](https://github.com/Drakkar-Software/OctoBot-Tentacles-Template)
+* Automated installation that is handling **OctoBot tentacles** following the [OctoBot Tentacle Template](https://github.com/Drakkar-Software/OctoBot-Tentacles-Template)
+* Manual installation that allows to install any type of tentacle without any specific tentacle package format. **Careful with manual installation: if your tentacle is not defined in any tentacle package (outside of the `tentacles` folder of OctoBot) it will be deleted if you use the ```start.py -p reset_tentacles``` command !**
+### Web interface installation
+![tentacles_packages](https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/tentacles_packages.jpg)
+Simply add your tentacle package and press **register and install**
+### Automated installation
+To install tentacles via an **OctoBot tentacles package**, 2 steps only:
+1. Add the url to a GitHub repository containing the tentacles package (or the local path to the package) in **user/config.json** inside the **&quot;tentacles-packages&quot;** part.
+```json
+&quot;tentacles-packages&quot;: [
+    &quot;C:/Users/JohnSmith/TradingBots/Advanced-Trading-Tentacles-Package&quot;
+  ],
+</pre></div>
+</div>
+<p>You can add as many tentacles packages as you want, just separate them with a “,”.</p>
+<ol class="arabic">
+<li><p>Execute the following command:
+.. code-block:: bash</p>
+<blockquote>
+<div><p>python start.py -p install all</p>
+</div></blockquote>
+<p>This will install every tentacles packages OctoBot can find in its configuration as well as the <a class="reference external" href="https://github.com/Drakkar-Software/OctoBot-Tentacles">default OctoBot tentacles packages</a>.</p>
+</li>
+</ol>
+<p>It is also possible to specify which tentacle(s) to install by naming it(them). In this case only tentacles available in the available tentacles packages can be installed.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python start.py -p install forum_evaluator john_smith_macd_evaluator advanced_twitter_evaluator
+</pre></div>
+</div>
+<div class="section" id="manual-installation">
+<h2>Manual installation<a class="headerlink" href="#manual-installation" title="Permalink to this headline">¶</a></h2>
+<p>Only 3 steps are necessary to install a new tentacle:</p>
+<ol class="arabic">
+<li><p>Store the tentacle in the <code class="docutils literal notranslate"><span class="pre">Advanced</span></code> folder contained in the folder of the basic version of the tentacle</p></li>
+<li><p>In this <code class="docutils literal notranslate"><span class="pre">Advanced</span></code> folder, create or update the <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> file to add the following line:
+.. code-block:: python</p>
+<blockquote>
+<div><p>from .file_containing_new_implementation_name import *</p>
+</div></blockquote>
+</li>
+<li><p>Add the class of your evaluator into your <code class="docutils literal notranslate"><span class="pre">tentacles/Evaluator/evaluator_config.json</span></code> or <code class="docutils literal notranslate"><span class="pre">tentacles/Trading/trading_config.json</span></code> file (depending on the type of tentacle) alongside the others. This will allow OctoBot to see it.</p></li>
+</ol>
+<p>Examples with the tentacles created in the <strong>Tentacle customization</strong> section:</p>
+<ol class="arabic simple">
+<li><p><strong>TwitterNewsEvaluator</strong></p></li>
+</ol>
+<ul>
+<li><p>Store the tentacle file: <code class="docutils literal notranslate"><span class="pre">advanced_twitter_news_evaluator.py</span></code> in <code class="docutils literal notranslate"><span class="pre">tentacles/Evaluator/Social/Advanced</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">tentacles/Evaluator/Social/Advanced</span></code>, create or edit the <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> file and add the following line:
+.. code-block:: python</p>
+<blockquote>
+<div><p>from .advanced_twitter_news_evaluator import *</p>
+</div></blockquote>
+</li>
+</ul>
+<ol class="arabic simple">
+<li><p><strong>StatisticAnalysis</strong></p></li>
+</ol>
+<ul>
+<li><p>Store the tentacle file: <code class="docutils literal notranslate"><span class="pre">advanced_statistics_analysis.py</span></code> in <code class="docutils literal notranslate"><span class="pre">tentacles/Evaluator/Util/Advanced</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">tentacles/Evaluator/Util/Advanced</span></code>, create or edit the <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> file and add the following line:
+.. code-block:: python</p>
+<blockquote>
+<div><p>from .advanced_statistics_analysis import *</p>
+</div></blockquote>
+</li>
+</ul>
+<ol class="arabic simple">
+<li><p><strong>InstantSocialReactionMixedStrategiesEvaluator</strong></p></li>
+</ol>
+<ul>
+<li><p>Store the tentacle file: <code class="docutils literal notranslate"><span class="pre">advanced_instant_strategy_evaluator.py</span></code> in <code class="docutils literal notranslate"><span class="pre">tentacles/Evaluator/Strategies/Advanced</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">tentacles/Evaluator/Strategies/Advanced</span></code>, create or edit the <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> file and add the following line:
+.. code-block:: python</p>
+<blockquote>
+<div><p>from .advanced_instant_strategy_evaluator import *</p>
+</div></blockquote>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="advanced-evaluator-and-strategy-creation-octobot-v0-3">
+<h1>Advanced: Evaluator and Strategy creation (OctoBot v0.3)<a class="headerlink" href="#advanced-evaluator-and-strategy-creation-octobot-v0-3" title="Permalink to this headline">¶</a></h1>
+<p>With OctoBot, everyone can create it’s own evaluators and strategies, even if it’s not already existing already in a simple version.</p>
+<p>In order to add a new type of evaluator, you need to respect the following rules:</p>
+<ul class="simple">
+<li><p>Evaluators extend any type of <em>implementation</em> of <strong>RealTimeEvaluator</strong>, <strong>SocialEvaluator</strong> or <strong>TAEvaluator</strong></p></li>
+</ul>
+<p>Example: RSIMomentumEvaluator extends <em>MomentumEvaluator</em> which extends <strong>TAEvaluator</strong>. Here RSIMomentumEvaluator is an evaluator extending <strong>TAEvaluator</strong>‘s implementation <em>MomentumEvaluator</em></p>
+<p>In order to add a new type of strategy, you need to respect the following rules:</p>
+<ul class="simple">
+<li><p>Strategies extend any type of <em>implementation</em> of <strong>StrategiesEvaluator</strong></p></li>
+</ul>
+<p>Example: InstantSocialReactionMixedStrategiesEvaluator extends <em>MixedStrategiesEvaluator</em> which extends <strong>StrategiesEvaluator</strong>. Here InstantSocialReactionMixedStrategiesEvaluator is a strategy extending <strong>StrategiesEvaluator</strong>‘s implementation <em>MixedStrategiesEvaluator</em></p>
+<ul class="simple">
+<li><p>Evaluators and strategies have to implement all the <code class="docutils literal notranslate"><span class="pre">&#64;abstractmethod</span></code> methods.</p></li>
+<li><p>Evaluators other than the ones extending <strong>TAEvaluator</strong> can be threaded, in this case <code class="docutils literal notranslate"><span class="pre">self.is_threaded</span></code> should be set to true. Strategies can’t be threaded.</p></li>
+<li><p>Evaluators and strategies have to set <code class="docutils literal notranslate"><span class="pre">self.eval_note</span></code> to a value between -1 and 1 (-1 for buy and 1 for sell) to be considered.</p></li>
+<li><p>Evaluators are ignored if <code class="docutils literal notranslate"><span class="pre">self.enabled</span></code> is not set to true.</p></li>
+<li><p>Evaluators and strategy files have to be included in the <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> file using the following line:
+<code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">.evaluator_file</span> <span class="pre">import</span> <span class="pre">*</span></code>.</p></li>
+</ul>
+<p>Including a new evaluator or strategy will automatically tell OctoBot to load this evaluator or strategy.</p>
+</div>
+<div class="section" id="join-the-octobot-community">
+<h1>Join the OctoBot community !<a class="headerlink" href="#join-the-octobot-community" title="Permalink to this headline">¶</a></h1>
+<p>After creating your own evaluators, strategies, utilitary tools, or trading modes you can share them with the OctoBot community !</p>
+<p>The OctoBot team will be delighted to add new tentacles to the project and update the <a class="reference external" href="https://github.com/Drakkar-Software/OctoBot-Tentacles">default OctoBot evaluation and strategies tentacles package</a> !</p>
+</div>
+
+
+             </article>
+             
+            </div>
+            <footer>
+  
+
+  
+
+    <hr>
+
+  
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2021, DrakkarSoftware.
+
+    </p>
+  </div>
+    
+      <div>
+        Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+      </div>
+     
+
+</footer>
+
+          </div>
+        </div>
+
+        <div class="pytorch-content-right" id="pytorch-content-right">
+          <div class="pytorch-right-menu" id="pytorch-right-menu">
+            <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
+              <ul>
+<li><a class="reference internal" href="#">OctoBot is customizable !</a></li>
+<li><a class="reference internal" href="#tentacle-installation-octobot-v0-4">Tentacle installation (OctoBot v0.4)</a><ul>
+<li><a class="reference internal" href="#default-tentacles">Default tentacles</a></li>
+<li><a class="reference internal" href="#installing-a-tentacles">Installing a tentacles</a><ul>
+<li><a class="reference internal" href="#tentacle-packages">Tentacle packages</a></li>
+<li><a class="reference internal" href="#single-tentacles">Single tentacles</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#tentacle-customization-octobot-v0-3">Tentacle customization (OctoBot v0.3)</a><ul>
+<li><a class="reference internal" href="#manual-installation">Manual installation</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#advanced-evaluator-and-strategy-creation-octobot-v0-3">Advanced: Evaluator and Strategy creation (OctoBot v0.3)</a></li>
+<li><a class="reference internal" href="#join-the-octobot-community">Join the OctoBot community !</a></li>
+</ul>
+
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+  
+
+
+  
+
+     
+       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+         <script src="../_static/jquery.js"></script>
+         <script src="../_static/underscore.js"></script>
+         <script src="../_static/doctools.js"></script>
+     
+
+  
+
+  <script type="text/javascript" src="../_static/js/vendor/popper.min.js"></script>
+  <script type="text/javascript" src="../_static/js/vendor/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+  <!-- Begin Footer -->
+
+  <div class="container-fluid" id="docs-tutorials-resources">
+    <div class="container">
+      <div class="row">
+        <!--
+        <div class="col-md-4 text-center">
+          <h2>Docs</h2>
+          <p>Access comprehensive developer documentation for PyTorch</p>
+          <a class="with-right-arrow" href="https://drakkar-software.github.io/OctoBot">View Docs</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Tutorials</h2>
+          <p>Get in-depth tutorials for beginners and advanced developers</p>
+          <a class="with-right-arrow" href="">View Tutorials</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Resources</h2>
+          <p>Find development resources and get your questions answered</p>
+          <a class="with-right-arrow" href="https://drakkar-software.github.io/OctoBot">View Resources</a>
+        </div>
+        -->
+      </div>
+    </div>
+  </div>
+
+
+  <!-- <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-logo-wrapper">
+        <a href="https://drakkar-software.github.io/OctoBot" class="footer-logo"></a>
+      </div>
+
+      <div class="footer-links-wrapper">
+
+        <div class="footer-logo-col">
+          <img class="footer-logo-img" src="../_static/images/dark_asteroid_logo.svg"/>
+        </div>
+
+        <div class="footer-links-col">
+          <ul>
+            <li class="list-title"><a href="https://drakkar-software.github.io/OctoBot">Asteroid</a></li>
+            <li><a href="https://github.com/Drakkar-Software/OctoBot/wiki">Get Started</a></li>
+            <li><a href="https://drakkar-software.github.io/OctoBot">Features</a></li>
+            <li><a href="">Ecosystem</a></li>
+            <li><a href="https://drakkar-software.github.io/OctoBot">Blog</a></li>
+            <li><a href="https://drakkar-software.github.io/OctoBot">Resources</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <ul>
+            <li class="list-title"><a href="https://drakkar-software.github.io/OctoBot">Support</a></li>
+            <li><a href="">Tutorials</a></li>
+            <li><a href="https://drakkar-software.github.io/OctoBot">Docs</a></li>
+            <li><a href="https://github.com/Drakkar-Software/OctoBot/discussions" target="_blank">Discuss</a></li>
+            <li><a href="https://github.com/Drakkar-Software/OctoBot/issues" target="_blank">Github Issues</a></li>
+            <li><a href="" target="_blank">Slack</a></li>
+            <li><a href="https://github.com/Drakkar-Software/OctoBot/blob/master/CONTRIBUTING.md" target="_blank">Contributing</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col follow-us-col">
+          <ul>
+            <li class="list-title">Follow Us</li>
+            <li>
+              <div id="mc_embed_signup">
+                <form
+                  action="https://twitter.us14.list-manage.com/subscribe/post?u=75419c71fe0a935e53dfa4a3f&id=91d0dccd39"
+                  method="post"
+                  id="mc-embedded-subscribe-form"
+                  name="mc-embedded-subscribe-form"
+                  class="email-subscribe-form validate"
+                  target="_blank"
+                  novalidate>
+                  <div id="mc_embed_signup_scroll" class="email-subscribe-form-fields-wrapper">
+                    <div class="mc-field-group">
+                      <label for="mce-EMAIL" style="display:none;">Email Address</label>
+                      <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Email Address">
+                    </div>
+
+                    <div id="mce-responses" class="clear">
+                      <div class="response" id="mce-error-response" style="display:none"></div>
+                      <div class="response" id="mce-success-response" style="display:none"></div>
+                    </div>
+
+                    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_75419c71fe0a935e53dfa4a3f_91d0dccd39" tabindex="-1" value=""></div>
+
+                    <div class="clear">
+                      <input type="submit" value="" name="subscribe" id="mc-embedded-subscribe" class="button email-subscribe-button">
+                    </div>
+                  </div>
+                </form>
+              </div>
+
+            </li>
+          </ul>
+
+          <div class="footer-social-icons">
+            <a href="" target="_blank" class="facebook"></a>
+            <a href="https://twitter.com/DrakkarsOctoBot" target="_blank" class="twitter"></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </footer> -->
+
+
+  <!-- End Footer -->
+
+  <!-- Begin Mobile Menu -->
+
+  <div class="mobile-main-menu">
+    <div class="container-fluid">
+      <div class="container">
+        <div class="mobile-main-menu-header-container">
+          <a class="header-logo" href="https://drakkar-software.github.io/OctoBot" aria-label="PyTorch Lightning"></a>
+          <a class="main-menu-close-button" href="#" data-behavior="close-mobile-menu"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mobile-main-menu-links-container">
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="https://github.com/Drakkar-Software/OctoBot/wiki">Get Started</a>
+          </li>
+
+          <li>
+            <a href="https://drakkar-software.github.io/OctoBot">Features</a>
+          </li>
+
+          <li>
+            <a href="https://drakkar-software.github.io/OctoBot">Blog</a>
+          </li>
+
+          <li>
+            <a href="">Tutorials</a>
+          </li>
+
+          <li>
+            <a href="https://drakkar-software.github.io/OctoBot">Docs</a>
+          </li>
+
+          <li>
+            <a href="https://drakkar-software.github.io/OctoBot">Resources</a>
+          </li>
+
+          <li>
+            <a href="https://github.com/Drakkar-Software/OctoBot">Github</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- End Mobile Menu -->
+
+  <script type="text/javascript" src="../_static/js/vendor/anchor.min.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+      mobileMenu.bind();
+      mobileTOC.bind();
+      pytorchAnchors.bind();
+      sideMenus.bind();
+      scrollToAnchor.bind();
+      highlightNavigation.bind();
+      mainMenuDropdown.bind();
+
+      // Add class to links that have code blocks, since we cannot create links in code blocks
+      $("article.pytorch-article a span.pre").each(function(e) {
+        $(this).closest("a").addClass("has-code");
+      });
+    })
+  </script>
+</body>
+</html>

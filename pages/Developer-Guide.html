@@ -1,0 +1,702 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Developer &mdash; OctoBot</title>
+  
+
+  
+  
+  
+  
+    <link rel="canonical" href="https://github.com/Drakkar-Software/OctoBotpages/Developer-Guide.html"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+  <!-- Preload the theme fonts -->
+
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-book.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium-italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+<!-- Preload the katex fonts -->
+
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Math-Italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size1-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size4-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size2-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size3-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Caligraphic-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+</head>
+
+<div class="container-fluid header-holder tutorials-header" id="header-holder">
+  <div class="container">
+    <div class="header-container">
+      <a class="header-logo" href="https://drakkar-software.github.io/OctoBot" aria-label="PyTorch">
+       <!-- <img class="call-to-action-img" src="../_static/images/asteroid_logo_dark.png"/> -->
+      </a>
+
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="https://github.com/Drakkar-Software/OctoBot/wiki">Get Started</a>
+          </li>
+
+          <li>
+            <a href="https://drakkar-software.github.io/OctoBot">Blog</a>
+          </li>
+
+          <li>
+            <a href="">Tutorials</a>
+          </li>
+
+          <li>
+            <a href="https://drakkar-software.github.io/OctoBot">Docs</a>
+          </li>
+
+          <li>
+            <div class="resources-dropdown">
+              <a id="resourcesDropdownButton" data-toggle="resources-dropdown">
+                Resources
+              </a>
+              <div class="resources-dropdown-menu">
+                <a class="nav-dropdown-item" href="https://drakkar-software.github.io/OctoBot"">
+                  <span class=dropdown-title>Developer Resources</span>
+                  <p>Find resources and get questions answered</p>
+                </a>
+                <!--
+                <a class="nav-dropdown-item" href="https://drakkar-software.github.io/OctoBot">
+                  <span class=dropdown-title>About</span>
+                  <p>Learn about PyTorch’s features and capabilities</p>
+                </a>
+                -->
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <a href="https://github.com/Drakkar-Software/OctoBot">Github</a>
+          </li>
+        </ul>
+      </div>
+
+      <a class="main-menu-open-button" href="#" data-behavior="open-mobile-menu"></a>
+    </div>
+
+  </div>
+</div>
+
+
+<body class="pytorch-body">
+
+   
+
+    
+
+    <div class="table-of-contents-link-wrapper">
+      <span>Table of Contents</span>
+      <a href="#" class="toggle-table-of-contents" data-behavior="toggle-table-of-contents"></a>
+    </div>
+
+    <nav data-toggle="wy-nav-shift" class="pytorch-left-menu" id="pytorch-left-menu">
+      <div class="pytorch-side-scroll">
+        <div class="pytorch-menu pytorch-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          <div class="pytorch-left-menu-search">
+            
+
+            
+              
+              
+                <div class="version">
+                  0.4.0b2
+                </div>
+              
+            
+
+            
+
+
+  
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search Docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+            
+          </div>
+
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="With-Docker.html">With docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="With-PIP.html">With Python index package (pip)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="With-Python-only.html">With python only</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Configuration.html">Global configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Configuration.html#evaluator-and-trading-configuration">Evaluator and trading configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Configuration.html#specific-evaluator-configuration">Specific evaluator configuration</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Interfaces</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Web-interface.html">Web interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Discord-interface.html">Discord interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Reddit-interface.html">Reddit interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Twitter-interface.html">Twitter interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Telegram-interface.html">Telegram interface</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <div class="pytorch-container">
+      <div class="pytorch-page-level-bar" id="pytorch-page-level-bar">
+        <div class="pytorch-breadcrumbs-wrapper">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="pytorch-breadcrumbs">
+    
+      <li>
+        <a href="../index.html">
+          
+            Docs
+          
+        </a> &gt;
+      </li>
+
+        
+      <li>Developer</li>
+    
+    
+      <li class="pytorch-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/pages/Developer-Guide.rst.txt" rel="nofollow"><img src="../_static/images/view-page-source-icon.svg"></a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+</div>
+        </div>
+
+        <div class="pytorch-shortcuts-wrapper" id="pytorch-shortcuts-wrapper">
+          Shortcuts
+        </div>
+      </div>
+
+      <section data-toggle="wy-nav-shift" id="pytorch-content-wrap" class="pytorch-content-wrap">
+        <div class="pytorch-content-left">
+
+        
+          
+          <div class="rst-content">
+          
+            <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
+             <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
+              
+  <div class="section" id="developer">
+<h1>Developer<a class="headerlink" href="#developer" title="Permalink to this headline">¶</a></h1>
+<p>Note: this page is referring to OctoBot in versions superior to 0.4.0.</p>
+<div class="section" id="developer-tips">
+<h2>Developer tips<a class="headerlink" href="#developer-tips" title="Permalink to this headline">¶</a></h2>
+<p>We gathered some useful tips on the <a class="reference external" href="https://github.com/Drakkar-Software/OctoBot/wiki/Developers-tips">developer tips page</a>.</p>
+</div>
+<div class="section" id="environment-setup">
+<h2>Environment setup<a class="headerlink" href="#environment-setup" title="Permalink to this headline">¶</a></h2>
+<p>We recommand using <a class="reference external" href="https://www.jetbrains.com/pycharm/">PyCharm</a> to navigate through the OctoBot projects. This IDE will allow you to open and navigate through the multiple OctoBot repositories and make your OctoBot run setup use the code directly from the clonned repos using the project dependencies.</p>
+<p>More details in the <a class="reference external" href="https://github.com/Drakkar-Software/OctoBot/wiki/Developer-Guide#octobot-repositories">OctoBot repositories</a> and <a class="reference external" href="https://github.com/Drakkar-Software/OctoBot/wiki/Developer-Guide#setting-up-the-recommended-octobot-development-environment">Setting up the recommended OctoBot development environment</a> sections.</p>
+</div>
+<div class="section" id="octobot-architecture">
+<h2>OctoBot architecture<a class="headerlink" href="#octobot-architecture" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="philosophy">
+<h3>Philosophy<a class="headerlink" href="#philosophy" title="Permalink to this headline">¶</a></h3>
+<p>The goal behind OctoBot is to have a <strong>very fast and scalable</strong> trading robot.</p>
+<p>To achieve this, OctoBot is entirely built around the <a class="reference external" href="https://docs.python.org/3/library/asyncio.html">asyncio</a> producer-consumer <a class="reference external" href="https://github.com/Drakkar-Software/Async-Channel">Async-Channel</a> framework which allows to very quickly and efficiently transmit data to different elements within the bot. The idea is all the time maintain <strong>fully up-to-date data</strong> without having to use update loops (that require have inefficient sleeping time) while also <strong>waking up the evaluation chain as quickly as possible</strong> when an update is available (without having to wait for any update cycle of any update loop).<span class="raw-html-m2r"><br></span>
+Additionally, in order to save CPU time, as little threads as possible are use by OctoBot (usually less than 10 with a standard setup).</p>
+<p>As a final touch, each CPU or memory intensive task is further optimized using <a class="reference external" href="https://cython.org/">Cython</a>. The python code of these tasks is translated into highly optimized C code that allows for less instructions to process and optimized memory representation ending up with a huge performance increase.</p>
+</div>
+<div class="section" id="overview">
+<h3>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h3>
+<p>The OctoBot code is split into <a class="reference external" href="https://github.com/Drakkar-Software/OctoBot/wiki/Developer-Guide#octobot-repositories">several repository</a>. Each module is handled as an independent python module and is available on the <a class="reference external" href="https://pypi.org/">official python package repository</a> (used in <code class="docutils literal notranslate"><span class="pre">pip</span></code> commands). Modules are made available as python source modules as well as as compiled modules which includes cython optimizations. Installing a module on a platform which as not already been built and made available on <a class="reference external" href="https://pypi.org/">pypi.org</a> will take much more time as <code class="docutils literal notranslate"><span class="pre">pip</span></code> will cythonize and compile the given module, which also requires a cpp compiler.</p>
+</div>
+<div class="section" id="octobot">
+<h3>OctoBot<a class="headerlink" href="#octobot" title="Permalink to this headline">¶</a></h3>
+<a class="reference external image-reference" href="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/octobot_arch.svg"><img alt="OctoBot architecture" src="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/octobot_arch.svg" /></a>
+<p>Simplified view of the OctoBot core components.<span class="raw-html-m2r"><br></span>
+Note: Inside the OctoBot part, each arrow is an async channel.</p>
+</div>
+<div class="section" id="octobot-tentacles">
+<h3>OctoBot tentacles<a class="headerlink" href="#octobot-tentacles" title="Permalink to this headline">¶</a></h3>
+<p>Tentacles are OctoBot’s extensions, they are meant to be easily customizable, can be activated or not and do any specific action within OctoBot.</p>
+<div class="section" id="evaluation-chain-tentacles">
+<h4>Evaluation chain tentacles<a class="headerlink" href="#evaluation-chain-tentacles" title="Permalink to this headline">¶</a></h4>
+<p>They are tools to analyze market data as well as any other type of data (twitter, telegram, etc). They implement abstract evaluators, strategies and trading modes.</p>
+</div>
+<div class="section" id="utility-tentacles">
+<h4>Utility tentacles<a class="headerlink" href="#utility-tentacles" title="Permalink to this headline">¶</a></h4>
+<p>These are OctoBot’s interfaces (web, telegram), notification systems, social news feeds and backtesting data collectors. They implement abstract interfaces, services, service feeds, notifiers and data collectors</p>
+</div>
+</div>
+<div class="section" id="evaluators-strategies-and-trading-modes">
+<h3>Evaluators, strategies and trading modes:<a class="headerlink" href="#evaluators-strategies-and-trading-modes" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="evaluators">
+<h4>Evaluators<a class="headerlink" href="#evaluators" title="Permalink to this headline">¶</a></h4>
+<p>Simple python classes that will automatically be wake up when new data is available. Their goal is to set <code class="docutils literal notranslate"><span class="pre">self.eval_note</span></code> and call <code class="docutils literal notranslate"><span class="pre">await</span> <span class="pre">self.evaluation_completed</span></code> that will then be made available to the Strategy(ies). They should be dedicated to a single simple task such as (for example) evaluate the RSI on the current data or looks for a divergence in a trend.</p>
+</div>
+<div class="section" id="strategies">
+<h4>Strategies<a class="headerlink" href="#strategies" title="Permalink to this headline">¶</a></h4>
+<p>Strategies are more complex elements, they can read all the evaluators evaluations on every time frame and are considering these evaluations to set their <code class="docutils literal notranslate"><span class="pre">self.eval_note</span></code> and call <code class="docutils literal notranslate"><span class="pre">await</span> <span class="pre">self.strategy_completed</span></code>. As a comparison if evaluators are human senses, strategies are the brain that will take these senses’ signals and decide to do something or not. Strategies can be generic like SimpleStrategyEvaluator that will take any standard evaluator and time frame into account or using specific evaluators only like MoveSignalsStrategyEvaluator.</p>
+</div>
+<div class="section" id="trading-modes">
+<h4>Trading modes<a class="headerlink" href="#trading-modes" title="Permalink to this headline">¶</a></h4>
+<p>Trading modes use the strategy(ies) evaluations to create, update or cancel orders. Using the strategies signals, they are responsible for the way to translate a signal into an order by looking at the available funds, open orders, considering stop loss or not and other trading related responsibilities.</p>
+</div>
+<div class="section" id="triggers">
+<h4>Triggers<a class="headerlink" href="#triggers" title="Permalink to this headline">¶</a></h4>
+<p>Evaluators, strategies and trading modes are automatically triggered when their channel has a new data. Trigger sources are:</p>
+<p>For evaluators</p>
+<ul class="simple">
+<li><p>Technical evaluators: any new candle or refresh request (with updated candles data) from a strategy</p></li>
+<li><p>Real time evaluators: any new candle and any market price change</p></li>
+<li><p>Social evaluators: associated signal (ex: a tweet for a twitter social evaluator)</p></li>
+</ul>
+<p>For strategies</p>
+<ul class="simple">
+<li><p>After a technical evaluator cycle: when all TA have updated their evaluation and called <code class="docutils literal notranslate"><span class="pre">await</span> <span class="pre">self.evaluation_completed</span></code></p></li>
+<li><p>After any real time evaluator evaluation and call of <code class="docutils literal notranslate"><span class="pre">await</span> <span class="pre">self.evaluation_completed</span></code></p></li>
+<li><p>After any social evaluator evaluation and call of <code class="docutils literal notranslate"><span class="pre">await</span> <span class="pre">self.evaluation_completed</span></code></p></li>
+</ul>
+<p>For trading mode</p>
+<ul class="simple">
+<li><p>After any strategy evaluation and call of <code class="docutils literal notranslate"><span class="pre">await</span> <span class="pre">self.strategy_completed</span></code></p></li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>OctoBot repositories<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>OctoBot code is split in multiple repositories:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/Drakkar-Software/OctoBot">https://github.com/Drakkar-Software/OctoBot</a> (dev branch) for the main program initialization, backtesting and strategy optimizer setup as well as community data management.</p></li>
+<li><p><a class="reference external" href="https://github.com/Drakkar-Software/OctoBot-Tentacles">https://github.com/Drakkar-Software/OctoBot-Tentacles</a> (dev branch) for tentacles: evaluators, strategies, trading modes, interfaces, notifiers, external data feeds (twitter, telegram etc), backtesting data formats management and exchange specific behaviors.</p></li>
+<li><p><a class="reference external" href="https://github.com/Drakkar-Software/OctoBot-Trading">https://github.com/Drakkar-Software/OctoBot-Trading</a> for everything trading and exchange related: exchange connections, exchange data fetch and update, orders, trades and portfolios management.</p></li>
+<li><p><a class="reference external" href="https://github.com/Drakkar-Software/OctoBot-evaluators">https://github.com/Drakkar-Software/OctoBot-evaluators</a> for everything related to evaluators and strategies.</p></li>
+<li><p><a class="reference external" href="https://github.com/Drakkar-Software/OctoBot-Services">https://github.com/Drakkar-Software/OctoBot-Services</a> for everything related to interfaces: graphic (web) and text(telegram), notifications push and social analysis data management: update engine to handle new data from an external feed (ex: twitter) when it gets available.</p></li>
+<li><p><a class="reference external" href="https://github.com/Drakkar-Software/OctoBot-Backtesting">https://github.com/Drakkar-Software/OctoBot-Backtesting</a> for the backtesting engine and scheduling as well as historical data collection unified storage management.</p></li>
+<li><p><a class="reference external" href="https://github.com/Drakkar-Software/OctoBot-Tentacles-Manager">https://github.com/Drakkar-Software/OctoBot-Tentacles-Manager</a> for tentacles installation, updates and interactions: get a tentacle documentation, configuration or it’s dependencies.</p></li>
+<li><p><a class="reference external" href="https://github.com/Drakkar-Software/OctoBot-Commons">https://github.com/Drakkar-Software/OctoBot-Commons</a> for common tools and constants used across each above repository.</p></li>
+<li><p><a class="reference external" href="https://github.com/Drakkar-Software/Async-Channel">https://github.com/Drakkar-Software/Async-Channel</a> which is used by OctoBot as a base framework for every data transfer within the bot. This allows a highly optimized and scalable architecture that adapts to any system while using a very low amount of CPU and RAM.</p></li>
+</ul>
+<div class="section" id="id2">
+<h3>Setting up the recommended OctoBot development environment<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>Requirements:</p>
+<ul class="simple">
+<li><p>IDE: <a class="reference external" href="https://www.jetbrains.com/pycharm/">PyCharm</a></p></li>
+<li><p>SCM: <a class="reference external" href="https://git-scm.com/downloads">Git</a>, we also use <a class="reference external" href="https://www.gitkraken.com/git-client">GitKraken</a> to easily manage OctoBot’s multiple repos, this is just a quality of life improvement and is not necessary.</p></li>
+<li><p>Language: <a class="reference external" href="https://www.python.org/downloads/">Python 3.8</a></p></li>
+</ul>
+<ol class="arabic">
+<li><p>Clone each <a class="reference external" href="https://github.com/Drakkar-Software/OctoBot/wiki/Developer-Guide#octobot-repositories">OctoBot repository</a> using the dev branch when specified.</p></li>
+<li><p>Open Pycharm and open the OctoBot repository.</p></li>
+<li><p>Open every other <a class="reference external" href="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/wiki/Developer-Guide#octobot-repositories">OctoBot repository</a> alongside to the main OctoBot repository <strong>in the same PyCharm window</strong>.</p></li>
+<li><p>In File/Settings/Project/Python Interpreter: select your installed python3.8 and create a new virtual environment through PyCharm.<span class="raw-html-m2r"><br></span></p>
+<a class="reference external image-reference" href="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/python_interpreter.png"><img alt="python interpreter" src="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/python_interpreter.png" /></a>
+</li>
+<li><p>In File/Settings/Project/Python Dependencies: For each repository: check its required OctoBot repository dependency. This will allow your PyCharm python runner to use your OctoBot repositories as source code directly. Thanks to this you will be able to edit any file in any repo and it will be taken into account in your other PyCharm run profiles runners from other open OctoBot repo. This is useful when running tests. If you skip this, you will need to install every OctoBot module with pip and won’t be able to edit their code.<span class="raw-html-m2r"><br></span></p>
+<a class="reference external image-reference" href="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/python_dependencies.png"><img alt="python dependencies" src="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/python_dependencies.png" /></a>
+</li>
+<li><p>For each OctoBot’s repository: install missing dependencies in requirements.txt and dev_requirements.txt. <strong>Warning</strong> do not install the requirements related to the previously downloaded repositories or your python runner will use them instead of your local code version.</p></li>
+<li><p>Create PyCharm run configurations using the previously created virtual env (with all the dependencies installed) for each way you want to start python commands (running OctoBot, running tests, etc). Example of run configs (only the selected one is necessary to start OctoBot):<span class="raw-html-m2r"><br></span></p>
+<a class="reference external image-reference" href="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/run_config.png"><img alt="run configuration" src="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/run_config.png" /></a>
+</li>
+<li><p>You can now run and debug the whole OctoBot project and its repositories.</p></li>
+</ol>
+<p>A script to install these git repo on a unix setup</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+
+<span class="nb">readonly</span> <span class="nv">REMOTE_DEVBRANCH</span><span class="o">=</span><span class="s2">&quot;remotes/origin/dev&quot;</span>
+<span class="nb">readonly</span> <span class="nv">DEVBRANCH</span><span class="o">=</span><span class="s2">&quot;dev&quot;</span>
+<span class="nb">readonly</span> <span class="nv">BASEDIR</span><span class="o">=</span><span class="k">$(</span>dirname <span class="s2">&quot;</span><span class="nv">$0</span><span class="s2">&quot;</span><span class="k">)</span>
+
+branch_work<span class="o">()</span> <span class="o">{</span>
+  <span class="nv">dir</span><span class="o">=</span><span class="nv">$1</span>
+  <span class="nv">devbranch</span><span class="o">=</span><span class="nv">$2</span>
+  <span class="nv">branch</span><span class="o">=</span><span class="k">$(</span><span class="nb">cd</span> <span class="nv">$BASEDIR</span>/<span class="nv">$dir</span> <span class="o">&amp;&amp;</span> git name-rev --name-only HEAD<span class="k">)</span>
+  <span class="k">if</span> <span class="nv">$devbranch</span><span class="p">;</span> <span class="k">then</span>
+    <span class="k">if</span> <span class="o">[</span> <span class="nv">$branch</span> <span class="o">==</span> <span class="nv">$REMOTE_DEVBRANCH</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+      <span class="nb">echo</span> <span class="s2">&quot;[WARN] Already on branch: </span><span class="nv">$branch</span><span class="s2"> &quot;</span>
+      <span class="nb">echo</span> <span class="s2">&quot;[INFO] Delete Folder: </span><span class="nv">$dir</span><span class="s2"> - if you would like to have clean </span><span class="nv">$dir</span><span class="s2"> project&quot;</span>
+    <span class="k">else</span>
+      <span class="o">(</span><span class="nb">cd</span> <span class="nv">$dir</span><span class="p">;</span> git checkout <span class="nv">$DEVBRANCH</span><span class="o">)</span>
+    <span class="k">fi</span>
+  <span class="k">fi</span>
+<span class="o">}</span>
+
+project_work<span class="o">()</span> <span class="o">{</span>
+  <span class="nv">url</span><span class="o">=</span><span class="nv">$1</span>
+  <span class="nv">devbranch</span><span class="o">=</span><span class="nv">$2</span>
+  <span class="nv">dir</span><span class="o">=</span><span class="k">$(</span>basename -s .git <span class="s2">&quot;</span><span class="nv">$url</span><span class="s2">&quot;</span><span class="k">)</span>
+  <span class="nb">echo</span> <span class="s2">&quot;Check Dir </span><span class="nv">$BASEDIR</span><span class="s2">/</span><span class="nv">$dir</span><span class="s2">&quot;</span>
+  <span class="k">if</span> <span class="o">[</span> -d <span class="nv">$BASEDIR</span>/<span class="nv">$dir</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+    <span class="nb">echo</span> <span class="s2">&quot;[WARN] Directory: </span><span class="nv">$dir</span><span class="s2"> exists!&quot;</span>
+    branch_work <span class="nv">$dir</span> <span class="nv">$devbranch</span>
+  <span class="k">else</span>
+    <span class="nb">echo</span> <span class="s2">&quot;----- </span><span class="nv">$dir</span><span class="s2"> -----&quot;</span>
+    git clone <span class="nv">$url</span>
+    branch_work <span class="nv">$dir</span> <span class="nv">$devbranch</span>
+    <span class="nb">echo</span> <span class="s2">&quot;----- END </span><span class="nv">$dir</span><span class="s2"> -----&quot;</span>
+  <span class="k">fi</span>
+<span class="o">}</span>
+
+<span class="c1">#Uses dev branch: true/false</span>
+project_work https://github.com/Drakkar-Software/OctoBot.git <span class="nb">true</span>
+project_work https://github.com/Drakkar-Software/OctoBot-Tentacles.git <span class="nb">true</span>
+project_work https://github.com/Drakkar-Software/OctoBot-Trading <span class="nb">false</span>
+project_work https://github.com/Drakkar-Software/OctoBot-evaluators <span class="nb">false</span>
+project_work https://github.com/Drakkar-Software/OctoBot-Services <span class="nb">false</span>
+project_work https://github.com/Drakkar-Software/OctoBot-Backtesting <span class="nb">false</span>
+project_work https://github.com/Drakkar-Software/OctoBot-Tentacles-Manager <span class="nb">false</span>
+project_work https://github.com/Drakkar-Software/OctoBot-Commons <span class="nb">false</span>
+project_work https://github.com/Drakkar-Software/Async-Channel <span class="nb">false</span>
+</pre></div>
+</div>
+<p><em>Thanks for reading this guide and if you have any idea on how to improve it, please reach out to us !</em></p>
+</div>
+</div>
+</div>
+
+
+             </article>
+             
+            </div>
+            <footer>
+  
+
+  
+
+    <hr>
+
+  
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2021, DrakkarSoftware.
+
+    </p>
+  </div>
+    
+      <div>
+        Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+      </div>
+     
+
+</footer>
+
+          </div>
+        </div>
+
+        <div class="pytorch-content-right" id="pytorch-content-right">
+          <div class="pytorch-right-menu" id="pytorch-right-menu">
+            <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
+              <ul>
+<li><a class="reference internal" href="#">Developer</a><ul>
+<li><a class="reference internal" href="#developer-tips">Developer tips</a></li>
+<li><a class="reference internal" href="#environment-setup">Environment setup</a></li>
+<li><a class="reference internal" href="#octobot-architecture">OctoBot architecture</a><ul>
+<li><a class="reference internal" href="#philosophy">Philosophy</a></li>
+<li><a class="reference internal" href="#overview">Overview</a></li>
+<li><a class="reference internal" href="#octobot">OctoBot</a></li>
+<li><a class="reference internal" href="#octobot-tentacles">OctoBot tentacles</a><ul>
+<li><a class="reference internal" href="#evaluation-chain-tentacles">Evaluation chain tentacles</a></li>
+<li><a class="reference internal" href="#utility-tentacles">Utility tentacles</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#evaluators-strategies-and-trading-modes">Evaluators, strategies and trading modes:</a><ul>
+<li><a class="reference internal" href="#evaluators">Evaluators</a></li>
+<li><a class="reference internal" href="#strategies">Strategies</a></li>
+<li><a class="reference internal" href="#trading-modes">Trading modes</a></li>
+<li><a class="reference internal" href="#triggers">Triggers</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id1">OctoBot repositories</a><ul>
+<li><a class="reference internal" href="#id2">Setting up the recommended OctoBot development environment</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+  
+
+
+  
+
+     
+       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+         <script src="../_static/jquery.js"></script>
+         <script src="../_static/underscore.js"></script>
+         <script src="../_static/doctools.js"></script>
+     
+
+  
+
+  <script type="text/javascript" src="../_static/js/vendor/popper.min.js"></script>
+  <script type="text/javascript" src="../_static/js/vendor/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+  <!-- Begin Footer -->
+
+  <div class="container-fluid" id="docs-tutorials-resources">
+    <div class="container">
+      <div class="row">
+        <!--
+        <div class="col-md-4 text-center">
+          <h2>Docs</h2>
+          <p>Access comprehensive developer documentation for PyTorch</p>
+          <a class="with-right-arrow" href="https://drakkar-software.github.io/OctoBot">View Docs</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Tutorials</h2>
+          <p>Get in-depth tutorials for beginners and advanced developers</p>
+          <a class="with-right-arrow" href="">View Tutorials</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Resources</h2>
+          <p>Find development resources and get your questions answered</p>
+          <a class="with-right-arrow" href="https://drakkar-software.github.io/OctoBot">View Resources</a>
+        </div>
+        -->
+      </div>
+    </div>
+  </div>
+
+
+  <!-- <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-logo-wrapper">
+        <a href="https://drakkar-software.github.io/OctoBot" class="footer-logo"></a>
+      </div>
+
+      <div class="footer-links-wrapper">
+
+        <div class="footer-logo-col">
+          <img class="footer-logo-img" src="../_static/images/dark_asteroid_logo.svg"/>
+        </div>
+
+        <div class="footer-links-col">
+          <ul>
+            <li class="list-title"><a href="https://drakkar-software.github.io/OctoBot">Asteroid</a></li>
+            <li><a href="https://github.com/Drakkar-Software/OctoBot/wiki">Get Started</a></li>
+            <li><a href="https://drakkar-software.github.io/OctoBot">Features</a></li>
+            <li><a href="">Ecosystem</a></li>
+            <li><a href="https://drakkar-software.github.io/OctoBot">Blog</a></li>
+            <li><a href="https://drakkar-software.github.io/OctoBot">Resources</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <ul>
+            <li class="list-title"><a href="https://drakkar-software.github.io/OctoBot">Support</a></li>
+            <li><a href="">Tutorials</a></li>
+            <li><a href="https://drakkar-software.github.io/OctoBot">Docs</a></li>
+            <li><a href="https://github.com/Drakkar-Software/OctoBot/discussions" target="_blank">Discuss</a></li>
+            <li><a href="https://github.com/Drakkar-Software/OctoBot/issues" target="_blank">Github Issues</a></li>
+            <li><a href="" target="_blank">Slack</a></li>
+            <li><a href="https://github.com/Drakkar-Software/OctoBot/blob/master/CONTRIBUTING.md" target="_blank">Contributing</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col follow-us-col">
+          <ul>
+            <li class="list-title">Follow Us</li>
+            <li>
+              <div id="mc_embed_signup">
+                <form
+                  action="https://twitter.us14.list-manage.com/subscribe/post?u=75419c71fe0a935e53dfa4a3f&id=91d0dccd39"
+                  method="post"
+                  id="mc-embedded-subscribe-form"
+                  name="mc-embedded-subscribe-form"
+                  class="email-subscribe-form validate"
+                  target="_blank"
+                  novalidate>
+                  <div id="mc_embed_signup_scroll" class="email-subscribe-form-fields-wrapper">
+                    <div class="mc-field-group">
+                      <label for="mce-EMAIL" style="display:none;">Email Address</label>
+                      <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Email Address">
+                    </div>
+
+                    <div id="mce-responses" class="clear">
+                      <div class="response" id="mce-error-response" style="display:none"></div>
+                      <div class="response" id="mce-success-response" style="display:none"></div>
+                    </div>
+
+                    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_75419c71fe0a935e53dfa4a3f_91d0dccd39" tabindex="-1" value=""></div>
+
+                    <div class="clear">
+                      <input type="submit" value="" name="subscribe" id="mc-embedded-subscribe" class="button email-subscribe-button">
+                    </div>
+                  </div>
+                </form>
+              </div>
+
+            </li>
+          </ul>
+
+          <div class="footer-social-icons">
+            <a href="" target="_blank" class="facebook"></a>
+            <a href="https://twitter.com/DrakkarsOctoBot" target="_blank" class="twitter"></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </footer> -->
+
+
+  <!-- End Footer -->
+
+  <!-- Begin Mobile Menu -->
+
+  <div class="mobile-main-menu">
+    <div class="container-fluid">
+      <div class="container">
+        <div class="mobile-main-menu-header-container">
+          <a class="header-logo" href="https://drakkar-software.github.io/OctoBot" aria-label="PyTorch Lightning"></a>
+          <a class="main-menu-close-button" href="#" data-behavior="close-mobile-menu"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mobile-main-menu-links-container">
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="https://github.com/Drakkar-Software/OctoBot/wiki">Get Started</a>
+          </li>
+
+          <li>
+            <a href="https://drakkar-software.github.io/OctoBot">Features</a>
+          </li>
+
+          <li>
+            <a href="https://drakkar-software.github.io/OctoBot">Blog</a>
+          </li>
+
+          <li>
+            <a href="">Tutorials</a>
+          </li>
+
+          <li>
+            <a href="https://drakkar-software.github.io/OctoBot">Docs</a>
+          </li>
+
+          <li>
+            <a href="https://drakkar-software.github.io/OctoBot">Resources</a>
+          </li>
+
+          <li>
+            <a href="https://github.com/Drakkar-Software/OctoBot">Github</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- End Mobile Menu -->
+
+  <script type="text/javascript" src="../_static/js/vendor/anchor.min.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+      mobileMenu.bind();
+      mobileTOC.bind();
+      pytorchAnchors.bind();
+      sideMenus.bind();
+      scrollToAnchor.bind();
+      highlightNavigation.bind();
+      mainMenuDropdown.bind();
+
+      // Add class to links that have code blocks, since we cannot create links in code blocks
+      $("article.pytorch-article a span.pre").each(function(e) {
+        $(this).closest("a").addClass("has-code");
+      });
+    })
+  </script>
+</body>
+</html>

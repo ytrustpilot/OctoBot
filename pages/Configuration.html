@@ -1,0 +1,668 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Global configuration &mdash; OctoBot</title>
+  
+
+  
+  
+  
+  
+    <link rel="canonical" href="https://github.com/Drakkar-Software/OctoBotpages/Configuration.html"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Web interface" href="Web-interface.html" />
+    <link rel="prev" title="With python only" href="With-Python-only.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+  <!-- Preload the theme fonts -->
+
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-book.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium-italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+<!-- Preload the katex fonts -->
+
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Math-Italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size1-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size4-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size2-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size3-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Caligraphic-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+</head>
+
+<div class="container-fluid header-holder tutorials-header" id="header-holder">
+  <div class="container">
+    <div class="header-container">
+      <a class="header-logo" href="https://drakkar-software.github.io/OctoBot" aria-label="PyTorch">
+       <!-- <img class="call-to-action-img" src="../_static/images/asteroid_logo_dark.png"/> -->
+      </a>
+
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="https://github.com/Drakkar-Software/OctoBot/wiki">Get Started</a>
+          </li>
+
+          <li>
+            <a href="https://drakkar-software.github.io/OctoBot">Blog</a>
+          </li>
+
+          <li>
+            <a href="">Tutorials</a>
+          </li>
+
+          <li>
+            <a href="https://drakkar-software.github.io/OctoBot">Docs</a>
+          </li>
+
+          <li>
+            <div class="resources-dropdown">
+              <a id="resourcesDropdownButton" data-toggle="resources-dropdown">
+                Resources
+              </a>
+              <div class="resources-dropdown-menu">
+                <a class="nav-dropdown-item" href="https://drakkar-software.github.io/OctoBot"">
+                  <span class=dropdown-title>Developer Resources</span>
+                  <p>Find resources and get questions answered</p>
+                </a>
+                <!--
+                <a class="nav-dropdown-item" href="https://drakkar-software.github.io/OctoBot">
+                  <span class=dropdown-title>About</span>
+                  <p>Learn about PyTorch’s features and capabilities</p>
+                </a>
+                -->
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <a href="https://github.com/Drakkar-Software/OctoBot">Github</a>
+          </li>
+        </ul>
+      </div>
+
+      <a class="main-menu-open-button" href="#" data-behavior="open-mobile-menu"></a>
+    </div>
+
+  </div>
+</div>
+
+
+<body class="pytorch-body">
+
+   
+
+    
+
+    <div class="table-of-contents-link-wrapper">
+      <span>Table of Contents</span>
+      <a href="#" class="toggle-table-of-contents" data-behavior="toggle-table-of-contents"></a>
+    </div>
+
+    <nav data-toggle="wy-nav-shift" class="pytorch-left-menu" id="pytorch-left-menu">
+      <div class="pytorch-side-scroll">
+        <div class="pytorch-menu pytorch-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          <div class="pytorch-left-menu-search">
+            
+
+            
+              
+              
+                <div class="version">
+                  0.4.0b2
+                </div>
+              
+            
+
+            
+
+
+  
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search Docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+            
+          </div>
+
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="With-Docker.html">With docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="With-PIP.html">With Python index package (pip)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="With-Python-only.html">With python only</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Configuration</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Global configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#evaluator-and-trading-configuration">Evaluator and trading configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#specific-evaluator-configuration">Specific evaluator configuration</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Interfaces</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Web-interface.html">Web interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Discord-interface.html">Discord interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Reddit-interface.html">Reddit interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Twitter-interface.html">Twitter interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Telegram-interface.html">Telegram interface</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <div class="pytorch-container">
+      <div class="pytorch-page-level-bar" id="pytorch-page-level-bar">
+        <div class="pytorch-breadcrumbs-wrapper">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="pytorch-breadcrumbs">
+    
+      <li>
+        <a href="../index.html">
+          
+            Docs
+          
+        </a> &gt;
+      </li>
+
+        
+      <li>Global configuration</li>
+    
+    
+      <li class="pytorch-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/pages/Configuration.rst.txt" rel="nofollow"><img src="../_static/images/view-page-source-icon.svg"></a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+</div>
+        </div>
+
+        <div class="pytorch-shortcuts-wrapper" id="pytorch-shortcuts-wrapper">
+          Shortcuts
+        </div>
+      </div>
+
+      <section data-toggle="wy-nav-shift" id="pytorch-content-wrap" class="pytorch-content-wrap">
+        <div class="pytorch-content-left">
+
+        
+          
+          <div class="rst-content">
+          
+            <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
+             <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
+              
+  <p>OctoBot configuration is located in two files:</p>
+<ul class="simple">
+<li><p><strong>user/config.json</strong> is the global configuration file, mostly used to setup the bot exchanges credentials, cryptocurrency pairs, interfaces and the trading risk</p></li>
+<li><p><strong>tentacles/Evaluator/evaluator_config.json</strong> defines the evaluators and strategies toolkit that the bot is allowed to use. This file is automatically pre-filled when <a class="reference external" href="https://github.com/Drakkar-Software/OctoBot/wiki/Tentacle-Manager">installing tentacles</a> with OctoBot and when using the configuration web interface.</p></li>
+<li><p><strong>tentacles/Trading/trading_config.json</strong> defines the trade mode that the bot will use. This file is automatically pre-filled when <a class="reference external" href="https://github.com/Drakkar-Software/OctoBot/wiki/Tentacle-Manager">installing tentacles</a> with OctoBot and when using the configuration web interface.</p></li>
+</ul>
+<p>OctoBot’s web interface allows to easily edit the configuration, however, it is also possible to manually edit configuration files. Please be careful when manually editing them or OctoBot won’t be able to read them and wont start. Json file are readable and editable using any text editor.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ERROR    root &lt;class &#39;Exception&#39;&gt;: Error when load config
+</pre></div>
+</div>
+<p>This will appear when a configuration file is not a json valid file.</p>
+<div class="section" id="global-configuration">
+<h1>Global configuration<a class="headerlink" href="#global-configuration" title="Permalink to this headline">¶</a></h1>
+<p><strong>user/config.json</strong> is the technical configuration file of OctoBot, an example is available in <strong>config/default_config.json</strong>.</p>
+<p>To start with OctoBot, use <strong>default_config.json</strong> as an example for your <strong>user/config.json</strong> (copy <strong>default_config.json</strong> into OctoBot’s <strong>root folder/user</strong> and rename the copy into <strong>config.json</strong>). This operation is automatically done when using <a class="reference external" href="https://github.com/Drakkar-Software/OctoBot/wiki/Installation#instructions">OctoBot’s installation procedure</a>.</p>
+<div class="section" id="exchanges">
+<h2>Exchanges<a class="headerlink" href="#exchanges" title="Permalink to this headline">¶</a></h2>
+<a class="reference external image-reference" href="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/exchanges.jpg"><img alt="exchanges" src="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/exchanges.jpg" /></a>
+<p>Once you have your own <strong>user/config.json</strong> file, to start using OctoBot, you will just need to add your exchange credentials.</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&quot;exchanges&quot;: {
+    &quot;EXCHANGE_NAME&quot;: {
+      &quot;api-key&quot;: &quot;&quot;,
+      &quot;api-secret&quot;: &quot;&quot;,
+      &quot;web-socket&quot;: true
+    }
+  },
+</pre></div>
+</div>
+<p><a class="reference external" href="https://github.com/Drakkar-Software/OctoBot/wiki/Exchanges">Here is the wiki page helping to setup an exchange for OctoBot</a></p>
+</div>
+<div class="section" id="cryptocurrencies">
+<h2>CryptoCurrencies<a class="headerlink" href="#cryptocurrencies" title="Permalink to this headline">¶</a></h2>
+<a class="reference external image-reference" href="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/currencies.jpg"><img alt="currencies" src="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/currencies.jpg" /></a>
+<p>OctoBot will trade all the cryptocurrencies listed in its configuration. To tell which cryptocurrencies to trade, add the currency in the <strong>crypto-currencies</strong> section in <strong>user/config.json</strong>.</p>
+<p>In order to keep OctoBot working at its full potential, we recommend to trade <strong>between 1 and 5</strong> different assets <strong>not to use more than 10 to 15</strong> different assets at the same time, depending on the size of your available funds.</p>
+<p>Examples:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&quot;crypto-currencies&quot;:{
+    &quot;Bitcoin&quot;: {
+      &quot;pairs&quot;: [&quot;BTC/USDT&quot;]
+    }
+  }
+</pre></div>
+</div>
+<p>OctoBot trading only Bitcoin against USDT</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&quot;crypto-currencies&quot;:{
+    &quot;Bitcoin&quot;: {
+      &quot;pairs&quot;: [&quot;BTC/USDT&quot;]
+    },
+    &quot;Ethereum&quot;: {
+      &quot;pairs&quot;: [&quot;ETH/USDT&quot;]
+    },
+    &quot;NEO&quot;: {
+      &quot;pairs&quot;: [&quot;NEO/BTC&quot;, &quot;NEO/ETH&quot;]
+    }
+  },
+</pre></div>
+</div>
+<p>OctoBot trading Bitcoin and Ethereum against USDT as well as NEO against BTC and ETH</p>
+<div class="section" id="wildcard">
+<h3>Wildcard<a class="headerlink" href="#wildcard" title="Permalink to this headline">¶</a></h3>
+<p>To tell OctoBot to trade all BTC trading pairs (with BTC as a quote asset), use the wildcard “*” instead of a list for “pairs”:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&quot;crypto-currencies&quot;:{
+    &quot;Bitcoin&quot;: {
+      &quot;pairs&quot;: [&quot;*&quot;],
+      &quot;quote&quot;: &quot;BTC&quot;
+    }
+ },
+</pre></div>
+</div>
+<p>A “quote” is required to specify the name of the currency to trade with.</p>
+</div>
+</div>
+<div class="section" id="interfaces">
+<h2>Interfaces<a class="headerlink" href="#interfaces" title="Permalink to this headline">¶</a></h2>
+<a class="reference external image-reference" href="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/services.jpg"><img alt="services" src="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/services.jpg" /></a>
+<p>Interfaces are all defined in <strong>user/config.json</strong> in the <strong>services</strong> section.</p>
+<p><a class="reference external" href="https://github.com/Drakkar-Software/OctoBot/wiki/Interfaces">Here are the details on how to setup OctoBot’s interfaces.</a></p>
+</div>
+<div class="section" id="trading-and-risk-parameter">
+<h2>Trading and Risk parameter<a class="headerlink" href="#trading-and-risk-parameter" title="Permalink to this headline">¶</a></h2>
+<p>OctoBot can process two types of trading:</p>
+<ul class="simple">
+<li><p>Real trading using your exchanges’ portfolio.
+<a class="reference external" href="https://github.com/Drakkar-Software/OctoBot/wiki/Trader">Here are the details on how to setup a trader.</a></p></li>
+<li><p>Simulated trading using any imaginary portfolio.
+<a class="reference external" href="https://github.com/Drakkar-Software/OctoBot/wiki/Simulator">Here are the details on how to setup a trader simulator.</a></p></li>
+</ul>
+<a class="reference external image-reference" href="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/trading.jpg"><img alt="trading" src="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/trading.jpg" /></a>
+<p>Any type of trading has its <strong>risk</strong> parameter. It is a parameter defining the behavior of the trader, similarly to a real human trader. <a class="reference external" href="https://github.com/Drakkar-Software/OctoBot/wiki/Trader#risk">This **risk** parameter is described here</a></p>
+</div>
+</div>
+<div class="section" id="evaluator-and-trading-configuration">
+<h1>Evaluator and trading configuration<a class="headerlink" href="#evaluator-and-trading-configuration" title="Permalink to this headline">¶</a></h1>
+<a class="reference external image-reference" href="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/trading_modes.jpg"><img alt="trading_modes" src="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/trading_modes.jpg" /></a>
+<p><strong>tentacles/Evaluator/evaluator_config.json</strong> and <strong>tentacles/Trading/trading_config.json</strong> are configuration files telling OctoBot which evaluators, strategies and trading modes to use. It is automatically kept updated after each <a class="reference external" href="https://github.com/Drakkar-Software/OctoBot/wiki/Tentacle-Manager">Tentacle Manager</a> usage.</p>
+<p>An example of <strong>tentacles/Evaluator/evaluator_config.json</strong> is available in the <strong>config</strong> folder: <strong>config/default_evaluator_config.json</strong>.</p>
+<p>When using OctoBot’s <a class="reference external" href="https://github.com/Drakkar-Software/OctoBot/wiki/Tentacle-Manager">Tentacle Manager</a>, <strong>default_evaluator_config.json</strong> is automatically used to enable default evaluators configuration when no configuration is already available for a given evaluator. The same process is used for trading_config.</p>
+<p>By default, new evaluatuators are not used (set to “false”) if not defined otherwise in <strong>config/default_evaluator_config.json</strong>.</p>
+<a class="reference external image-reference" href="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/evaluators.jpg"><img alt="evaluators" src="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/evaluators.jpg" /></a>
+<p>Example of <strong>evaluator_config.json</strong>:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;RSIMomentumEvaluator&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nt">&quot;DoubleMovingAverageTrendEvaluator&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nt">&quot;BBMomentumEvaluator&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nt">&quot;MACDMomentumEvaluator&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nt">&quot;CandlePatternMomentumEvaluator&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="nt">&quot;ADXMomentumEvaluator&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+
+
+  <span class="nt">&quot;InstantFluctuationsEvaluator&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+
+
+  <span class="nt">&quot;TwitterNewsEvaluator&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nt">&quot;RedditForumEvaluator&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="nt">&quot;GoogleTrendStatsEvaluator&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+
+
+  <span class="nt">&quot;TempFullMixedStrategiesEvaluator&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+  <span class="nt">&quot;InstantSocialReactionMixedStrategiesEvaluator&quot;</span><span class="p">:</span> <span class="kc">false</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Here, the first part is about technical analysis evaluators: they are all activated except for the <strong>CandlePatternMomentumEvaluator</strong>. This means that any technical evaluator of these types (except <strong>CandlePatternMomentumEvaluator</strong>) will be used by OctoBot.</p></li>
+<li><p>Second part contains only <strong>InstantFluctuationsEvaluator</strong>, OctoBot will then take real time market moves into account using <strong>InstantFluctuationsEvaluator</strong> only.</p></li>
+<li><p>Third part is the social evaluation. Here OctoBot will look at Twitter using <strong>TwitterNewsEvaluator</strong> (this requires that the <a class="reference external" href="https://github.com/Drakkar-Software/OctoBot/wiki/Twitter-interface">Twitter interface</a> is setup correctly) and google stats using <strong>GoogleTrendStatsEvaluator</strong>. However, OctoBot will not look a reddit (<code class="docutils literal notranslate"><span class="pre">&quot;RedditForumEvaluator&quot;:</span> <span class="pre">false</span></code>), therefore a <a class="reference external" href="https://github.com/Drakkar-Software/OctoBot/wiki/Reddit-interface">Reddit interface</a> configuration is not necessary.</p></li>
+<li><p>Last part are the strategies to use. Here only one strategy out of two is to be used by OctoBot: <strong>TempFullMixedStrategiesEvaluator</strong>.</p></li>
+</ul>
+<p>Any setting also applies to subclasses of these evaluators. For example if you add an evaluator extending <strong>ADXMomentumEvaluator</strong>, <code class="docutils literal notranslate"><span class="pre">&quot;ADXMomentumEvaluator&quot;:</span> <span class="pre">true</span></code> will tell OctoBot to use the <strong>most advanced ADXMomentumEvaluator</strong> available: if you evaluator extends <strong>ADXMomentumEvaluator</strong>, your evaluator will be considered more advanced than the <strong>basic ADXMomentumEvaluator</strong> and OctoBot will use it. See the  <a class="reference external" href="https://github.com/Drakkar-Software/OctoBot/wiki/Customize-your-OctoBot">Customize your OctoBot page</a> to learn how to add elements to your OctoBot.</p>
+<p>This is valid for any evaluator and strategy.</p>
+<p>Please note that any evaluator or strategy that doesn’t extend an element in <strong>evaluator_config.json</strong> has to be added to this file otherwise will be ignored by OctoBot.</p>
+</div>
+<div class="section" id="specific-evaluator-configuration">
+<h1>Specific evaluator configuration<a class="headerlink" href="#specific-evaluator-configuration" title="Permalink to this headline">¶</a></h1>
+<p>Some evaluators and trading modes can be configured.</p>
+<p>If it is the case, configuration is possible through OctoBot’s web interface.</p>
+<a class="reference external image-reference" href="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/specific_eval_config.jpg"><img alt="evaluators_config" src="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/specific_eval_config.jpg" /></a>
+<p>This edition interface is generated according to the <strong>NameOfTheRelatedClass_schema.json</strong> <a class="reference external" href="https://json-schema.org/understanding-json-schema/">json schema</a> file of the evaluator or trading mode to configure.</p>
+<p>It is also possible to manually edit each configuration file using a text editor for JSON. When configurable, each evaluator or trading mode has a <strong>NameOfTheRelatedClass.json</strong> file in the closest config folder.</p>
+</div>
+
+
+             </article>
+             
+            </div>
+            <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Web-interface.html" class="btn btn-neutral float-right" title="Web interface" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+      
+      
+        <a href="With-Python-only.html" class="btn btn-neutral" title="With python only" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+      
+    </div>
+  
+
+  
+
+    <hr>
+
+  
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2021, DrakkarSoftware.
+
+    </p>
+  </div>
+    
+      <div>
+        Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+      </div>
+     
+
+</footer>
+
+          </div>
+        </div>
+
+        <div class="pytorch-content-right" id="pytorch-content-right">
+          <div class="pytorch-right-menu" id="pytorch-right-menu">
+            <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
+              <ul>
+<li><a class="reference internal" href="#">Global configuration</a><ul>
+<li><a class="reference internal" href="#exchanges">Exchanges</a></li>
+<li><a class="reference internal" href="#cryptocurrencies">CryptoCurrencies</a><ul>
+<li><a class="reference internal" href="#wildcard">Wildcard</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#interfaces">Interfaces</a></li>
+<li><a class="reference internal" href="#trading-and-risk-parameter">Trading and Risk parameter</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#evaluator-and-trading-configuration">Evaluator and trading configuration</a></li>
+<li><a class="reference internal" href="#specific-evaluator-configuration">Specific evaluator configuration</a></li>
+</ul>
+
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+  
+
+
+  
+
+     
+       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+         <script src="../_static/jquery.js"></script>
+         <script src="../_static/underscore.js"></script>
+         <script src="../_static/doctools.js"></script>
+     
+
+  
+
+  <script type="text/javascript" src="../_static/js/vendor/popper.min.js"></script>
+  <script type="text/javascript" src="../_static/js/vendor/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+  <!-- Begin Footer -->
+
+  <div class="container-fluid" id="docs-tutorials-resources">
+    <div class="container">
+      <div class="row">
+        <!--
+        <div class="col-md-4 text-center">
+          <h2>Docs</h2>
+          <p>Access comprehensive developer documentation for PyTorch</p>
+          <a class="with-right-arrow" href="https://drakkar-software.github.io/OctoBot">View Docs</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Tutorials</h2>
+          <p>Get in-depth tutorials for beginners and advanced developers</p>
+          <a class="with-right-arrow" href="">View Tutorials</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Resources</h2>
+          <p>Find development resources and get your questions answered</p>
+          <a class="with-right-arrow" href="https://drakkar-software.github.io/OctoBot">View Resources</a>
+        </div>
+        -->
+      </div>
+    </div>
+  </div>
+
+
+  <!-- <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-logo-wrapper">
+        <a href="https://drakkar-software.github.io/OctoBot" class="footer-logo"></a>
+      </div>
+
+      <div class="footer-links-wrapper">
+
+        <div class="footer-logo-col">
+          <img class="footer-logo-img" src="../_static/images/dark_asteroid_logo.svg"/>
+        </div>
+
+        <div class="footer-links-col">
+          <ul>
+            <li class="list-title"><a href="https://drakkar-software.github.io/OctoBot">Asteroid</a></li>
+            <li><a href="https://github.com/Drakkar-Software/OctoBot/wiki">Get Started</a></li>
+            <li><a href="https://drakkar-software.github.io/OctoBot">Features</a></li>
+            <li><a href="">Ecosystem</a></li>
+            <li><a href="https://drakkar-software.github.io/OctoBot">Blog</a></li>
+            <li><a href="https://drakkar-software.github.io/OctoBot">Resources</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <ul>
+            <li class="list-title"><a href="https://drakkar-software.github.io/OctoBot">Support</a></li>
+            <li><a href="">Tutorials</a></li>
+            <li><a href="https://drakkar-software.github.io/OctoBot">Docs</a></li>
+            <li><a href="https://github.com/Drakkar-Software/OctoBot/discussions" target="_blank">Discuss</a></li>
+            <li><a href="https://github.com/Drakkar-Software/OctoBot/issues" target="_blank">Github Issues</a></li>
+            <li><a href="" target="_blank">Slack</a></li>
+            <li><a href="https://github.com/Drakkar-Software/OctoBot/blob/master/CONTRIBUTING.md" target="_blank">Contributing</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col follow-us-col">
+          <ul>
+            <li class="list-title">Follow Us</li>
+            <li>
+              <div id="mc_embed_signup">
+                <form
+                  action="https://twitter.us14.list-manage.com/subscribe/post?u=75419c71fe0a935e53dfa4a3f&id=91d0dccd39"
+                  method="post"
+                  id="mc-embedded-subscribe-form"
+                  name="mc-embedded-subscribe-form"
+                  class="email-subscribe-form validate"
+                  target="_blank"
+                  novalidate>
+                  <div id="mc_embed_signup_scroll" class="email-subscribe-form-fields-wrapper">
+                    <div class="mc-field-group">
+                      <label for="mce-EMAIL" style="display:none;">Email Address</label>
+                      <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Email Address">
+                    </div>
+
+                    <div id="mce-responses" class="clear">
+                      <div class="response" id="mce-error-response" style="display:none"></div>
+                      <div class="response" id="mce-success-response" style="display:none"></div>
+                    </div>
+
+                    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_75419c71fe0a935e53dfa4a3f_91d0dccd39" tabindex="-1" value=""></div>
+
+                    <div class="clear">
+                      <input type="submit" value="" name="subscribe" id="mc-embedded-subscribe" class="button email-subscribe-button">
+                    </div>
+                  </div>
+                </form>
+              </div>
+
+            </li>
+          </ul>
+
+          <div class="footer-social-icons">
+            <a href="" target="_blank" class="facebook"></a>
+            <a href="https://twitter.com/DrakkarsOctoBot" target="_blank" class="twitter"></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </footer> -->
+
+
+  <!-- End Footer -->
+
+  <!-- Begin Mobile Menu -->
+
+  <div class="mobile-main-menu">
+    <div class="container-fluid">
+      <div class="container">
+        <div class="mobile-main-menu-header-container">
+          <a class="header-logo" href="https://drakkar-software.github.io/OctoBot" aria-label="PyTorch Lightning"></a>
+          <a class="main-menu-close-button" href="#" data-behavior="close-mobile-menu"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mobile-main-menu-links-container">
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="https://github.com/Drakkar-Software/OctoBot/wiki">Get Started</a>
+          </li>
+
+          <li>
+            <a href="https://drakkar-software.github.io/OctoBot">Features</a>
+          </li>
+
+          <li>
+            <a href="https://drakkar-software.github.io/OctoBot">Blog</a>
+          </li>
+
+          <li>
+            <a href="">Tutorials</a>
+          </li>
+
+          <li>
+            <a href="https://drakkar-software.github.io/OctoBot">Docs</a>
+          </li>
+
+          <li>
+            <a href="https://drakkar-software.github.io/OctoBot">Resources</a>
+          </li>
+
+          <li>
+            <a href="https://github.com/Drakkar-Software/OctoBot">Github</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- End Mobile Menu -->
+
+  <script type="text/javascript" src="../_static/js/vendor/anchor.min.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+      mobileMenu.bind();
+      mobileTOC.bind();
+      pytorchAnchors.bind();
+      sideMenus.bind();
+      scrollToAnchor.bind();
+      highlightNavigation.bind();
+      mainMenuDropdown.bind();
+
+      // Add class to links that have code blocks, since we cannot create links in code blocks
+      $("article.pytorch-article a span.pre").each(function(e) {
+        $(this).closest("a").addClass("has-code");
+      });
+    })
+  </script>
+</body>
+</html>

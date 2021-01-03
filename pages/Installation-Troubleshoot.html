@@ -1,0 +1,615 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Troubleshoot &mdash; OctoBot</title>
+  
+
+  
+  
+  
+  
+    <link rel="canonical" href="https://github.com/Drakkar-Software/OctoBotpages/Installation-Troubleshoot.html"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+  <!-- Preload the theme fonts -->
+
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-book.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium-italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+<!-- Preload the katex fonts -->
+
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Math-Italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size1-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size4-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size2-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size3-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Caligraphic-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+</head>
+
+<div class="container-fluid header-holder tutorials-header" id="header-holder">
+  <div class="container">
+    <div class="header-container">
+      <a class="header-logo" href="https://drakkar-software.github.io/OctoBot" aria-label="PyTorch">
+       <!-- <img class="call-to-action-img" src="../_static/images/asteroid_logo_dark.png"/> -->
+      </a>
+
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="https://github.com/Drakkar-Software/OctoBot/wiki">Get Started</a>
+          </li>
+
+          <li>
+            <a href="https://drakkar-software.github.io/OctoBot">Blog</a>
+          </li>
+
+          <li>
+            <a href="">Tutorials</a>
+          </li>
+
+          <li>
+            <a href="https://drakkar-software.github.io/OctoBot">Docs</a>
+          </li>
+
+          <li>
+            <div class="resources-dropdown">
+              <a id="resourcesDropdownButton" data-toggle="resources-dropdown">
+                Resources
+              </a>
+              <div class="resources-dropdown-menu">
+                <a class="nav-dropdown-item" href="https://drakkar-software.github.io/OctoBot"">
+                  <span class=dropdown-title>Developer Resources</span>
+                  <p>Find resources and get questions answered</p>
+                </a>
+                <!--
+                <a class="nav-dropdown-item" href="https://drakkar-software.github.io/OctoBot">
+                  <span class=dropdown-title>About</span>
+                  <p>Learn about PyTorch’s features and capabilities</p>
+                </a>
+                -->
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <a href="https://github.com/Drakkar-Software/OctoBot">Github</a>
+          </li>
+        </ul>
+      </div>
+
+      <a class="main-menu-open-button" href="#" data-behavior="open-mobile-menu"></a>
+    </div>
+
+  </div>
+</div>
+
+
+<body class="pytorch-body">
+
+   
+
+    
+
+    <div class="table-of-contents-link-wrapper">
+      <span>Table of Contents</span>
+      <a href="#" class="toggle-table-of-contents" data-behavior="toggle-table-of-contents"></a>
+    </div>
+
+    <nav data-toggle="wy-nav-shift" class="pytorch-left-menu" id="pytorch-left-menu">
+      <div class="pytorch-side-scroll">
+        <div class="pytorch-menu pytorch-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          <div class="pytorch-left-menu-search">
+            
+
+            
+              
+              
+                <div class="version">
+                  0.4.0b2
+                </div>
+              
+            
+
+            
+
+
+  
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search Docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+            
+          </div>
+
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="With-Docker.html">With docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="With-PIP.html">With Python index package (pip)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="With-Python-only.html">With python only</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Configuration.html">Global configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Configuration.html#evaluator-and-trading-configuration">Evaluator and trading configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Configuration.html#specific-evaluator-configuration">Specific evaluator configuration</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Interfaces</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Web-interface.html">Web interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Discord-interface.html">Discord interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Reddit-interface.html">Reddit interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Twitter-interface.html">Twitter interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Telegram-interface.html">Telegram interface</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <div class="pytorch-container">
+      <div class="pytorch-page-level-bar" id="pytorch-page-level-bar">
+        <div class="pytorch-breadcrumbs-wrapper">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="pytorch-breadcrumbs">
+    
+      <li>
+        <a href="../index.html">
+          
+            Docs
+          
+        </a> &gt;
+      </li>
+
+        
+      <li>Troubleshoot</li>
+    
+    
+      <li class="pytorch-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/pages/Installation-Troubleshoot.rst.txt" rel="nofollow"><img src="../_static/images/view-page-source-icon.svg"></a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+</div>
+        </div>
+
+        <div class="pytorch-shortcuts-wrapper" id="pytorch-shortcuts-wrapper">
+          Shortcuts
+        </div>
+      </div>
+
+      <section data-toggle="wy-nav-shift" id="pytorch-content-wrap" class="pytorch-content-wrap">
+        <div class="pytorch-content-left">
+
+        
+          
+          <div class="rst-content">
+          
+            <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
+             <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
+              
+  <div class="section" id="troubleshoot">
+<h1>Troubleshoot<a class="headerlink" href="#troubleshoot" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="windows">
+<h2>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="time-synchronization">
+<h3>Time synchronization<a class="headerlink" href="#time-synchronization" title="Permalink to this headline">¶</a></h3>
+<p>This issue happens when error messages such as <code class="docutils literal notranslate"><span class="pre">'recvWindow'</span> <span class="pre">must</span> <span class="pre">be</span> <span class="pre">less</span> <span class="pre">than</span> <span class="pre">...</span></code> appear.<span class="raw-html-m2r"><br></span>
+Open an administrator terminal and type:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">net</span> <span class="n">stop</span> <span class="n">w32time</span>
+<span class="n">net</span> <span class="n">start</span> <span class="n">w32time</span>
+<span class="n">w32tm</span> <span class="o">/</span><span class="n">resync</span>
+<span class="n">w32tm</span> <span class="o">/</span><span class="n">query</span> <span class="o">/</span><span class="n">status</span>
+</pre></div>
+</div>
+<p>Code from <a class="reference external" href="https://serverfault.com/questions/294787/how-do-i-force-sync-the-time-on-windows-workstation-or-server">serverfault.com</a></p>
+<p>Another solution found by &#64;alpi on discord channel : <a class="reference external" href="http://www.timesynctool.com">timesynctool.com</a></p>
+</div>
+<div class="section" id="octobot-freeze">
+<h3>OctoBot freeze<a class="headerlink" href="#octobot-freeze" title="Permalink to this headline">¶</a></h3>
+<p>When running OctoBot on Windows, clicking into the OctoBot terminal (Powershell or Cmd) can freeze the log output and therefore freeze OctoBot execution (OctoBot will be waiting for the log to be published to continue).</p>
+<p>To fix this issue, untick the “QuickEdit Mode” in your terminal properties and restart it.</p>
+<a class="reference external image-reference" href="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/powerShellEditMode.jpg"><img alt="Powershell" src="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/powerShellEditMode.jpg" /></a>
+<a class="reference external image-reference" href="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/cmdQuickEdit.jpg"><img alt="Cmd" src="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/cmdQuickEdit.jpg" /></a>
+<p>To open the properties menu, right click on the terminal window header and select “properties”.</p>
+</div>
+<div class="section" id="installation">
+<h3>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>During <em>pip install -r requirements.txt</em> –&gt; <strong>Failed to install Twisted</strong> : <span class="raw-html-m2r"><br></span></p></li>
+</ul>
+<ol class="arabic simple">
+<li><p>Download Twisted compiled for your platform <a class="reference external" href="https://www.lfd.uci.edu/~gohlke/pythonlibs/">here</a><span class="raw-html-m2r"><br></span></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">Twisted-17.XXXXXX.whl</span></code><span class="raw-html-m2r"><br></span></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements.txt</span></code><span class="raw-html-m2r"><br></span></p></li>
+</ol>
+<ul class="simple">
+<li><p>During <em>pip install -r requirements.txt</em> –&gt; <strong>Failed to install lru_dict</strong> : <span class="raw-html-m2r"><br></span></p></li>
+</ul>
+<ol class="arabic simple">
+<li><p>Download Lru_dict compiled for your platform <a class="reference external" href="https://www.lfd.uci.edu/~gohlke/pythonlibs/">here</a><span class="raw-html-m2r"><br></span></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">lru_dict‑1.1.6‑XXXXX.whl</span></code><span class="raw-html-m2r"><br></span></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements.txt</span></code><span class="raw-html-m2r"><br></span></p></li>
+</ol>
+<ul class="simple">
+<li><p>During <em>pip install -r requirements.txt</em> –&gt; <strong>Failed to install cytoolz</strong> : <span class="raw-html-m2r"><br></span></p></li>
+</ul>
+<ol class="arabic simple">
+<li><p>Download cytoolz compiled for your platform <a class="reference external" href="https://www.lfd.uci.edu/~gohlke/pythonlibs/">here</a><span class="raw-html-m2r"><br></span></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">cytoolz‑0.9.0.1‑XXXXX.whl</span></code><span class="raw-html-m2r"><br></span></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements.txt</span></code><span class="raw-html-m2r"><br></span></p></li>
+</ol>
+<ul class="simple">
+<li><p>During <em>pip install -r requirements.txt</em> –&gt; <strong>Failed to install pycares</strong> : <span class="raw-html-m2r"><br></span></p></li>
+</ul>
+<ol class="arabic">
+<li><p>Download pycares compiled for your platform <a class="reference external" href="https://www.lfd.uci.edu/~gohlke/pythonlibs/">here</a><span class="raw-html-m2r"><br></span></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">pycares‑2.3.0‑XXXXX.whl</span></code><span class="raw-html-m2r"><br></span></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements.txt</span></code><span class="raw-html-m2r"><br></span>
+### Web interface display issue “MIME type (‘text/plain’) is not executable”
+If the web interface is now correctly displayed and this error (or similar) appears in your browser console: <code class="docutils literal notranslate"><span class="pre">Refused</span> <span class="pre">to</span> <span class="pre">execute</span> <span class="pre">script</span> <span class="pre">from</span> <span class="pre">'&lt;URL&gt;'</span> <span class="pre">because</span> <span class="pre">its</span> <span class="pre">MIME</span> <span class="pre">type</span> <span class="pre">('text/plain')</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">executable,</span> <span class="pre">and</span> <span class="pre">strict</span> <span class="pre">MIME</span> <span class="pre">type</span> <span class="pre">checking</span> <span class="pre">is</span> <span class="pre">enabled.</span></code>, then there might be an issue with your Windows registry. Here is how to solve it:</p></li>
+<li><p>Type <code class="docutils literal notranslate"><span class="pre">regedit</span></code> in the windows start menu</p></li>
+<li><p>Go to <code class="docutils literal notranslate"><span class="pre">\HKEY_CLASSES_ROOT</span></code></p></li>
+<li><p>Check the 2 following key values (they should be somewhat similar to these):</p>
+<a class="reference external image-reference" href="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/regedit-js.png"><img alt="regedit js" src="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/regedit-js.png" /></a>
+<a class="reference external image-reference" href="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/regedit-css.png"><img alt="regedit js" src="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/regedit-css.png" /></a>
+</li>
+<li><p>Check the the following key value in <code class="docutils literal notranslate"><span class="pre">\HKEY_CLASSES_ROOT\MIME\Database\Content</span> <span class="pre">Type</span></code></p>
+<a class="reference external image-reference" href="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/regedit-json.png"><img alt="regedit js" src="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/regedit-json.png" /></a>
+</li>
+<li><p>Restart you OctoBot and reload the full page including cached files (CTRL+F5 or SHIFT+F5 depending on the browser)</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="linux">
+<h2>Linux<a class="headerlink" href="#linux" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id4">
+<h3>Time synchronization<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>This issue happens when error messages such as <code class="docutils literal notranslate"><span class="pre">'recvWindow'</span> <span class="pre">must</span> <span class="pre">be</span> <span class="pre">less</span> <span class="pre">than</span> <span class="pre">...</span></code> appear.<span class="raw-html-m2r"><br></span>
+On Debian or Ubuntu, open a terminal and type:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo service ntp stop
+sudo ntpd -gq
+sudo service ntp start
+</pre></div>
+</div>
+<p>Requires <code class="docutils literal notranslate"><span class="pre">ntp</span></code> package installation <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">ntp</span></code>.</p>
+<p>Code from <a class="reference external" href="https://askubuntu.com/questions/254826/how-to-force-a-clock-update-using-ntp#256004">askubuntu.com</a>.</p>
+</div>
+<div class="section" id="id5">
+<h3>Installation<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>During pip install if you have SSL problems, open a terminal and type</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip3 install service_identity --force --upgrade
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+             </article>
+             
+            </div>
+            <footer>
+  
+
+  
+
+    <hr>
+
+  
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2021, DrakkarSoftware.
+
+    </p>
+  </div>
+    
+      <div>
+        Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+      </div>
+     
+
+</footer>
+
+          </div>
+        </div>
+
+        <div class="pytorch-content-right" id="pytorch-content-right">
+          <div class="pytorch-right-menu" id="pytorch-right-menu">
+            <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
+              <ul>
+<li><a class="reference internal" href="#">Troubleshoot</a><ul>
+<li><a class="reference internal" href="#windows">Windows</a><ul>
+<li><a class="reference internal" href="#time-synchronization">Time synchronization</a></li>
+<li><a class="reference internal" href="#octobot-freeze">OctoBot freeze</a></li>
+<li><a class="reference internal" href="#installation">Installation</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#linux">Linux</a><ul>
+<li><a class="reference internal" href="#id4">Time synchronization</a></li>
+<li><a class="reference internal" href="#id5">Installation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+  
+
+
+  
+
+     
+       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+         <script src="../_static/jquery.js"></script>
+         <script src="../_static/underscore.js"></script>
+         <script src="../_static/doctools.js"></script>
+     
+
+  
+
+  <script type="text/javascript" src="../_static/js/vendor/popper.min.js"></script>
+  <script type="text/javascript" src="../_static/js/vendor/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+  <!-- Begin Footer -->
+
+  <div class="container-fluid" id="docs-tutorials-resources">
+    <div class="container">
+      <div class="row">
+        <!--
+        <div class="col-md-4 text-center">
+          <h2>Docs</h2>
+          <p>Access comprehensive developer documentation for PyTorch</p>
+          <a class="with-right-arrow" href="https://drakkar-software.github.io/OctoBot">View Docs</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Tutorials</h2>
+          <p>Get in-depth tutorials for beginners and advanced developers</p>
+          <a class="with-right-arrow" href="">View Tutorials</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Resources</h2>
+          <p>Find development resources and get your questions answered</p>
+          <a class="with-right-arrow" href="https://drakkar-software.github.io/OctoBot">View Resources</a>
+        </div>
+        -->
+      </div>
+    </div>
+  </div>
+
+
+  <!-- <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-logo-wrapper">
+        <a href="https://drakkar-software.github.io/OctoBot" class="footer-logo"></a>
+      </div>
+
+      <div class="footer-links-wrapper">
+
+        <div class="footer-logo-col">
+          <img class="footer-logo-img" src="../_static/images/dark_asteroid_logo.svg"/>
+        </div>
+
+        <div class="footer-links-col">
+          <ul>
+            <li class="list-title"><a href="https://drakkar-software.github.io/OctoBot">Asteroid</a></li>
+            <li><a href="https://github.com/Drakkar-Software/OctoBot/wiki">Get Started</a></li>
+            <li><a href="https://drakkar-software.github.io/OctoBot">Features</a></li>
+            <li><a href="">Ecosystem</a></li>
+            <li><a href="https://drakkar-software.github.io/OctoBot">Blog</a></li>
+            <li><a href="https://drakkar-software.github.io/OctoBot">Resources</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <ul>
+            <li class="list-title"><a href="https://drakkar-software.github.io/OctoBot">Support</a></li>
+            <li><a href="">Tutorials</a></li>
+            <li><a href="https://drakkar-software.github.io/OctoBot">Docs</a></li>
+            <li><a href="https://github.com/Drakkar-Software/OctoBot/discussions" target="_blank">Discuss</a></li>
+            <li><a href="https://github.com/Drakkar-Software/OctoBot/issues" target="_blank">Github Issues</a></li>
+            <li><a href="" target="_blank">Slack</a></li>
+            <li><a href="https://github.com/Drakkar-Software/OctoBot/blob/master/CONTRIBUTING.md" target="_blank">Contributing</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col follow-us-col">
+          <ul>
+            <li class="list-title">Follow Us</li>
+            <li>
+              <div id="mc_embed_signup">
+                <form
+                  action="https://twitter.us14.list-manage.com/subscribe/post?u=75419c71fe0a935e53dfa4a3f&id=91d0dccd39"
+                  method="post"
+                  id="mc-embedded-subscribe-form"
+                  name="mc-embedded-subscribe-form"
+                  class="email-subscribe-form validate"
+                  target="_blank"
+                  novalidate>
+                  <div id="mc_embed_signup_scroll" class="email-subscribe-form-fields-wrapper">
+                    <div class="mc-field-group">
+                      <label for="mce-EMAIL" style="display:none;">Email Address</label>
+                      <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Email Address">
+                    </div>
+
+                    <div id="mce-responses" class="clear">
+                      <div class="response" id="mce-error-response" style="display:none"></div>
+                      <div class="response" id="mce-success-response" style="display:none"></div>
+                    </div>
+
+                    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_75419c71fe0a935e53dfa4a3f_91d0dccd39" tabindex="-1" value=""></div>
+
+                    <div class="clear">
+                      <input type="submit" value="" name="subscribe" id="mc-embedded-subscribe" class="button email-subscribe-button">
+                    </div>
+                  </div>
+                </form>
+              </div>
+
+            </li>
+          </ul>
+
+          <div class="footer-social-icons">
+            <a href="" target="_blank" class="facebook"></a>
+            <a href="https://twitter.com/DrakkarsOctoBot" target="_blank" class="twitter"></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </footer> -->
+
+
+  <!-- End Footer -->
+
+  <!-- Begin Mobile Menu -->
+
+  <div class="mobile-main-menu">
+    <div class="container-fluid">
+      <div class="container">
+        <div class="mobile-main-menu-header-container">
+          <a class="header-logo" href="https://drakkar-software.github.io/OctoBot" aria-label="PyTorch Lightning"></a>
+          <a class="main-menu-close-button" href="#" data-behavior="close-mobile-menu"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mobile-main-menu-links-container">
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="https://github.com/Drakkar-Software/OctoBot/wiki">Get Started</a>
+          </li>
+
+          <li>
+            <a href="https://drakkar-software.github.io/OctoBot">Features</a>
+          </li>
+
+          <li>
+            <a href="https://drakkar-software.github.io/OctoBot">Blog</a>
+          </li>
+
+          <li>
+            <a href="">Tutorials</a>
+          </li>
+
+          <li>
+            <a href="https://drakkar-software.github.io/OctoBot">Docs</a>
+          </li>
+
+          <li>
+            <a href="https://drakkar-software.github.io/OctoBot">Resources</a>
+          </li>
+
+          <li>
+            <a href="https://github.com/Drakkar-Software/OctoBot">Github</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- End Mobile Menu -->
+
+  <script type="text/javascript" src="../_static/js/vendor/anchor.min.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+      mobileMenu.bind();
+      mobileTOC.bind();
+      pytorchAnchors.bind();
+      sideMenus.bind();
+      scrollToAnchor.bind();
+      highlightNavigation.bind();
+      mainMenuDropdown.bind();
+
+      // Add class to links that have code blocks, since we cannot create links in code blocks
+      $("article.pytorch-article a span.pre").each(function(e) {
+        $(this).closest("a").addClass("has-code");
+      });
+    })
+  </script>
+</body>
+</html>

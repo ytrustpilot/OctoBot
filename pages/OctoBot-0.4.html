@@ -1,0 +1,714 @@
+
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>OctoBot 0.4 &mdash; OctoBot</title>
+  
+
+  
+  
+  
+  
+    <link rel="canonical" href="https://github.com/Drakkar-Software/OctoBotpages/OctoBot-0.4.html"/>
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+  <!-- Preload the theme fonts -->
+
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-book.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/FreightSans/freight-sans-medium-italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="../_static/fonts/IBMPlexMono/IBMPlexMono-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+<!-- Preload the katex fonts -->
+
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Math-Italic.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Main-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size1-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size4-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size2-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Size3-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/fonts/KaTeX_Caligraphic-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+</head>
+
+<div class="container-fluid header-holder tutorials-header" id="header-holder">
+  <div class="container">
+    <div class="header-container">
+      <a class="header-logo" href="https://drakkar-software.github.io/OctoBot" aria-label="PyTorch">
+       <!-- <img class="call-to-action-img" src="../_static/images/asteroid_logo_dark.png"/> -->
+      </a>
+
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="https://github.com/Drakkar-Software/OctoBot/wiki">Get Started</a>
+          </li>
+
+          <li>
+            <a href="https://drakkar-software.github.io/OctoBot">Blog</a>
+          </li>
+
+          <li>
+            <a href="">Tutorials</a>
+          </li>
+
+          <li>
+            <a href="https://drakkar-software.github.io/OctoBot">Docs</a>
+          </li>
+
+          <li>
+            <div class="resources-dropdown">
+              <a id="resourcesDropdownButton" data-toggle="resources-dropdown">
+                Resources
+              </a>
+              <div class="resources-dropdown-menu">
+                <a class="nav-dropdown-item" href="https://drakkar-software.github.io/OctoBot"">
+                  <span class=dropdown-title>Developer Resources</span>
+                  <p>Find resources and get questions answered</p>
+                </a>
+                <!--
+                <a class="nav-dropdown-item" href="https://drakkar-software.github.io/OctoBot">
+                  <span class=dropdown-title>About</span>
+                  <p>Learn about PyTorch’s features and capabilities</p>
+                </a>
+                -->
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <a href="https://github.com/Drakkar-Software/OctoBot">Github</a>
+          </li>
+        </ul>
+      </div>
+
+      <a class="main-menu-open-button" href="#" data-behavior="open-mobile-menu"></a>
+    </div>
+
+  </div>
+</div>
+
+
+<body class="pytorch-body">
+
+   
+
+    
+
+    <div class="table-of-contents-link-wrapper">
+      <span>Table of Contents</span>
+      <a href="#" class="toggle-table-of-contents" data-behavior="toggle-table-of-contents"></a>
+    </div>
+
+    <nav data-toggle="wy-nav-shift" class="pytorch-left-menu" id="pytorch-left-menu">
+      <div class="pytorch-side-scroll">
+        <div class="pytorch-menu pytorch-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          <div class="pytorch-left-menu-search">
+            
+
+            
+              
+              
+                <div class="version">
+                  0.4.0b2
+                </div>
+              
+            
+
+            
+
+
+  
+
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search Docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+            
+          </div>
+
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Installation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="With-Docker.html">With docker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="With-PIP.html">With Python index package (pip)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="With-Python-only.html">With python only</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Configuration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Configuration.html">Global configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Configuration.html#evaluator-and-trading-configuration">Evaluator and trading configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Configuration.html#specific-evaluator-configuration">Specific evaluator configuration</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Interfaces</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Web-interface.html">Web interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Discord-interface.html">Discord interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Reddit-interface.html">Reddit interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Twitter-interface.html">Twitter interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Telegram-interface.html">Telegram interface</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <div class="pytorch-container">
+      <div class="pytorch-page-level-bar" id="pytorch-page-level-bar">
+        <div class="pytorch-breadcrumbs-wrapper">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="pytorch-breadcrumbs">
+    
+      <li>
+        <a href="../index.html">
+          
+            Docs
+          
+        </a> &gt;
+      </li>
+
+        
+      <li>OctoBot 0.4</li>
+    
+    
+      <li class="pytorch-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/pages/OctoBot-0.4.rst.txt" rel="nofollow"><img src="../_static/images/view-page-source-icon.svg"></a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+</div>
+        </div>
+
+        <div class="pytorch-shortcuts-wrapper" id="pytorch-shortcuts-wrapper">
+          Shortcuts
+        </div>
+      </div>
+
+      <section data-toggle="wy-nav-shift" id="pytorch-content-wrap" class="pytorch-content-wrap">
+        <div class="pytorch-content-left">
+
+        
+          
+          <div class="rst-content">
+          
+            <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
+             <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
+              
+  <div class="section" id="octobot-0-4">
+<h1>OctoBot 0.4<a class="headerlink" href="#octobot-0-4" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="about-octobot-0-4">
+<h2>About OctoBot 0.4<a class="headerlink" href="#about-octobot-0-4" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>OctoBot 0.4.0 uses python 3.8</p>
+</div></blockquote>
+<p>OctoBot 0.4 is a complete rework of OctoBot, while it doesn’t change a lot on the appearance (for now), its core engine is completely different.<span class="raw-html-m2r"><br></span>
+With 0.4, OctoBot uses an asynchronous producer/consumer design. This enables deep optimizations by removing every downtime and therefore taking every signal opportunity as soon as possible without being overwhelmed by information. This is ideal for websocket connexions and enables the full potential of any strategy.</p>
+<p>To go even further on the optimization path, OctoBot is now using <a class="reference external" href="https://cython.org/">Cython</a> to compile its CPU intensive processes into efficient C code and increase its performances.</p>
+</div>
+<div class="section" id="what-s-new-on-octobot-0-4">
+<h2>What’s new on OctoBot 0.4 ?<a class="headerlink" href="#what-s-new-on-octobot-0-4" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="high-speed-trading">
+<h3>High speed trading<a class="headerlink" href="#high-speed-trading" title="Permalink to this headline">¶</a></h3>
+<p>Thanks to its increased performances, OctoBot is now suitable for arbitrage, leverage trading, future trading, order book analysis and more. Trading on these products is not available yet but it will come in the the near future with dedicated trading strategies.</p>
+<p>This is the main feature of this new version and is paving the way to many more trading strategies and possibilities.</p>
+</div>
+<div class="section" id="inifinite-customization">
+<h3>Inifinite customization<a class="headerlink" href="#inifinite-customization" title="Permalink to this headline">¶</a></h3>
+<p>Each and every OctoBot interface is now a tentacle, meaning it can easily be customized and improved. This makes it easy to plug a anything into OctoBot from a system getting data from another website to a websocket exchange connexion or even an sms command interface, basically anything.</p>
+</div>
+<div class="section" id="improved-backtesting">
+<h3>Improved backtesting<a class="headerlink" href="#improved-backtesting" title="Permalink to this headline">¶</a></h3>
+<p>Starting from 0.4, OctoBot will be able to process backtestings with all of its price data based trading strategies. Multi-exchanges backtestings is also possible and accurate.</p>
+</div>
+<div class="section" id="improved-web-interface">
+<h3>Improved web interface<a class="headerlink" href="#improved-web-interface" title="Permalink to this headline">¶</a></h3>
+<p>OctoBot’s web interface now has a much stronger server side, this enabled more reactivity and a smoother user experience.</p>
+</div>
+</div>
+<div class="section" id="from-octobot-0-3-to-0-4">
+<h2>From Octobot 0.3 to 0.4<a class="headerlink" href="#from-octobot-0-3-to-0-4" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="octobot-0-4-installation">
+<h3>OctoBot 0.4 installation<a class="headerlink" href="#octobot-0-4-installation" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="octobot-executable">
+<h4>OctoBot executable<a class="headerlink" href="#octobot-executable" title="Permalink to this headline">¶</a></h4>
+<p>Download and start the OctoBot 0.4.0 executable for your computer from <a class="reference external" href="https://github.com/Drakkar-Software/OctoBot-Binary/releases">https://github.com/Drakkar-Software/OctoBot-Binary/releases</a>.<span class="raw-html-m2r"><br></span>
+The first start will setup your OctoBot environment and download tentacles.</p>
+<blockquote>
+<div><p>This executable version is still experimental for now on 0.4.0.</p>
+</div></blockquote>
+</div>
+<div class="section" id="octobot-cli">
+<h4>OctoBot CLI<a class="headerlink" href="#octobot-cli" title="Permalink to this headline">¶</a></h4>
+<blockquote>
+<div><p>OctoBot 0.4.0 uses python 3.8</p>
+</div></blockquote>
+<p>To install OctoBot 0.4, the easiest way is to use <a class="reference external" href="https://pypi.org/project/OctoBot-CLI/">the OctoBot CLI</a> to install OctoBot 0.4 either using docker or python directly.</p>
+<ol class="arabic">
+<li><p>Install octobot-cli using the following command:
+.. code-block:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">octobot_cli</span>
+</pre></div>
+</div>
+</li>
+<li><p>Go to the directory you want your OctoBot0.4 to be installed</p></li>
+<li><p>Now two possibilities: you can install OctoBot using python (pip and virtual env), it is preferred way for Windows users or using docker if you are familiar with it.</p></li>
+</ol>
+<p>For a python installation open a terminal and type in:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">octobot_cli</span> <span class="n">install</span> <span class="o">--</span><span class="n">python</span>
+</pre></div>
+</div>
+<p>For a docker installation, open a terminal and type in:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">octobot_cli</span> <span class="n">install</span> <span class="o">--</span><span class="n">docker</span>
+</pre></div>
+</div>
+<p>Note: if you are on an arm architecture (like on raspberry pie), add the <code class="docutils literal notranslate"><span class="pre">--arm</span></code> argument to the docker command.</p>
+<ol class="arabic">
+<li><p>Start your OctoBot using the following command:
+Python installations:
+.. code-block:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">octobot_cli</span> <span class="n">start</span>
+</pre></div>
+</div>
+<p>Docker installations:
+.. code-block:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">octobot_cli</span> <span class="n">start</span> <span class="o">--</span><span class="n">docker</span>
+</pre></div>
+</div>
+<p>### OctoBot 0.4 update
+To update your OctoBot, use the following command:
+Python installations:
+.. code-block:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">octobot_cli</span> <span class="n">update</span>
+</pre></div>
+</div>
+<p>Docker installations:
+.. code-block:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">octobot_cli</span> <span class="n">update</span> <span class="o">--</span><span class="n">docker</span>
+</pre></div>
+</div>
+<p>This will update your OctoBot with its dependencies and tentacles</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="manual-installation">
+<h3>Manual installation<a class="headerlink" href="#manual-installation" title="Permalink to this headline">¶</a></h3>
+<p><strong>With the OctoBot executable</strong><span class="raw-html-m2r"><br></span>
+Download and start the latest OctoBot 0.4.0 executable for your computer from <a class="reference external" href="https://github.com/Drakkar-Software/OctoBot-Binary/releases">https://github.com/Drakkar-Software/OctoBot-Binary/releases</a>.<span class="raw-html-m2r"><br></span>
+The first start will setup your OctoBot environment and download tentacles.</p>
+<p><strong>With Docker</strong></p>
+<ol class="arabic">
+<li><p>Get the latest Octobot 0.4 image:
+.. code-block:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">pull</span> <span class="n">drakkarsoftware</span><span class="o">/</span><span class="n">octobot</span><span class="p">:</span><span class="mf">0.4</span><span class="o">.</span><span class="mi">0</span><span class="o">-</span><span class="n">stable</span>
+</pre></div>
+</div>
+</li>
+<li><p>Run it via
+.. code-block:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>docker run -it -d --name Octobot -p 5001:5001 -v $(pwd)/user:/octobot/user -v $(pwd)/tentacles:/octobot/tentacles -v $(pwd)/logs:/octobot/logs drakkarsoftware/octobot:0.4.0-stable
+</pre></div>
+</div>
+</li>
+<li><p>Follow the <a class="reference external" href="https://github.com/Drakkar-Software/OctoBot/wiki/With-Docker#how-to-look-at-octobot-logs-">docker help wiki</a> if you need more details about how to use OctoBot with Docker.</p></li>
+</ol>
+<p><strong>With Python</strong></p>
+<blockquote>
+<div><p>It is strongly advised to install OctoBot in a <strong>virtual env</strong> when installing it from python directly.</p>
+</div></blockquote>
+<ol class="arabic">
+<li><p>Clone the <a class="reference external" href="https://github.com/Drakkar-Software/OctoBot/tree/0.4.0">OctoBot 0.4 branch</a>
+.. code-block:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="o">-</span><span class="n">b</span> <span class="mf">0.4</span><span class="o">.</span><span class="mi">0</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">Drakkar</span><span class="o">-</span><span class="n">Software</span><span class="o">/</span><span class="n">OctoBot</span>
+</pre></div>
+</div>
+</li>
+<li><p>Install the requirements via</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">prefer</span><span class="o">-</span><span class="n">binary</span> <span class="o">-</span><span class="n">Ur</span> <span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p><strong>–prefer-binary</strong> is important here otherwise you will have to recompile every module: it requires a c++ compiler and can be very slow.</p>
+</li>
+<li><p>Start your OctoBot using</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">start</span><span class="o">.</span><span class="n">py</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p><strong>Using CentOS</strong></p>
+<p>Requirements</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>yum -y update
+yum install -y git wget sqlite-devel screen
+yum -y groupinstall <span class="s2">&quot;Development Tools&quot;</span>
+yum -y install openssl-devel bzip2-devel libffi-devel
+yum install -y screen
+<span class="nb">cd</span> /root
+wget https://www.python.org/ftp/python/3.8.3/Python-3.8.3.tgz
+tar xvf Python-3.8.3.tgz
+d Python-3.8*/
+./configure --enable-loadable-sqlite-extensions <span class="o">&amp;&amp;</span> make <span class="o">&amp;&amp;</span> sudo make install
+</pre></div>
+</div>
+<p>OctoBot</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/Drakkar-Software/OctoBot.git
+<span class="nb">cd</span> OctoBot/
+git checkout remotes/origin/0.4.0
+python3.8 -m pip install virtualenv
+virtualenv venv
+<span class="nb">source</span> venv/bin/activate
+pip install -Ur requirements.txt
+python start.py tentacles --install --all
+python start.py
+</pre></div>
+</div>
+</div>
+<div class="section" id="manual-update">
+<h3>Manual update<a class="headerlink" href="#manual-update" title="Permalink to this headline">¶</a></h3>
+<p>To update your OctoBot, use the following commands:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">prefer</span><span class="o">-</span><span class="n">binary</span> <span class="o">-</span><span class="n">Ur</span> <span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
+<span class="n">python</span> <span class="n">start</span><span class="o">.</span><span class="n">py</span> <span class="n">tentacles</span> <span class="o">--</span><span class="n">install</span> <span class="o">--</span><span class="nb">all</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="octobot-configuration">
+<h3>OctoBot configuration<a class="headerlink" href="#octobot-configuration" title="Permalink to this headline">¶</a></h3>
+<p>OctoBot 0.4 configuration file uses the same format as the 0.3 one and is also located in <strong>user/config.json</strong>. It is possible to use the same as a current OctoBot 0.3.</p>
+</div>
+<div class="section" id="octobot-tentacles">
+<h3>OctoBot tentacles<a class="headerlink" href="#octobot-tentacles" title="Permalink to this headline">¶</a></h3>
+<p>OctoBot will automatically download the 0.4 version of its tentacles during the first launch. Every existing official 0.3 tentacle has an equivalent in 0.4 with similar configuration options. Some tentacles are now much more customizable.</p>
+</div>
+</div>
+</div>
+
+
+             </article>
+             
+            </div>
+            <footer>
+  
+
+  
+
+    <hr>
+
+  
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2021, DrakkarSoftware.
+
+    </p>
+  </div>
+    
+      <div>
+        Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+      </div>
+     
+
+</footer>
+
+          </div>
+        </div>
+
+        <div class="pytorch-content-right" id="pytorch-content-right">
+          <div class="pytorch-right-menu" id="pytorch-right-menu">
+            <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
+              <ul>
+<li><a class="reference internal" href="#">OctoBot 0.4</a><ul>
+<li><a class="reference internal" href="#about-octobot-0-4">About OctoBot 0.4</a></li>
+<li><a class="reference internal" href="#what-s-new-on-octobot-0-4">What’s new on OctoBot 0.4 ?</a><ul>
+<li><a class="reference internal" href="#high-speed-trading">High speed trading</a></li>
+<li><a class="reference internal" href="#inifinite-customization">Inifinite customization</a></li>
+<li><a class="reference internal" href="#improved-backtesting">Improved backtesting</a></li>
+<li><a class="reference internal" href="#improved-web-interface">Improved web interface</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#from-octobot-0-3-to-0-4">From Octobot 0.3 to 0.4</a><ul>
+<li><a class="reference internal" href="#octobot-0-4-installation">OctoBot 0.4 installation</a><ul>
+<li><a class="reference internal" href="#octobot-executable">OctoBot executable</a></li>
+<li><a class="reference internal" href="#octobot-cli">OctoBot CLI</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#manual-installation">Manual installation</a></li>
+<li><a class="reference internal" href="#manual-update">Manual update</a></li>
+<li><a class="reference internal" href="#octobot-configuration">OctoBot configuration</a></li>
+<li><a class="reference internal" href="#octobot-tentacles">OctoBot tentacles</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+  
+
+
+  
+
+     
+       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+         <script src="../_static/jquery.js"></script>
+         <script src="../_static/underscore.js"></script>
+         <script src="../_static/doctools.js"></script>
+     
+
+  
+
+  <script type="text/javascript" src="../_static/js/vendor/popper.min.js"></script>
+  <script type="text/javascript" src="../_static/js/vendor/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+  <!-- Begin Footer -->
+
+  <div class="container-fluid" id="docs-tutorials-resources">
+    <div class="container">
+      <div class="row">
+        <!--
+        <div class="col-md-4 text-center">
+          <h2>Docs</h2>
+          <p>Access comprehensive developer documentation for PyTorch</p>
+          <a class="with-right-arrow" href="https://drakkar-software.github.io/OctoBot">View Docs</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Tutorials</h2>
+          <p>Get in-depth tutorials for beginners and advanced developers</p>
+          <a class="with-right-arrow" href="">View Tutorials</a>
+        </div>
+
+        <div class="col-md-4 text-center">
+          <h2>Resources</h2>
+          <p>Find development resources and get your questions answered</p>
+          <a class="with-right-arrow" href="https://drakkar-software.github.io/OctoBot">View Resources</a>
+        </div>
+        -->
+      </div>
+    </div>
+  </div>
+
+
+  <!-- <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-logo-wrapper">
+        <a href="https://drakkar-software.github.io/OctoBot" class="footer-logo"></a>
+      </div>
+
+      <div class="footer-links-wrapper">
+
+        <div class="footer-logo-col">
+          <img class="footer-logo-img" src="../_static/images/dark_asteroid_logo.svg"/>
+        </div>
+
+        <div class="footer-links-col">
+          <ul>
+            <li class="list-title"><a href="https://drakkar-software.github.io/OctoBot">Asteroid</a></li>
+            <li><a href="https://github.com/Drakkar-Software/OctoBot/wiki">Get Started</a></li>
+            <li><a href="https://drakkar-software.github.io/OctoBot">Features</a></li>
+            <li><a href="">Ecosystem</a></li>
+            <li><a href="https://drakkar-software.github.io/OctoBot">Blog</a></li>
+            <li><a href="https://drakkar-software.github.io/OctoBot">Resources</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <ul>
+            <li class="list-title"><a href="https://drakkar-software.github.io/OctoBot">Support</a></li>
+            <li><a href="">Tutorials</a></li>
+            <li><a href="https://drakkar-software.github.io/OctoBot">Docs</a></li>
+            <li><a href="https://github.com/Drakkar-Software/OctoBot/discussions" target="_blank">Discuss</a></li>
+            <li><a href="https://github.com/Drakkar-Software/OctoBot/issues" target="_blank">Github Issues</a></li>
+            <li><a href="" target="_blank">Slack</a></li>
+            <li><a href="https://github.com/Drakkar-Software/OctoBot/blob/master/CONTRIBUTING.md" target="_blank">Contributing</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col follow-us-col">
+          <ul>
+            <li class="list-title">Follow Us</li>
+            <li>
+              <div id="mc_embed_signup">
+                <form
+                  action="https://twitter.us14.list-manage.com/subscribe/post?u=75419c71fe0a935e53dfa4a3f&id=91d0dccd39"
+                  method="post"
+                  id="mc-embedded-subscribe-form"
+                  name="mc-embedded-subscribe-form"
+                  class="email-subscribe-form validate"
+                  target="_blank"
+                  novalidate>
+                  <div id="mc_embed_signup_scroll" class="email-subscribe-form-fields-wrapper">
+                    <div class="mc-field-group">
+                      <label for="mce-EMAIL" style="display:none;">Email Address</label>
+                      <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Email Address">
+                    </div>
+
+                    <div id="mce-responses" class="clear">
+                      <div class="response" id="mce-error-response" style="display:none"></div>
+                      <div class="response" id="mce-success-response" style="display:none"></div>
+                    </div>
+
+                    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_75419c71fe0a935e53dfa4a3f_91d0dccd39" tabindex="-1" value=""></div>
+
+                    <div class="clear">
+                      <input type="submit" value="" name="subscribe" id="mc-embedded-subscribe" class="button email-subscribe-button">
+                    </div>
+                  </div>
+                </form>
+              </div>
+
+            </li>
+          </ul>
+
+          <div class="footer-social-icons">
+            <a href="" target="_blank" class="facebook"></a>
+            <a href="https://twitter.com/DrakkarsOctoBot" target="_blank" class="twitter"></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </footer> -->
+
+
+  <!-- End Footer -->
+
+  <!-- Begin Mobile Menu -->
+
+  <div class="mobile-main-menu">
+    <div class="container-fluid">
+      <div class="container">
+        <div class="mobile-main-menu-header-container">
+          <a class="header-logo" href="https://drakkar-software.github.io/OctoBot" aria-label="PyTorch Lightning"></a>
+          <a class="main-menu-close-button" href="#" data-behavior="close-mobile-menu"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="mobile-main-menu-links-container">
+      <div class="main-menu">
+        <ul>
+          <li>
+            <a href="https://github.com/Drakkar-Software/OctoBot/wiki">Get Started</a>
+          </li>
+
+          <li>
+            <a href="https://drakkar-software.github.io/OctoBot">Features</a>
+          </li>
+
+          <li>
+            <a href="https://drakkar-software.github.io/OctoBot">Blog</a>
+          </li>
+
+          <li>
+            <a href="">Tutorials</a>
+          </li>
+
+          <li>
+            <a href="https://drakkar-software.github.io/OctoBot">Docs</a>
+          </li>
+
+          <li>
+            <a href="https://drakkar-software.github.io/OctoBot">Resources</a>
+          </li>
+
+          <li>
+            <a href="https://github.com/Drakkar-Software/OctoBot">Github</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- End Mobile Menu -->
+
+  <script type="text/javascript" src="../_static/js/vendor/anchor.min.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+      mobileMenu.bind();
+      mobileTOC.bind();
+      pytorchAnchors.bind();
+      sideMenus.bind();
+      scrollToAnchor.bind();
+      highlightNavigation.bind();
+      mainMenuDropdown.bind();
+
+      // Add class to links that have code blocks, since we cannot create links in code blocks
+      $("article.pytorch-article a span.pre").each(function(e) {
+        $(this).closest("a").addClass("has-code");
+      });
+    })
+  </script>
+</body>
+</html>
