@@ -10,7 +10,7 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-        <title>Cython &mdash; OctoBot</title>
+        <title>Developer tips &mdash; OctoBot</title>
     
 
     
@@ -23,7 +23,9 @@
     
 
     <link rel="stylesheet" href="../_static/css/theme.css" type="text/css"/>
-    <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> --> 
+    <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
+            <link rel="next" title="TradingView webhook" href="TradingView-webhook.html"/>
+            <link rel="prev" title="Developer" href="Developer-Guide.html"/> 
 
     
     <script src="../_static/js/modernizr.min.js"></script>
@@ -135,7 +137,7 @@
 <li class="toctree-l1"><a class="reference internal" href="Telegram-interface.html">Telegram interface</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Advanced Usage</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="Customize-your-OctoBot.html">OctoBot is customizable !</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Tentacle-Manager.html">Tentacle Manager</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Backtesting-and-strategy-optimization.html">Backtesting</a></li>
@@ -144,6 +146,7 @@
 <li class="toctree-l1"><a class="reference internal" href="Tests.html">Tests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Contribution.html">Contribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Developer-Guide.html">Developer</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Developer tips</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Webhooks</span></p>
 <ul>
@@ -189,7 +192,7 @@
       </li>
 
         
-      <li>Cython</li>
+      <li>Developer tips</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
@@ -219,10 +222,12 @@
             <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
                     <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
                         
-  <div class="section" id="cython">
-<h1>Cython<a class="headerlink" href="#cython" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="developer-tips">
+<h1>Developer tips<a class="headerlink" href="#developer-tips" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="cython">
+<h2>Cython<a class="headerlink" href="#cython" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="compile-in-debug">
-<h2>Compile in debug<a class="headerlink" href="#compile-in-debug" title="Permalink to this headline">¶</a></h2>
+<h3>Compile in debug<a class="headerlink" href="#compile-in-debug" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>make clean
 <span class="nb">export</span> <span class="nv">CYTHON_DEBUG</span><span class="o">=</span><span class="nb">true</span>
 python setup.py build_ext --inplace
@@ -230,10 +235,11 @@ python setup.py build_ext --inplace
 </div>
 </div>
 <div class="section" id="debugging-cythonized-code">
-<h2>Debugging cythonized code<a class="headerlink" href="#debugging-cythonized-code" title="Permalink to this headline">¶</a></h2>
+<h3>Debugging cythonized code<a class="headerlink" href="#debugging-cythonized-code" title="Permalink to this headline">¶</a></h3>
 <p>Run your python program with cython debugger :</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>cygdb . -- --args python3-dbg test.py
 </pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="backtesting-data">
@@ -261,9 +267,8 @@ cygdb . -- --args python3-dbg test.py
 </div>
 </div>
 </div>
-</div>
 <div class="section" id="strategy-tests">
-<h1>Strategy tests<a class="headerlink" href="#strategy-tests" title="Permalink to this headline">¶</a></h1>
+<h2>Strategy tests<a class="headerlink" href="#strategy-tests" title="Permalink to this headline">¶</a></h2>
 <p>To quickly check tentacles strategy tests states or develop a new tentacles strategy test, change the following lines
 in <strong>octobot/tests/functional_tests/strategy_evaluators_tests/abstract_strategy_test.py</strong>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">_handle_results</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">independent_backtesting</span><span class="p">,</span> <span class="n">profitability</span><span class="p">):</span>
@@ -291,12 +296,22 @@ in <strong>octobot/tests/functional_tests/strategy_evaluators_tests/abstract_str
 </div>
 <p>This will not stop tests on failure and display the current tests results as well as expected values.</p>
 </div>
+</div>
 
 
                     </article>
                     
                     </div>
             <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="TradingView-webhook.html" class="btn btn-neutral float-right" title="TradingView webhook" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+      
+      
+        <a href="Developer-Guide.html" class="btn btn-neutral" title="Developer" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+      
+    </div>
   
 
   
@@ -326,17 +341,20 @@ in <strong>octobot/tests/functional_tests/strategy_evaluators_tests/abstract_str
                 <div class="pytorch-right-menu" id="pytorch-right-menu">
                     <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
                         <ul>
-<li><a class="reference internal" href="#">Cython</a><ul>
+<li><a class="reference internal" href="#">Developer tips</a><ul>
+<li><a class="reference internal" href="#cython">Cython</a><ul>
 <li><a class="reference internal" href="#compile-in-debug">Compile in debug</a></li>
 <li><a class="reference internal" href="#debugging-cythonized-code">Debugging cythonized code</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#backtesting-data">Backtesting data</a></li>
 <li><a class="reference internal" href="#pytest">Pytest</a><ul>
 <li><a class="reference internal" href="#fatal-python-error-segmentation-fault">Fatal Python error: Segmentation fault</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#strategy-tests">Strategy tests</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#strategy-tests">Strategy tests</a></li>
 </ul>
 
                     </div>
