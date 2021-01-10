@@ -10,15 +10,32 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-        <title>Developer &mdash; OctoBot</title>
+        <title>Developer | OctoBot docs</title>
     
 
     
+    
+        <link rel="shortcut icon" href="../_static/favicon.ico"/>
     
     
     
         <link rel="canonical" href="https://github.com/Drakkar-Software/OctoBotpages/Developer-Guide.html"/>
     
+
+    <meta name="keywords" content="octobot, octobot docs, octobot documentation, free, open source, trading, community, cryptocurrency, cryptocurrencies, bitcoin, ethereum" />
+    <meta name="description" content="Documentation for OctoBot: a free and highly customizable open source cryptocurrency trading robot." />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Developer | OctoBot docs" />
+    <meta name="twitter:description" content="Documentation for OctoBot: a free and highly customizable open source cryptocurrency trading robot." />
+    <meta name="twitter:image" content="https://docs.octobot.online/_static/images/octobot.png" />
+    <meta name="twitter:domain" content="docs.octobot.online" />
+    <meta name="twitter:url" content="https://docs.octobot.online" />
+    <meta property="og:title" content="Developer | OctoBot docs" />
+    <meta property="og:description" content="Documentation for OctoBot: a free and highly customizable open source cryptocurrency trading robot." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://docs.octobot.online" />
+    <meta property="og:image" content="https://docs.octobot.online/_static/images/octobot.png" />
+    <meta property="og:site_name" content="OctoBot docs" />
 
     
 
@@ -228,26 +245,26 @@
 <div class="section" id="environment-setup">
 <h2>Environment setup<a class="headerlink" href="#environment-setup" title="Permalink to this headline">¶</a></h2>
 <p>We recommand using <a class="reference external" href="https://www.jetbrains.com/pycharm/">PyCharm</a> to navigate through the OctoBot projects. This IDE will allow you to open and navigate through the multiple OctoBot repositories and make your OctoBot run setup use the code directly from the clonned repos using the project dependencies.</p>
-<p>More details in the <a class="reference external" href="https://github.com/Drakkar-Software/OctoBot/wiki/Developer-Guide#octobot-repositories">OctoBot repositories</a> and <a class="reference external" href="https://github.com/Drakkar-Software/OctoBot/wiki/Developer-Guide#setting-up-the-recommended-octobot-development-environment">Setting up the recommended OctoBot development environment</a> sections.</p>
+<p>More details in the <a class="reference external" href="Developer-Guide.html#id1">OctoBot repositories</a> and <a class="reference external" href="Developer-Guide.html#id2">Setting up the recommended OctoBot development environment</a> sections.</p>
 </div>
 <div class="section" id="octobot-architecture">
 <h2>OctoBot architecture<a class="headerlink" href="#octobot-architecture" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="philosophy">
 <h3>Philosophy<a class="headerlink" href="#philosophy" title="Permalink to this headline">¶</a></h3>
 <p>The goal behind OctoBot is to have a <strong>very fast and scalable</strong> trading robot.</p>
-<p>To achieve this, OctoBot is entirely built around the <a class="reference external" href="https://docs.python.org/3/library/asyncio.html">asyncio</a> producer-consumer <a class="reference external" href="https://github.com/Drakkar-Software/Async-Channel">Async-Channel</a> framework which allows to very quickly and efficiently transmit data to different elements within the bot. The idea is all the time maintain <strong>fully up-to-date data</strong> without having to use update loops (that require have inefficient sleeping time) while also <strong>waking up the evaluation chain as quickly as possible</strong> when an update is available (without having to wait for any update cycle of any update loop).<span class="raw-html-m2r"><br></span>
-Additionally, in order to save CPU time, as little threads as possible are use by OctoBot (usually less than 10 with a standard setup).</p>
+<p>To achieve this, OctoBot is entirely built around the <a class="reference external" href="https://docs.python.org/3/library/asyncio.html">asyncio</a> producer-consumer <a class="reference external" href="https://github.com/Drakkar-Software/Async-Channel">Async-Channel</a> framework which allows to very quickly and efficiently transmit data to different elements within the bot. The idea is all the time maintain <strong>fully up-to-date data</strong> without having to use update loops (that require have inefficient sleeping time) while also <strong>waking up the evaluation chain as quickly as possible</strong> when an update is available (without having to wait for any update cycle of any update loop).</p>
+<p>Additionally, in order to save CPU time, as little threads as possible are use by OctoBot (usually less than 10 with a standard setup).</p>
 <p>As a final touch, each CPU or memory intensive task is further optimized using <a class="reference external" href="https://cython.org/">Cython</a>. The python code of these tasks is translated into highly optimized C code that allows for less instructions to process and optimized memory representation ending up with a huge performance increase.</p>
 </div>
 <div class="section" id="overview">
 <h3>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h3>
-<p>The OctoBot code is split into <a class="reference external" href="https://github.com/Drakkar-Software/OctoBot/wiki/Developer-Guide#octobot-repositories">several repository</a>. Each module is handled as an independent python module and is available on the <a class="reference external" href="https://pypi.org/">official python package repository</a> (used in <code class="docutils literal notranslate"><span class="pre">pip</span></code> commands). Modules are made available as python source modules as well as as compiled modules which includes cython optimizations. Installing a module on a platform which as not already been built and made available on <a class="reference external" href="https://pypi.org/">pypi.org</a> will take much more time as <code class="docutils literal notranslate"><span class="pre">pip</span></code> will cythonize and compile the given module, which also requires a cpp compiler.</p>
+<p>The OctoBot code is split into <a class="reference external" href="Developer-Guide.html#id1">several repository</a>. Each module is handled as an independent python module and is available on the <a class="reference external" href="https://pypi.org/">official python package repository</a> (used in <code class="docutils literal notranslate"><span class="pre">pip</span></code> commands). Modules are made available as python source modules as well as as compiled modules which includes cython optimizations. Installing a module on a platform which as not already been built and made available on <a class="reference external" href="https://pypi.org/">pypi.org</a> will take much more time as <code class="docutils literal notranslate"><span class="pre">pip</span></code> will cythonize and compile the given module, which also requires a cpp compiler.</p>
 </div>
 <div class="section" id="octobot">
 <h3>OctoBot<a class="headerlink" href="#octobot" title="Permalink to this headline">¶</a></h3>
 <a class="reference external image-reference" href="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/octobot_arch.svg"><img alt="OctoBot architecture" src="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/octobot_arch.svg" /></a>
-<p>Simplified view of the OctoBot core components.<span class="raw-html-m2r"><br></span>
-Note: Inside the OctoBot part, each arrow is an async channel.</p>
+<p>Simplified view of the OctoBot core components.</p>
+<p>Note: Inside the OctoBot part, each arrow is an async channel.</p>
 </div>
 <div class="section" id="octobot-tentacles">
 <h3>OctoBot tentacles<a class="headerlink" href="#octobot-tentacles" title="Permalink to this headline">¶</a></h3>
@@ -320,17 +337,17 @@ Note: Inside the OctoBot part, each arrow is an async channel.</p>
 <li><p>Language: <a class="reference external" href="https://www.python.org/downloads/">Python 3.8</a></p></li>
 </ul>
 <ol class="arabic">
-<li><p>Clone each <a class="reference external" href="https://github.com/Drakkar-Software/OctoBot/wiki/Developer-Guide#octobot-repositories">OctoBot repository</a> using the dev branch when specified.</p></li>
+<li><p>Clone each <a class="reference external" href="Developer-Guide.html#id1">OctoBot repository</a> using the dev branch when specified.</p></li>
 <li><p>Open Pycharm and open the OctoBot repository.</p></li>
-<li><p>Open every other <a class="reference external" href="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/wiki/Developer-Guide#octobot-repositories">OctoBot repository</a> alongside to the main OctoBot repository <strong>in the same PyCharm window</strong>.</p></li>
-<li><p>In File/Settings/Project/Python Interpreter: select your installed python3.8 and create a new virtual environment through PyCharm.<span class="raw-html-m2r"><br></span></p>
+<li><p>Open every other <a class="reference external" href="Developer-Guide.html#id1">OctoBot repository</a> alongside to the main OctoBot repository <strong>in the same PyCharm window</strong>.</p></li>
+<li><p>In File/Settings/Project/Python Interpreter: select your installed python3.8 and create a new virtual environment through PyCharm.</p>
 <a class="reference external image-reference" href="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/python_interpreter.png"><img alt="python interpreter" src="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/python_interpreter.png" /></a>
 </li>
-<li><p>In File/Settings/Project/Python Dependencies: For each repository: check its required OctoBot repository dependency. This will allow your PyCharm python runner to use your OctoBot repositories as source code directly. Thanks to this you will be able to edit any file in any repo and it will be taken into account in your other PyCharm run profiles runners from other open OctoBot repo. This is useful when running tests. If you skip this, you will need to install every OctoBot module with pip and won’t be able to edit their code.<span class="raw-html-m2r"><br></span></p>
+<li><p>In File/Settings/Project/Python Dependencies: For each repository: check its required OctoBot repository dependency. This will allow your PyCharm python runner to use your OctoBot repositories as source code directly. Thanks to this you will be able to edit any file in any repo and it will be taken into account in your other PyCharm run profiles runners from other open OctoBot repo. This is useful when running tests. If you skip this, you will need to install every OctoBot module with pip and won’t be able to edit their code.</p>
 <a class="reference external image-reference" href="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/python_dependencies.png"><img alt="python dependencies" src="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/python_dependencies.png" /></a>
 </li>
 <li><p>For each OctoBot’s repository: install missing dependencies in requirements.txt and dev_requirements.txt. <strong>Warning</strong> do not install the requirements related to the previously downloaded repositories or your python runner will use them instead of your local code version.</p></li>
-<li><p>Create PyCharm run configurations using the previously created virtual env (with all the dependencies installed) for each way you want to start python commands (running OctoBot, running tests, etc). Example of run configs (only the selected one is necessary to start OctoBot):<span class="raw-html-m2r"><br></span></p>
+<li><p>Create PyCharm run configurations using the previously created virtual env (with all the dependencies installed) for each way you want to start python commands (running OctoBot, running tests, etc). Example of run configs (only the selected one is necessary to start OctoBot):</p>
 <a class="reference external image-reference" href="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/run_config.png"><img alt="run configuration" src="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/run_config.png" /></a>
 </li>
 <li><p>You can now run and debug the whole OctoBot project and its repositories.</p></li>

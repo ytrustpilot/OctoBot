@@ -10,15 +10,32 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-        <title>Exchanges &mdash; OctoBot</title>
+        <title>Exchanges | OctoBot docs</title>
     
 
     
+    
+        <link rel="shortcut icon" href="../_static/favicon.ico"/>
     
     
     
         <link rel="canonical" href="https://github.com/Drakkar-Software/OctoBotpages/Exchanges.html"/>
     
+
+    <meta name="keywords" content="octobot, octobot docs, octobot documentation, free, open source, trading, community, cryptocurrency, cryptocurrencies, bitcoin, ethereum" />
+    <meta name="description" content="Documentation for OctoBot: a free and highly customizable open source cryptocurrency trading robot." />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Exchanges | OctoBot docs" />
+    <meta name="twitter:description" content="Documentation for OctoBot: a free and highly customizable open source cryptocurrency trading robot." />
+    <meta name="twitter:image" content="https://docs.octobot.online/_static/images/octobot.png" />
+    <meta name="twitter:domain" content="docs.octobot.online" />
+    <meta name="twitter:url" content="https://docs.octobot.online" />
+    <meta property="og:title" content="Exchanges | OctoBot docs" />
+    <meta property="og:description" content="Documentation for OctoBot: a free and highly customizable open source cryptocurrency trading robot." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://docs.octobot.online" />
+    <meta property="og:image" content="https://docs.octobot.online/_static/images/octobot.png" />
+    <meta property="og:site_name" content="OctoBot docs" />
 
     
 
@@ -226,47 +243,47 @@
 <h1>Exchanges<a class="headerlink" href="#exchanges" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="web-interface-configuration">
 <h2>Web interface configuration<a class="headerlink" href="#web-interface-configuration" title="Permalink to this headline">¶</a></h2>
-<p>Octobot reads trading data (prices, volumes, trades, etc) from exchanges. At least one exchange is required for OctoBot to perform trades. In <a class="reference external" href="https://github.com/Drakkar-Software/OctoBot/wiki/Simulator#simulator">simulation mode</a>, exchange API keys configuration is not necessary.</p>
+<p>Octobot reads trading data (prices, volumes, trades, etc) from exchanges. At least one exchange is required for OctoBot to perform trades. In <a class="reference external" href="Simulator.html#simulator">simulation mode</a>, exchange API keys configuration is not necessary.</p>
 <a class="reference external image-reference" href="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/exchanges.jpg"><img alt="exchanges" src="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/exchanges.jpg" /></a>
-<p>You can configure OctoBot’s exchanges using the <a class="reference external" href="https://github.com/Drakkar-Software/OctoBot/wiki/Web-interface">web interface</a> <strong>configuration</strong> tab.</p>
+<p>You can configure OctoBot’s exchanges using the <a class="reference external" href="Web-interface.html">web interface</a> <strong>configuration</strong> tab.</p>
 </div>
 <div class="section" id="manual-configuration">
 <h2>Manual configuration<a class="headerlink" href="#manual-configuration" title="Permalink to this headline">¶</a></h2>
 <p>In <strong>user/config.json</strong>, find this lines:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;exchanges&quot;</span><span class="p">:</span> <span class="p">{</span>
-<span class="o">...</span>
-<span class="p">}</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&quot;exchanges&quot;: {
+
+}
 </pre></div>
 </div>
 <p>Edit this lines and add the exchange(s) you want to use.</p>
 <p>In OctoBot configuration, exchange connection info are encrypted.
 To manually add exchange configuration, you can add your info directly into your <strong>user/config.json</strong> file, OctoBot will then take care of the encryption for you.</p>
 <p>If you want to encrypt your exchange keys before starting OctoBot, you can use the following instructions:</p>
-<p><a class="reference external" href="https://github.com/Drakkar-Software/OctoBot/wiki/Usage#start-the-bot">start the bot</a> with option <strong>–encrypter</strong> like below :</p>
+<p>Start the OctoBot with option <strong>–encrypter</strong> like below :</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python start.py --encrypter
 </pre></div>
 </div>
 <p>And copy and paste your api-key and api-secret to your configuration file (see example below).</p>
 <p>Example with Binance and Coinbase Pro :</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;exchanges&quot;</span><span class="p">:</span> <span class="p">{</span>
-    <span class="s2">&quot;binance&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">&quot;api-key&quot;</span><span class="p">:</span> <span class="s2">&quot;YOUR_BINANCE_API_KEY_ENCRYPTED&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;api-secret&quot;</span><span class="p">:</span> <span class="s2">&quot;YOUR_BINANCE_API_SECRET_ENCRYPTED&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;web-socket&quot;</span><span class="p">:</span> <span class="n">true</span>
-    <span class="p">},</span>
-    <span class="s2">&quot;coinbasepro&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">&quot;api-key&quot;</span><span class="p">:</span> <span class="s2">&quot;YOUR_EXCHANGE_API_KEY_ENCRYPTED&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;api-secret&quot;</span><span class="p">:</span> <span class="s2">&quot;YOUR_EXCHANGE_API_SECRET_ENCRYPTED&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;api-password&quot;</span><span class="p">:</span> <span class="s2">&quot;YOUR_EXCHANGE_API_SECRET_ENCRYPTED&quot;</span>
-    <span class="p">}</span>
-  <span class="p">},</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&quot;exchanges&quot;: {
+    &quot;binance&quot;: {
+        &quot;api-key&quot;: &quot;YOUR_BINANCE_API_KEY_ENCRYPTED&quot;,
+        &quot;api-secret&quot;: &quot;YOUR_BINANCE_API_SECRET_ENCRYPTED&quot;,
+        &quot;web-socket&quot;: true
+    },
+    &quot;coinbasepro&quot;: {
+        &quot;api-key&quot;: &quot;YOUR_EXCHANGE_API_KEY_ENCRYPTED&quot;,
+        &quot;api-secret&quot;: &quot;YOUR_EXCHANGE_API_SECRET_ENCRYPTED&quot;,
+        &quot;api-password&quot;: &quot;YOUR_EXCHANGE_API_SECRET_ENCRYPTED&quot;
+    }
+}
 </pre></div>
 </div>
 <ul class="simple">
-<li><p><a href="#id1"><span class="problematic" id="id2">**</span></a><em>api-key</em>** is your exchange account API key</p></li>
-<li><p><a href="#id3"><span class="problematic" id="id4">**</span></a><em>api-secret</em>** is your exchange account API secret</p></li>
-<li><p><a href="#id5"><span class="problematic" id="id6">**</span></a><em>api-password</em>** is your exchange account API password if this exchange is requiring a password. Leave empty otherwise</p></li>
-<li><p><a href="#id7"><span class="problematic" id="id8">**</span></a><em>web-socket</em>** is a setting telling OctoBot wether or not to try to use websockets interfaces (websockets are used to get close to real-time data update but it’s using more bandwidth). Moreover, RealTime evaluators are much better with websockets enabled.</p></li>
+<li><p><strong>api-key</strong> is your exchange account API key</p></li>
+<li><p><strong>api-secret</strong> is your exchange account API secret</p></li>
+<li><p><strong>api-password</strong> is your exchange account API password if this exchange is requiring a password. Leave empty otherwise</p></li>
+<li><p><strong>web-socket</strong> is a setting telling OctoBot whether or not to try to use websockets interfaces (websockets are used to get close to real-time data update but it’s using more bandwidth). Moreover, RealTime evaluators are much better with websockets enabled.</p></li>
 </ul>
 </div>
 <div class="section" id="octobot-officially-supported-exchanges">
@@ -285,14 +302,14 @@ To manually add exchange configuration, you can add your info directly into your
 <th class="head"><p>REST</p></th>
 <th class="head"><p>Websocket</p></th>
 <th class="head"><p>Internal tests</p></th>
-<th class="head"><p>Simulable</p></th>
+<th class="head"><p>Simulated</p></th>
 <th class="head"><p>Community tested</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>Binance</p></td>
 <td><p>100%</p></td>
-<td><p>100%</p></td>
+<td><p>80%</p></td>
 <td><p>100%</p></td>
 <td><p>100%</p></td>
 <td><p>yes</p></td>
@@ -309,15 +326,12 @@ To manually add exchange configuration, you can add your info directly into your
 <td><p>0%</p></td>
 <td><p>100%</p></td>
 <td><p>100%</p></td>
-<td><ul class="simple">
-<li></li>
-</ul>
-</td>
+<td><p>yes</p></td>
 </tr>
-<tr class="row-odd"><td><p>Bitfinex</p></td>
-<td><p>75%</p></td>
+<tr class="row-odd"><td><p>BitMax</p></td>
+<td><p>100%</p></td>
 <td><p>0%</p></td>
-<td><p>50%</p></td>
+<td><p>100%</p></td>
 <td><p>100%</p></td>
 <td><ul class="simple">
 <li></li>
@@ -331,7 +345,7 @@ To manually add exchange configuration, you can add your info directly into your
 <td><p>100%</p></td>
 <td><p>yes</p></td>
 </tr>
-<tr class="row-odd"><td><p>Bittrex</p></td>
+<tr class="row-odd"><td><p>Bitfinex</p></td>
 <td><p>75%</p></td>
 <td><p>0%</p></td>
 <td><p>50%</p></td>
@@ -341,7 +355,17 @@ To manually add exchange configuration, you can add your info directly into your
 </ul>
 </td>
 </tr>
-<tr class="row-even"><td><p>Bitmex</p></td>
+<tr class="row-even"><td><p>Bittrex</p></td>
+<td><p>75%</p></td>
+<td><p>0%</p></td>
+<td><p>50%</p></td>
+<td><p>100%</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Bitmex</p></td>
 <td><p>75%</p></td>
 <td><p>30%</p></td>
 <td><p>20%</p></td>
@@ -351,14 +375,14 @@ To manually add exchange configuration, you can add your info directly into your
 </ul>
 </td>
 </tr>
-<tr class="row-odd"><td><p>COSS</p></td>
+<tr class="row-even"><td><p>COSS</p></td>
 <td><p>75%</p></td>
 <td><p>0%</p></td>
 <td><p>0%</p></td>
 <td><p>100%</p></td>
 <td><p>yes</p></td>
 </tr>
-<tr class="row-even"><td><p>Bitstamp</p></td>
+<tr class="row-odd"><td><p>Bitstamp</p></td>
 <td><p>10%</p></td>
 <td><p>0%</p></td>
 <td><p>0%</p></td>
@@ -368,7 +392,7 @@ To manually add exchange configuration, you can add your info directly into your
 </ul>
 </td>
 </tr>
-<tr class="row-odd"><td><p>OKEX</p></td>
+<tr class="row-even"><td><p>OKEX</p></td>
 <td><p>10%</p></td>
 <td><p>0%</p></td>
 <td><p>0%</p></td>
@@ -378,7 +402,7 @@ To manually add exchange configuration, you can add your info directly into your
 </ul>
 </td>
 </tr>
-<tr class="row-even"><td><p>Poloniex</p></td>
+<tr class="row-odd"><td><p>Poloniex</p></td>
 <td><p>0%</p></td>
 <td><p>0%</p></td>
 <td><p>0%</p></td>
@@ -388,7 +412,7 @@ To manually add exchange configuration, you can add your info directly into your
 </ul>
 </td>
 </tr>
-<tr class="row-odd"><td><p>Cryptopia</p></td>
+<tr class="row-even"><td><p>Cryptopia</p></td>
 <td><p>0%</p></td>
 <td><p>0%</p></td>
 <td><p>0%</p></td>
@@ -404,11 +428,11 @@ To manually add exchange configuration, you can add your info directly into your
 <p><em>REST</em> : <strong>slow</strong> and <strong>limited</strong> requests</p>
 <p><em>Websocket</em> : <strong>high speed</strong> and <strong>no limit</strong></p>
 <p>If you want use any exchange that is available <a class="reference external" href="https://github.com/ccxt/ccxt/wiki/Exchange-Markets">here</a>, the REST interface should work but <strong>it’s at your own risk</strong> since we did not test it yet.</p>
-<p>For simulable only exchanges, see the “Simulated exchange” section below.</p>
+<p>For simulated only exchanges, see the “Simulated exchange” section below.</p>
 </div>
 <div class="section" id="simulated-exchange">
 <h2>Simulated exchange<a class="headerlink" href="#simulated-exchange" title="Permalink to this headline">¶</a></h2>
-<p>To use the Simulated exchange feature of the Octobot, you have to specifiy a <a class="reference external" href="https://github.com/Drakkar-Software/OctoBot/wiki/Simulator">*trader simulator*</a> configuration.
+<p>To use the Simulated exchange feature of the Octobot, you have to specifiy a <a class="reference external" href="Simulator.html">trader simulator</a> configuration.
 To use an exchange in simulation only, you also have to specify its configuration as described above. For most exchanges,  API credentials are not required in simulation mode, adding the exchange with default values is enough.</p>
 </div>
 </div>

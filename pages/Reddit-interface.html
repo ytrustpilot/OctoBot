@@ -10,15 +10,32 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-        <title>Reddit interface &mdash; OctoBot</title>
+        <title>Reddit interface | OctoBot docs</title>
     
 
     
+    
+        <link rel="shortcut icon" href="../_static/favicon.ico"/>
     
     
     
         <link rel="canonical" href="https://github.com/Drakkar-Software/OctoBotpages/Reddit-interface.html"/>
     
+
+    <meta name="keywords" content="octobot, octobot docs, octobot documentation, free, open source, trading, community, cryptocurrency, cryptocurrencies, bitcoin, ethereum" />
+    <meta name="description" content="Documentation for OctoBot: a free and highly customizable open source cryptocurrency trading robot." />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Reddit interface | OctoBot docs" />
+    <meta name="twitter:description" content="Documentation for OctoBot: a free and highly customizable open source cryptocurrency trading robot." />
+    <meta name="twitter:image" content="https://docs.octobot.online/_static/images/octobot.png" />
+    <meta name="twitter:domain" content="docs.octobot.online" />
+    <meta name="twitter:url" content="https://docs.octobot.online" />
+    <meta property="og:title" content="Reddit interface | OctoBot docs" />
+    <meta property="og:description" content="Documentation for OctoBot: a free and highly customizable open source cryptocurrency trading robot." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://docs.octobot.online" />
+    <meta property="og:image" content="https://docs.octobot.online/_static/images/octobot.png" />
+    <meta property="og:site_name" content="OctoBot docs" />
 
     
 
@@ -237,26 +254,26 @@
 </pre></div>
 </div>
 <p><strong>Exemple:</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;services&quot;</span><span class="p">:</span> <span class="p">{</span>
-   <span class="s2">&quot;a service&quot;</span><span class="p">:</span> <span class="p">{</span>
-       <span class="o">...</span>
-   <span class="p">},</span>
-   <span class="s2">&quot;reddit&quot;</span><span class="p">:</span> <span class="p">{</span>
-       <span class="s2">&quot;client-id&quot;</span><span class="p">:</span> <span class="s2">&quot;YOUR_CLIENT_ID&quot;</span><span class="p">,</span>
-       <span class="s2">&quot;client-secret&quot;</span><span class="p">:</span> <span class="s2">&quot;YOUR_CLIENT_SECRET&quot;</span><span class="p">,</span>
-       <span class="s2">&quot;username&quot;</span><span class="p">:</span> <span class="s2">&quot;YOUR_REDDIT_USERNAME&quot;</span><span class="p">,</span>
-       <span class="s2">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;YOUR_REDDIT_PASSWORD&quot;</span>
-   <span class="p">},</span>
-   <span class="s2">&quot;another service&quot;</span><span class="p">:</span> <span class="p">{</span>
-       <span class="o">...</span>
-   <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&quot;services&quot;: {
+   &quot;a service&quot;: {
+
+   },
+   &quot;reddit&quot;: {
+       &quot;client-id&quot;: &quot;YOUR_CLIENT_ID&quot;,
+       &quot;client-secret&quot;: &quot;YOUR_CLIENT_SECRET&quot;,
+       &quot;username&quot;: &quot;YOUR_REDDIT_USERNAME&quot;,
+       &quot;password&quot;: &quot;YOUR_REDDIT_PASSWORD&quot;
+   },
+   &quot;another service&quot;: {
+
+   }
+}
 </pre></div>
 </div>
 <p>All those information can be found after creating a Reddit App.</p>
 <ul class="simple">
 <li><p>Login on your Reddit account if you are not already</p></li>
-<li><p><a class="reference external" href="https://www.reddit.com/prefs/apps/">Generate a Reddit **script** App to your Reddit account if you don’t already have one</a></p></li>
+<li><p><a class="reference external" href="https://www.reddit.com/prefs/apps/">Generate a Reddit script App to your Reddit account if you don’t already have one</a></p></li>
 <li><p><strong>client-id</strong> is the 14 characters identifier under the App’s name</p></li>
 <li><p><strong>client-secret</strong> is the <strong>secret</strong> identifier of the App</p></li>
 <li><p><strong>username</strong> and <strong>password</strong> are your usual Reddit username and password</p></li>

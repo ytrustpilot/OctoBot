@@ -10,15 +10,32 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-        <title>OctoBot 0.4 &mdash; OctoBot</title>
+        <title>OctoBot 0.4 | OctoBot docs</title>
     
 
     
+    
+        <link rel="shortcut icon" href="../_static/favicon.ico"/>
     
     
     
         <link rel="canonical" href="https://github.com/Drakkar-Software/OctoBotpages/OctoBot-0.4.html"/>
     
+
+    <meta name="keywords" content="octobot, octobot docs, octobot documentation, free, open source, trading, community, cryptocurrency, cryptocurrencies, bitcoin, ethereum" />
+    <meta name="description" content="Documentation for OctoBot: a free and highly customizable open source cryptocurrency trading robot." />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="OctoBot 0.4 | OctoBot docs" />
+    <meta name="twitter:description" content="Documentation for OctoBot: a free and highly customizable open source cryptocurrency trading robot." />
+    <meta name="twitter:image" content="https://docs.octobot.online/_static/images/octobot.png" />
+    <meta name="twitter:domain" content="docs.octobot.online" />
+    <meta name="twitter:url" content="https://docs.octobot.online" />
+    <meta property="og:title" content="OctoBot 0.4 | OctoBot docs" />
+    <meta property="og:description" content="Documentation for OctoBot: a free and highly customizable open source cryptocurrency trading robot." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://docs.octobot.online" />
+    <meta property="og:image" content="https://docs.octobot.online/_static/images/octobot.png" />
+    <meta property="og:site_name" content="OctoBot docs" />
 
     
 
@@ -226,11 +243,8 @@
 <h1>OctoBot 0.4<a class="headerlink" href="#octobot-0-4" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="about-octobot-0-4">
 <h2>About OctoBot 0.4<a class="headerlink" href="#about-octobot-0-4" title="Permalink to this headline">¶</a></h2>
-<blockquote>
-<div><p>OctoBot 0.4.0 uses python 3.8</p>
-</div></blockquote>
-<p>OctoBot 0.4 is a complete rework of OctoBot, while it doesn’t change a lot on the appearance (for now), its core engine is completely different.<span class="raw-html-m2r"><br></span>
-With 0.4, OctoBot uses an asynchronous producer/consumer design. This enables deep optimizations by removing every downtime and therefore taking every signal opportunity as soon as possible without being overwhelmed by information. This is ideal for websocket connexions and enables the full potential of any strategy.</p>
+<p>OctoBot 0.4 is a complete rework of OctoBot, while it doesn’t change a lot on the appearance (for now), its core engine is completely different.</p>
+<p>With 0.4, OctoBot uses an asynchronous producer/consumer design. This enables deep optimizations by removing every downtime and therefore taking every signal opportunity as soon as possible without being overwhelmed by information. This is ideal for websocket connexions and enables the full potential of any strategy.</p>
 <p>To go even further on the optimization path, OctoBot is now using <a class="reference external" href="https://cython.org/">Cython</a> to compile its CPU intensive processes into efficient C code and increase its performances.</p>
 </div>
 <div class="section" id="what-s-new-on-octobot-0-4">
@@ -259,22 +273,18 @@ With 0.4, OctoBot uses an asynchronous producer/consumer design. This enables de
 <h3>OctoBot 0.4 installation<a class="headerlink" href="#octobot-0-4-installation" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="octobot-executable">
 <h4>OctoBot executable<a class="headerlink" href="#octobot-executable" title="Permalink to this headline">¶</a></h4>
-<p>Download and start the OctoBot 0.4.0 executable for your computer from <a class="reference external" href="https://github.com/Drakkar-Software/OctoBot-Binary/releases">https://github.com/Drakkar-Software/OctoBot-Binary/releases</a>.<span class="raw-html-m2r"><br></span>
-The first start will setup your OctoBot environment and download tentacles.</p>
+<p>Download and start the OctoBot 0.4.0 executable for your computer from <a class="reference external" href="https://github.com/Drakkar-Software/OctoBot-Binary/releases">https://github.com/Drakkar-Software/OctoBot-Binary/releases</a>.</p>
+<p>The first start will setup your OctoBot environment and download tentacles.</p>
 <blockquote>
 <div><p>This executable version is still experimental for now on 0.4.0.</p>
 </div></blockquote>
 </div>
 <div class="section" id="octobot-cli">
 <h4>OctoBot CLI<a class="headerlink" href="#octobot-cli" title="Permalink to this headline">¶</a></h4>
-<blockquote>
-<div><p>OctoBot 0.4.0 uses python 3.8</p>
-</div></blockquote>
 <p>To install OctoBot 0.4, the easiest way is to use <a class="reference external" href="https://pypi.org/project/OctoBot-CLI/">the OctoBot CLI</a> to install OctoBot 0.4 either using docker or python directly.</p>
 <ol class="arabic">
-<li><p>Install octobot-cli using the following command:
-.. code-block:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">octobot_cli</span>
+<li><p>Install octobot-cli using the following command:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python -m pip install octobot_cli
 </pre></div>
 </div>
 </li>
@@ -282,36 +292,32 @@ The first start will setup your OctoBot environment and download tentacles.</p>
 <li><p>Now two possibilities: you can install OctoBot using python (pip and virtual env), it is preferred way for Windows users or using docker if you are familiar with it.</p></li>
 </ol>
 <p>For a python installation open a terminal and type in:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">octobot_cli</span> <span class="n">install</span> <span class="o">--</span><span class="n">python</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>octobot_cli install --python
 </pre></div>
 </div>
 <p>For a docker installation, open a terminal and type in:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">octobot_cli</span> <span class="n">install</span> <span class="o">--</span><span class="n">docker</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>octobot_cli install --docker
 </pre></div>
 </div>
 <p>Note: if you are on an arm architecture (like on raspberry pie), add the <code class="docutils literal notranslate"><span class="pre">--arm</span></code> argument to the docker command.</p>
 <ol class="arabic">
 <li><p>Start your OctoBot using the following command:
-Python installations:
-.. code-block:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">octobot_cli</span> <span class="n">start</span>
+Python installations:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>octobot_cli start
 </pre></div>
 </div>
-<p>Docker installations:
-.. code-block:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">octobot_cli</span> <span class="n">start</span> <span class="o">--</span><span class="n">docker</span>
+<p>Docker installations:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>octobot_cli start --docker
 </pre></div>
 </div>
 <p>### OctoBot 0.4 update
 To update your OctoBot, use the following command:
-Python installations:
-.. code-block:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">octobot_cli</span> <span class="n">update</span>
+Python installations:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>octobot_cli update
 </pre></div>
 </div>
-<p>Docker installations:
-.. code-block:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">octobot_cli</span> <span class="n">update</span> <span class="o">--</span><span class="n">docker</span>
+<p>Docker installations:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>octobot_cli update --docker
 </pre></div>
 </div>
 <p>This will update your OctoBot with its dependencies and tentacles</p>
@@ -321,44 +327,41 @@ Python installations:
 </div>
 <div class="section" id="manual-installation">
 <h3>Manual installation<a class="headerlink" href="#manual-installation" title="Permalink to this headline">¶</a></h3>
-<p><strong>With the OctoBot executable</strong><span class="raw-html-m2r"><br></span>
-Download and start the latest OctoBot 0.4.0 executable for your computer from <a class="reference external" href="https://github.com/Drakkar-Software/OctoBot-Binary/releases">https://github.com/Drakkar-Software/OctoBot-Binary/releases</a>.<span class="raw-html-m2r"><br></span>
-The first start will setup your OctoBot environment and download tentacles.</p>
+<p><strong>With the OctoBot executable</strong></p>
+<p>Download and start the latest OctoBot 0.4.0 executable for your computer from <a class="reference external" href="https://github.com/Drakkar-Software/OctoBot-Binary/releases">https://github.com/Drakkar-Software/OctoBot-Binary/releases</a>.</p>
+<p>The first start will setup your OctoBot environment and download tentacles.</p>
 <p><strong>With Docker</strong></p>
 <ol class="arabic">
-<li><p>Get the latest Octobot 0.4 image:
-.. code-block:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docker</span> <span class="n">pull</span> <span class="n">drakkarsoftware</span><span class="o">/</span><span class="n">octobot</span><span class="p">:</span><span class="mf">0.4</span><span class="o">.</span><span class="mi">0</span><span class="o">-</span><span class="n">stable</span>
+<li><p>Get the latest Octobot 0.4 image:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker pull drakkarsoftware/octobot:0.4.0-stable
 </pre></div>
 </div>
 </li>
-<li><p>Run it via
-.. code-block:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>docker run -it -d --name Octobot -p 5001:5001 -v $(pwd)/user:/octobot/user -v $(pwd)/tentacles:/octobot/tentacles -v $(pwd)/logs:/octobot/logs drakkarsoftware/octobot:0.4.0-stable
+<li><p>Run it via</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker run -it -d --name Octobot -p <span class="m">5001</span>:5001 -v <span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>/user:/octobot/user -v <span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>/tentacles:/octobot/tentacles -v <span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>/logs:/octobot/logs drakkarsoftware/octobot:0.4.0-stable
 </pre></div>
 </div>
 </li>
-<li><p>Follow the <a class="reference external" href="https://github.com/Drakkar-Software/OctoBot/wiki/With-Docker#how-to-look-at-octobot-logs-">docker help wiki</a> if you need more details about how to use OctoBot with Docker.</p></li>
+<li><p>Follow the <a class="reference external" href="With-Docker.html#how-to-look-at-octobot-logs-">docker help docs</a> if you need more details about how to use OctoBot with Docker.</p></li>
 </ol>
 <p><strong>With Python</strong></p>
 <blockquote>
 <div><p>It is strongly advised to install OctoBot in a <strong>virtual env</strong> when installing it from python directly.</p>
 </div></blockquote>
 <ol class="arabic">
-<li><p>Clone the <a class="reference external" href="https://github.com/Drakkar-Software/OctoBot/tree/0.4.0">OctoBot 0.4 branch</a>
-.. code-block:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="o">-</span><span class="n">b</span> <span class="mf">0.4</span><span class="o">.</span><span class="mi">0</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">Drakkar</span><span class="o">-</span><span class="n">Software</span><span class="o">/</span><span class="n">OctoBot</span>
+<li><p>Clone the <a class="reference external" href="https://github.com/Drakkar-Software/OctoBot/tree/0.4.0">OctoBot 0.4 branch</a></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone -b <span class="m">0</span>.4.0 https://github.com/Drakkar-Software/OctoBot
 </pre></div>
 </div>
 </li>
 <li><p>Install the requirements via</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">prefer</span><span class="o">-</span><span class="n">binary</span> <span class="o">-</span><span class="n">Ur</span> <span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install --prefer-binary -Ur requirements.txt
 </pre></div>
 </div>
 <p><strong>–prefer-binary</strong> is important here otherwise you will have to recompile every module: it requires a c++ compiler and can be very slow.</p>
 </li>
 <li><p>Start your OctoBot using</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">start</span><span class="o">.</span><span class="n">py</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python start.py
 </pre></div>
 </div>
 </li>
@@ -393,8 +396,8 @@ python start.py
 <div class="section" id="manual-update">
 <h3>Manual update<a class="headerlink" href="#manual-update" title="Permalink to this headline">¶</a></h3>
 <p>To update your OctoBot, use the following commands:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">prefer</span><span class="o">-</span><span class="n">binary</span> <span class="o">-</span><span class="n">Ur</span> <span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
-<span class="n">python</span> <span class="n">start</span><span class="o">.</span><span class="n">py</span> <span class="n">tentacles</span> <span class="o">--</span><span class="n">install</span> <span class="o">--</span><span class="nb">all</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python -m pip install --prefer-binary -Ur requirements.txt
+python start.py tentacles --install --all
 </pre></div>
 </div>
 </div>

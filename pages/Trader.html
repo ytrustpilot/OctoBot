@@ -10,15 +10,32 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-        <title>Trader &mdash; OctoBot</title>
+        <title>Trader | OctoBot docs</title>
     
 
     
+    
+        <link rel="shortcut icon" href="../_static/favicon.ico"/>
     
     
     
         <link rel="canonical" href="https://github.com/Drakkar-Software/OctoBotpages/Trader.html"/>
     
+
+    <meta name="keywords" content="octobot, octobot docs, octobot documentation, free, open source, trading, community, cryptocurrency, cryptocurrencies, bitcoin, ethereum" />
+    <meta name="description" content="Documentation for OctoBot: a free and highly customizable open source cryptocurrency trading robot." />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Trader | OctoBot docs" />
+    <meta name="twitter:description" content="Documentation for OctoBot: a free and highly customizable open source cryptocurrency trading robot." />
+    <meta name="twitter:image" content="https://docs.octobot.online/_static/images/octobot.png" />
+    <meta name="twitter:domain" content="docs.octobot.online" />
+    <meta name="twitter:url" content="https://docs.octobot.online" />
+    <meta property="og:title" content="Trader | OctoBot docs" />
+    <meta property="og:description" content="Documentation for OctoBot: a free and highly customizable open source cryptocurrency trading robot." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://docs.octobot.online" />
+    <meta property="og:image" content="https://docs.octobot.online/_static/images/octobot.png" />
+    <meta property="og:site_name" content="OctoBot docs" />
 
     
 
@@ -226,9 +243,9 @@
 <h1>Trader<a class="headerlink" href="#trader" title="Permalink to this headline">¶</a></h1>
 <a class="reference external image-reference" href="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/trading.jpg"><img alt="trading" src="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/trading.jpg" /></a>
 <p>Open your <strong>user/config.json</strong> file and edit this configuration :</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;trader&quot;</span><span class="p">:{</span>
-  <span class="s2">&quot;enabled&quot;</span><span class="p">:</span> <span class="n">true</span>
-<span class="p">}</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&quot;trader&quot;:{
+  &quot;enabled&quot;: true
+}
 </pre></div>
 </div>
 <div class="section" id="enabled">
@@ -237,18 +254,13 @@
 When <strong>false</strong> OctoBot will never any create a real trade. This <strong>false</strong> value can be used to make OctoBot only use its simulation mode on real market conditions.</p>
 <div class="section" id="trading-settings">
 <h3>Trading settings<a class="headerlink" href="#trading-settings" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;trading&quot;</span><span class="p">:{</span>
-  <span class="s2">&quot;multi-session-profitability&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
-  <span class="s2">&quot;reference-market&quot;</span><span class="p">:</span> <span class="s2">&quot;BTC&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;risk&quot;</span><span class="p">:</span> <span class="mf">0.8</span>
-<span class="p">}</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&quot;trading&quot;:{
+  &quot;reference-market&quot;: &quot;BTC&quot;,
+  &quot;risk&quot;: 0.8
+}
 </pre></div>
 </div>
 </div>
-</div>
-<div class="section" id="multi-session-profitability">
-<h2>Multi-session-profitability<a class="headerlink" href="#multi-session-profitability" title="Permalink to this headline">¶</a></h2>
-<p>The <strong>Multi-session-profitability</strong> parameter defines whether or not OctoBot profritability should be reset at each start of the bot. If activated, as long as traded pairs configuration is not changing, the computed profitability will be computed taking the previous OctoBot executions into account. If the trader simulator is activated, it will also not reset its portfolio at each start but will continue from where it stopped in the previous execution. Default is false.</p>
 </div>
 <div class="section" id="reference-market">
 <h2>Reference-market<a class="headerlink" href="#reference-market" title="Permalink to this headline">¶</a></h2>
@@ -265,7 +277,7 @@ When <strong>false</strong> OctoBot will never any create a real trade. This <st
 <div class="section" id="trader-simulator">
 <h3>Trader simulator<a class="headerlink" href="#trader-simulator" title="Permalink to this headline">¶</a></h3>
 <p>Additionally to the real trading system, a trading simulator is available in OctoBot.</p>
-<p><a class="reference external" href="https://github.com/Drakkar-Software/OctoBot/wiki/Simulator">Here is the article describing the simulator feature of OctoBot</a></p>
+<p><a class="reference external" href="Simulator.html">Here is the article describing the simulator feature of OctoBot</a></p>
 </div>
 </div>
 </div>
@@ -318,7 +330,6 @@ When <strong>false</strong> OctoBot will never any create a real trade. This <st
 <li><a class="reference internal" href="#trading-settings">Trading settings</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#multi-session-profitability">Multi-session-profitability</a></li>
 <li><a class="reference internal" href="#reference-market">Reference-market</a></li>
 <li><a class="reference internal" href="#risk">Risk</a><ul>
 <li><a class="reference internal" href="#trader-simulator">Trader simulator</a></li>

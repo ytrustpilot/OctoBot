@@ -10,15 +10,32 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-        <title>Web interface &mdash; OctoBot</title>
+        <title>Web interface | OctoBot docs</title>
     
 
     
+    
+        <link rel="shortcut icon" href="../_static/favicon.ico"/>
     
     
     
         <link rel="canonical" href="https://github.com/Drakkar-Software/OctoBotpages/Web-interface.html"/>
     
+
+    <meta name="keywords" content="octobot, octobot docs, octobot documentation, free, open source, trading, community, cryptocurrency, cryptocurrencies, bitcoin, ethereum" />
+    <meta name="description" content="Documentation for OctoBot: a free and highly customizable open source cryptocurrency trading robot." />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Web interface | OctoBot docs" />
+    <meta name="twitter:description" content="Documentation for OctoBot: a free and highly customizable open source cryptocurrency trading robot." />
+    <meta name="twitter:image" content="https://docs.octobot.online/_static/images/octobot.png" />
+    <meta name="twitter:domain" content="docs.octobot.online" />
+    <meta name="twitter:url" content="https://docs.octobot.online" />
+    <meta property="og:title" content="Web interface | OctoBot docs" />
+    <meta property="og:description" content="Documentation for OctoBot: a free and highly customizable open source cryptocurrency trading robot." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://docs.octobot.online" />
+    <meta property="og:image" content="https://docs.octobot.online/_static/images/octobot.png" />
+    <meta property="og:site_name" content="OctoBot docs" />
 
     
 
@@ -234,23 +251,23 @@
 <div class="section" id="web-service-configuration">
 <h2>Web service configuration<a class="headerlink" href="#web-service-configuration" title="Permalink to this headline">¶</a></h2>
 <p>Add in <strong>user/config.json</strong> in the services key :</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;web&quot;</span><span class="p">:</span> <span class="p">{</span>
-       <span class="s2">&quot;port&quot;</span><span class="p">:</span> <span class="n">PORT_NUMBER_TO_RUN_WEB_SERVER_ON</span>
-   <span class="p">}</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&quot;web&quot;: {
+     &quot;port&quot;: 5001
+}
 </pre></div>
 </div>
 <p><strong>Exemple:</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;services&quot;</span><span class="p">:</span> <span class="p">{</span>
-   <span class="s2">&quot;a service&quot;</span><span class="p">:</span> <span class="p">{</span>
-       <span class="o">...</span>
-   <span class="p">},</span>
-   <span class="s2">&quot;web&quot;</span><span class="p">:</span> <span class="p">{</span>
-       <span class="s2">&quot;port&quot;</span><span class="p">:</span> <span class="n">PORT_NUMBER_TO_RUN_WEB_SERVER_ON</span>
-   <span class="p">},</span>
-   <span class="s2">&quot;another service&quot;</span><span class="p">:</span> <span class="p">{</span>
-       <span class="o">...</span>
-   <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&quot;services&quot;: {
+   &quot;a service&quot;: {
+
+   },
+   &quot;web&quot;: {
+       &quot;port&quot;: 5022
+   },
+   &quot;another service&quot;: {
+
+   }
+}
 </pre></div>
 </div>
 <ul class="simple">
@@ -287,8 +304,8 @@
 </div>
 <div class="section" id="blocking-requests-from-other-websites-csrf">
 <h3>Blocking requests from other websites (CSRF)<a class="headerlink" href="#blocking-requests-from-other-websites-csrf" title="Permalink to this headline">¶</a></h3>
-<p>You can set the <code class="docutils literal notranslate"><span class="pre">CORS_ALLOWED_ORIGINS</span></code> environment variable before starting your OctoBot, this way only requests from the specified origin(s) will be answered to.<span class="raw-html-m2r"><br></span>
-Examples:</p>
+<p>You can set the <code class="docutils literal notranslate"><span class="pre">CORS_ALLOWED_ORIGINS</span></code> environment variable before starting your OctoBot, this way only requests from the specified origin(s) will be answered to.</p>
+<p>Examples:</p>
 <ul class="simple">
 <li><p>CORS_ALLOWED_ORIGINS=https://mybot.com</p></li>
 <li><p>CORS_ALLOWED_ORIGINS=http://localhost:5001</p></li>

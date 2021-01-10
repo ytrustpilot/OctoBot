@@ -10,15 +10,32 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-        <title>Troubleshoot &mdash; OctoBot</title>
+        <title>Troubleshoot | OctoBot docs</title>
     
 
     
+    
+        <link rel="shortcut icon" href="../_static/favicon.ico"/>
     
     
     
         <link rel="canonical" href="https://github.com/Drakkar-Software/OctoBotpages/Installation-Troubleshoot.html"/>
     
+
+    <meta name="keywords" content="octobot, octobot docs, octobot documentation, free, open source, trading, community, cryptocurrency, cryptocurrencies, bitcoin, ethereum" />
+    <meta name="description" content="Documentation for OctoBot: a free and highly customizable open source cryptocurrency trading robot." />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Troubleshoot | OctoBot docs" />
+    <meta name="twitter:description" content="Documentation for OctoBot: a free and highly customizable open source cryptocurrency trading robot." />
+    <meta name="twitter:image" content="https://docs.octobot.online/_static/images/octobot.png" />
+    <meta name="twitter:domain" content="docs.octobot.online" />
+    <meta name="twitter:url" content="https://docs.octobot.online" />
+    <meta property="og:title" content="Troubleshoot | OctoBot docs" />
+    <meta property="og:description" content="Documentation for OctoBot: a free and highly customizable open source cryptocurrency trading robot." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://docs.octobot.online" />
+    <meta property="og:image" content="https://docs.octobot.online/_static/images/octobot.png" />
+    <meta property="og:site_name" content="OctoBot docs" />
 
     
 
@@ -228,12 +245,12 @@
 <h2>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="time-synchronization">
 <h3>Time synchronization<a class="headerlink" href="#time-synchronization" title="Permalink to this headline">¶</a></h3>
-<p>This issue happens when error messages such as <code class="docutils literal notranslate"><span class="pre">'recvWindow'</span> <span class="pre">must</span> <span class="pre">be</span> <span class="pre">less</span> <span class="pre">than</span> <span class="pre">...</span></code> appear.<span class="raw-html-m2r"><br></span>
-Open an administrator terminal and type:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">net</span> <span class="n">stop</span> <span class="n">w32time</span>
-<span class="n">net</span> <span class="n">start</span> <span class="n">w32time</span>
-<span class="n">w32tm</span> <span class="o">/</span><span class="n">resync</span>
-<span class="n">w32tm</span> <span class="o">/</span><span class="n">query</span> <span class="o">/</span><span class="n">status</span>
+<p>This issue happens when error messages such as <code class="docutils literal notranslate"><span class="pre">'recvWindow'</span> <span class="pre">must</span> <span class="pre">be</span> <span class="pre">less</span> <span class="pre">than</span> <span class="pre">...</span></code> appear.</p>
+<p>Open an administrator terminal and type:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>net stop w32time
+net start w32time
+w32tm /resync
+w32tm /query /status
 </pre></div>
 </div>
 <p>Code from <a class="reference external" href="https://serverfault.com/questions/294787/how-do-i-force-sync-the-time-on-windows-workstation-or-server">serverfault.com</a></p>
@@ -243,45 +260,14 @@ Open an administrator terminal and type:</p>
 <h3>OctoBot freeze<a class="headerlink" href="#octobot-freeze" title="Permalink to this headline">¶</a></h3>
 <p>When running OctoBot on Windows, clicking into the OctoBot terminal (Powershell or Cmd) can freeze the log output and therefore freeze OctoBot execution (OctoBot will be waiting for the log to be published to continue).</p>
 <p>To fix this issue, untick the “QuickEdit Mode” in your terminal properties and restart it.</p>
-<a class="reference external image-reference" href="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/powerShellEditMode.jpg"><img alt="Powershell" src="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/powerShellEditMode.jpg" /></a>
-<a class="reference external image-reference" href="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/cmdQuickEdit.jpg"><img alt="Cmd" src="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/cmdQuickEdit.jpg" /></a>
+<a class="reference external image-reference" href="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/powerShellEditMode.jpg"><img alt="Powershell" src="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/powerShellEditMode.jpg" style="width: 400px;" /></a>
+<a class="reference external image-reference" href="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/cmdQuickEdit.jpg"><img alt="Cmd" src="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/cmdQuickEdit.jpg" style="width: 400px;" /></a>
 <p>To open the properties menu, right click on the terminal window header and select “properties”.</p>
 </div>
-<div class="section" id="installation">
-<h3>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h3>
-<ul class="simple">
-<li><p>During <em>pip install -r requirements.txt</em> –&gt; <strong>Failed to install Twisted</strong> : <span class="raw-html-m2r"><br></span></p></li>
-</ul>
-<ol class="arabic simple">
-<li><p>Download Twisted compiled for your platform <a class="reference external" href="https://www.lfd.uci.edu/~gohlke/pythonlibs/">here</a><span class="raw-html-m2r"><br></span></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">Twisted-17.XXXXXX.whl</span></code><span class="raw-html-m2r"><br></span></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements.txt</span></code><span class="raw-html-m2r"><br></span></p></li>
-</ol>
-<ul class="simple">
-<li><p>During <em>pip install -r requirements.txt</em> –&gt; <strong>Failed to install lru_dict</strong> : <span class="raw-html-m2r"><br></span></p></li>
-</ul>
-<ol class="arabic simple">
-<li><p>Download Lru_dict compiled for your platform <a class="reference external" href="https://www.lfd.uci.edu/~gohlke/pythonlibs/">here</a><span class="raw-html-m2r"><br></span></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">lru_dict‑1.1.6‑XXXXX.whl</span></code><span class="raw-html-m2r"><br></span></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements.txt</span></code><span class="raw-html-m2r"><br></span></p></li>
-</ol>
-<ul class="simple">
-<li><p>During <em>pip install -r requirements.txt</em> –&gt; <strong>Failed to install cytoolz</strong> : <span class="raw-html-m2r"><br></span></p></li>
-</ul>
-<ol class="arabic simple">
-<li><p>Download cytoolz compiled for your platform <a class="reference external" href="https://www.lfd.uci.edu/~gohlke/pythonlibs/">here</a><span class="raw-html-m2r"><br></span></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">cytoolz‑0.9.0.1‑XXXXX.whl</span></code><span class="raw-html-m2r"><br></span></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements.txt</span></code><span class="raw-html-m2r"><br></span></p></li>
-</ol>
-<ul class="simple">
-<li><p>During <em>pip install -r requirements.txt</em> –&gt; <strong>Failed to install pycares</strong> : <span class="raw-html-m2r"><br></span></p></li>
-</ul>
+<div class="section" id="web-interface-display-issue-mime-type-text-plain-is-not-executable">
+<h3>Web interface display issue “MIME type (‘text/plain’) is not executable”<a class="headerlink" href="#web-interface-display-issue-mime-type-text-plain-is-not-executable" title="Permalink to this headline">¶</a></h3>
+<p>If the web interface is now correctly displayed and this error (or similar) appears in your browser console: <code class="docutils literal notranslate"><span class="pre">Refused</span> <span class="pre">to</span> <span class="pre">execute</span> <span class="pre">script</span> <span class="pre">from</span> <span class="pre">'&lt;URL&gt;'</span> <span class="pre">because</span> <span class="pre">its</span> <span class="pre">MIME</span> <span class="pre">type</span> <span class="pre">('text/plain')</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">executable,</span> <span class="pre">and</span> <span class="pre">strict</span> <span class="pre">MIME</span> <span class="pre">type</span> <span class="pre">checking</span> <span class="pre">is</span> <span class="pre">enabled.</span></code>, then there might be an issue with your Windows registry. Here is how to solve it:</p>
 <ol class="arabic">
-<li><p>Download pycares compiled for your platform <a class="reference external" href="https://www.lfd.uci.edu/~gohlke/pythonlibs/">here</a><span class="raw-html-m2r"><br></span></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">pycares‑2.3.0‑XXXXX.whl</span></code><span class="raw-html-m2r"><br></span></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements.txt</span></code><span class="raw-html-m2r"><br></span>
-### Web interface display issue “MIME type (‘text/plain’) is not executable”
-If the web interface is now correctly displayed and this error (or similar) appears in your browser console: <code class="docutils literal notranslate"><span class="pre">Refused</span> <span class="pre">to</span> <span class="pre">execute</span> <span class="pre">script</span> <span class="pre">from</span> <span class="pre">'&lt;URL&gt;'</span> <span class="pre">because</span> <span class="pre">its</span> <span class="pre">MIME</span> <span class="pre">type</span> <span class="pre">('text/plain')</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">executable,</span> <span class="pre">and</span> <span class="pre">strict</span> <span class="pre">MIME</span> <span class="pre">type</span> <span class="pre">checking</span> <span class="pre">is</span> <span class="pre">enabled.</span></code>, then there might be an issue with your Windows registry. Here is how to solve it:</p></li>
 <li><p>Type <code class="docutils literal notranslate"><span class="pre">regedit</span></code> in the windows start menu</p></li>
 <li><p>Go to <code class="docutils literal notranslate"><span class="pre">\HKEY_CLASSES_ROOT</span></code></p></li>
 <li><p>Check the 2 following key values (they should be somewhat similar to these):</p>
@@ -297,10 +283,10 @@ If the web interface is now correctly displayed and this error (or similar) appe
 </div>
 <div class="section" id="linux">
 <h2>Linux<a class="headerlink" href="#linux" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id4">
-<h3>Time synchronization<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
-<p>This issue happens when error messages such as <code class="docutils literal notranslate"><span class="pre">'recvWindow'</span> <span class="pre">must</span> <span class="pre">be</span> <span class="pre">less</span> <span class="pre">than</span> <span class="pre">...</span></code> appear.<span class="raw-html-m2r"><br></span>
-On Debian or Ubuntu, open a terminal and type:</p>
+<div class="section" id="id1">
+<h3>Time synchronization<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>This issue happens when error messages such as <code class="docutils literal notranslate"><span class="pre">'recvWindow'</span> <span class="pre">must</span> <span class="pre">be</span> <span class="pre">less</span> <span class="pre">than</span> <span class="pre">...</span></code> appear.</p>
+<p>On Debian or Ubuntu, open a terminal and type:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo service ntp stop
 sudo ntpd -gq
 sudo service ntp start
@@ -309,8 +295,8 @@ sudo service ntp start
 <p>Requires <code class="docutils literal notranslate"><span class="pre">ntp</span></code> package installation <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">ntp</span></code>.</p>
 <p>Code from <a class="reference external" href="https://askubuntu.com/questions/254826/how-to-force-a-clock-update-using-ntp#256004">askubuntu.com</a>.</p>
 </div>
-<div class="section" id="id5">
-<h3>Installation<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="installation">
+<h3>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h3>
 <p>During pip install if you have SSL problems, open a terminal and type</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip3 install service_identity --force --upgrade
 </pre></div>
@@ -366,12 +352,12 @@ sudo service ntp start
 <li><a class="reference internal" href="#windows">Windows</a><ul>
 <li><a class="reference internal" href="#time-synchronization">Time synchronization</a></li>
 <li><a class="reference internal" href="#octobot-freeze">OctoBot freeze</a></li>
-<li><a class="reference internal" href="#installation">Installation</a></li>
+<li><a class="reference internal" href="#web-interface-display-issue-mime-type-text-plain-is-not-executable">Web interface display issue “MIME type (‘text/plain’) is not executable”</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#linux">Linux</a><ul>
-<li><a class="reference internal" href="#id4">Time synchronization</a></li>
-<li><a class="reference internal" href="#id5">Installation</a></li>
+<li><a class="reference internal" href="#id1">Time synchronization</a></li>
+<li><a class="reference internal" href="#installation">Installation</a></li>
 </ul>
 </li>
 </ul>

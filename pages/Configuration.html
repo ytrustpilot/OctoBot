@@ -10,15 +10,32 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-        <title>Global configuration &mdash; OctoBot</title>
+        <title>Global configuration | OctoBot docs</title>
     
 
     
+    
+        <link rel="shortcut icon" href="../_static/favicon.ico"/>
     
     
     
         <link rel="canonical" href="https://github.com/Drakkar-Software/OctoBotpages/Configuration.html"/>
     
+
+    <meta name="keywords" content="octobot, octobot docs, octobot documentation, free, open source, trading, community, cryptocurrency, cryptocurrencies, bitcoin, ethereum" />
+    <meta name="description" content="Documentation for OctoBot: a free and highly customizable open source cryptocurrency trading robot." />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Global configuration | OctoBot docs" />
+    <meta name="twitter:description" content="Documentation for OctoBot: a free and highly customizable open source cryptocurrency trading robot." />
+    <meta name="twitter:image" content="https://docs.octobot.online/_static/images/octobot.png" />
+    <meta name="twitter:domain" content="docs.octobot.online" />
+    <meta name="twitter:url" content="https://docs.octobot.online" />
+    <meta property="og:title" content="Global configuration | OctoBot docs" />
+    <meta property="og:description" content="Documentation for OctoBot: a free and highly customizable open source cryptocurrency trading robot." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://docs.octobot.online" />
+    <meta property="og:image" content="https://docs.octobot.online/_static/images/octobot.png" />
+    <meta property="og:site_name" content="OctoBot docs" />
 
     
 
@@ -225,8 +242,8 @@
   <p>OctoBot configuration is located in two files:</p>
 <ul class="simple">
 <li><p><strong>user/config.json</strong> is the global configuration file, mostly used to setup the bot exchanges credentials, cryptocurrency pairs, interfaces and the trading risk</p></li>
-<li><p><strong>tentacles/Evaluator/evaluator_config.json</strong> defines the evaluators and strategies toolkit that the bot is allowed to use. This file is automatically pre-filled when <a class="reference external" href="https://github.com/Drakkar-Software/OctoBot/wiki/Tentacle-Manager">installing tentacles</a> with OctoBot and when using the configuration web interface.</p></li>
-<li><p><strong>tentacles/Trading/trading_config.json</strong> defines the trade mode that the bot will use. This file is automatically pre-filled when <a class="reference external" href="https://github.com/Drakkar-Software/OctoBot/wiki/Tentacle-Manager">installing tentacles</a> with OctoBot and when using the configuration web interface.</p></li>
+<li><p><strong>tentacles/Evaluator/evaluator_config.json</strong> defines the evaluators and strategies toolkit that the bot is allowed to use. This file is automatically pre-filled when <a class="reference external" href="Tentacle-Manager.html">installing tentacles</a> with OctoBot and when using the configuration web interface.</p></li>
+<li><p><strong>tentacles/Trading/trading_config.json</strong> defines the trade mode that the bot will use. This file is automatically pre-filled when <a class="reference external" href="Tentacle-Manager.html">installing tentacles</a> with OctoBot and when using the configuration web interface.</p></li>
 </ul>
 <p>OctoBot’s web interface allows to easily edit the configuration, however, it is also possible to manually edit configuration files. Please be careful when manually editing them or OctoBot won’t be able to read them and wont start. Json file are readable and editable using any text editor.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ERROR    root &lt;class &#39;Exception&#39;&gt;: Error when load config
@@ -236,7 +253,7 @@
 <div class="section" id="global-configuration">
 <h1>Global configuration<a class="headerlink" href="#global-configuration" title="Permalink to this headline">¶</a></h1>
 <p><strong>user/config.json</strong> is the technical configuration file of OctoBot, an example is available in <strong>config/default_config.json</strong>.</p>
-<p>To start with OctoBot, use <strong>default_config.json</strong> as an example for your <strong>user/config.json</strong> (copy <strong>default_config.json</strong> into OctoBot’s <strong>root folder/user</strong> and rename the copy into <strong>config.json</strong>). This operation is automatically done when using <a class="reference external" href="https://github.com/Drakkar-Software/OctoBot/wiki/Installation#instructions">OctoBot’s installation procedure</a>.</p>
+<p>To start with OctoBot, use <strong>default_config.json</strong> as an example for your <strong>user/config.json</strong> (copy <strong>default_config.json</strong> into OctoBot’s <strong>root folder/user</strong> and rename the copy into <strong>config.json</strong>). This operation is automatically done when using <a class="reference external" href="../index.html">OctoBot’s installation procedure</a>.</p>
 <div class="section" id="exchanges">
 <h2>Exchanges<a class="headerlink" href="#exchanges" title="Permalink to this headline">¶</a></h2>
 <a class="reference external image-reference" href="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/exchanges.jpg"><img alt="exchanges" src="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/exchanges.jpg" /></a>
@@ -247,10 +264,10 @@
       &quot;api-secret&quot;: &quot;&quot;,
       &quot;web-socket&quot;: true
     }
-  },
+}
 </pre></div>
 </div>
-<p><a class="reference external" href="https://github.com/Drakkar-Software/OctoBot/wiki/Exchanges">Here is the wiki page helping to setup an exchange for OctoBot</a></p>
+<p><a class="reference external" href="Exchanges.html">Here are the docs helping to setup an exchange for OctoBot</a></p>
 </div>
 <div class="section" id="cryptocurrencies">
 <h2>CryptoCurrencies<a class="headerlink" href="#cryptocurrencies" title="Permalink to this headline">¶</a></h2>
@@ -262,7 +279,7 @@
     &quot;Bitcoin&quot;: {
       &quot;pairs&quot;: [&quot;BTC/USDT&quot;]
     }
-  }
+}
 </pre></div>
 </div>
 <p>OctoBot trading only Bitcoin against USDT</p>
@@ -276,7 +293,7 @@
     &quot;NEO&quot;: {
       &quot;pairs&quot;: [&quot;NEO/BTC&quot;, &quot;NEO/ETH&quot;]
     }
-  },
+}
 </pre></div>
 </div>
 <p>OctoBot trading Bitcoin and Ethereum against USDT as well as NEO against BTC and ETH</p>
@@ -288,7 +305,7 @@
       &quot;pairs&quot;: [&quot;*&quot;],
       &quot;quote&quot;: &quot;BTC&quot;
     }
- },
+}
 </pre></div>
 </div>
 <p>A “quote” is required to specify the name of the currency to trade with.</p>
@@ -298,27 +315,27 @@
 <h2>Interfaces<a class="headerlink" href="#interfaces" title="Permalink to this headline">¶</a></h2>
 <a class="reference external image-reference" href="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/services.jpg"><img alt="services" src="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/services.jpg" /></a>
 <p>Interfaces are all defined in <strong>user/config.json</strong> in the <strong>services</strong> section.</p>
-<p><a class="reference external" href="https://github.com/Drakkar-Software/OctoBot/wiki/Interfaces">Here are the details on how to setup OctoBot’s interfaces.</a></p>
+<p>More details details on how to setup OctoBot’s interfaces in the Interfaces section.</p>
 </div>
 <div class="section" id="trading-and-risk-parameter">
 <h2>Trading and Risk parameter<a class="headerlink" href="#trading-and-risk-parameter" title="Permalink to this headline">¶</a></h2>
 <p>OctoBot can process two types of trading:</p>
 <ul class="simple">
 <li><p>Real trading using your exchanges’ portfolio.
-<a class="reference external" href="https://github.com/Drakkar-Software/OctoBot/wiki/Trader">Here are the details on how to setup a trader.</a></p></li>
+<a class="reference external" href="Trader.html">Here are the details on how to setup a trader.</a></p></li>
 <li><p>Simulated trading using any imaginary portfolio.
-<a class="reference external" href="https://github.com/Drakkar-Software/OctoBot/wiki/Simulator">Here are the details on how to setup a trader simulator.</a></p></li>
+<a class="reference external" href="Simulator.html">Here are the details on how to setup a trader simulator.</a></p></li>
 </ul>
 <a class="reference external image-reference" href="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/trading.jpg"><img alt="trading" src="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/trading.jpg" /></a>
-<p>Any type of trading has its <strong>risk</strong> parameter. It is a parameter defining the behavior of the trader, similarly to a real human trader. <a class="reference external" href="https://github.com/Drakkar-Software/OctoBot/wiki/Trader#risk">This **risk** parameter is described here</a></p>
+<p>Any type of trading has its <strong>risk</strong> parameter. It is a parameter defining the behavior of the trader, similarly to a real human trader. <a class="reference external" href="Trader.html#risk">This risk parameter is described here</a></p>
 </div>
 </div>
 <div class="section" id="evaluator-and-trading-configuration">
 <h1>Evaluator and trading configuration<a class="headerlink" href="#evaluator-and-trading-configuration" title="Permalink to this headline">¶</a></h1>
 <a class="reference external image-reference" href="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/trading_modes.jpg"><img alt="trading_modes" src="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/trading_modes.jpg" /></a>
-<p><strong>tentacles/Evaluator/evaluator_config.json</strong> and <strong>tentacles/Trading/trading_config.json</strong> are configuration files telling OctoBot which evaluators, strategies and trading modes to use. It is automatically kept updated after each <a class="reference external" href="https://github.com/Drakkar-Software/OctoBot/wiki/Tentacle-Manager">Tentacle Manager</a> usage.</p>
+<p><strong>tentacles/Evaluator/evaluator_config.json</strong> and <strong>tentacles/Trading/trading_config.json</strong> are configuration files telling OctoBot which evaluators, strategies and trading modes to use. It is automatically kept updated after each <a class="reference external" href="Tentacle-Manager.html">Tentacle Manager</a> usage.</p>
 <p>An example of <strong>tentacles/Evaluator/evaluator_config.json</strong> is available in the <strong>config</strong> folder: <strong>config/default_evaluator_config.json</strong>.</p>
-<p>When using OctoBot’s <a class="reference external" href="https://github.com/Drakkar-Software/OctoBot/wiki/Tentacle-Manager">Tentacle Manager</a>, <strong>default_evaluator_config.json</strong> is automatically used to enable default evaluators configuration when no configuration is already available for a given evaluator. The same process is used for trading_config.</p>
+<p>When using OctoBot’s <a class="reference external" href="Tentacle-Manager.html">Tentacle Manager</a>, <strong>default_evaluator_config.json</strong> is automatically used to enable default evaluators configuration when no configuration is already available for a given evaluator. The same process is used for trading_config.</p>
 <p>By default, new evaluatuators are not used (set to “false”) if not defined otherwise in <strong>config/default_evaluator_config.json</strong>.</p>
 <a class="reference external image-reference" href="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/evaluators.jpg"><img alt="evaluators" src="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/evaluators.jpg" /></a>
 <p>Example of <strong>evaluator_config.json</strong>:</p>
@@ -347,10 +364,10 @@
 <ul class="simple">
 <li><p>Here, the first part is about technical analysis evaluators: they are all activated except for the <strong>CandlePatternMomentumEvaluator</strong>. This means that any technical evaluator of these types (except <strong>CandlePatternMomentumEvaluator</strong>) will be used by OctoBot.</p></li>
 <li><p>Second part contains only <strong>InstantFluctuationsEvaluator</strong>, OctoBot will then take real time market moves into account using <strong>InstantFluctuationsEvaluator</strong> only.</p></li>
-<li><p>Third part is the social evaluation. Here OctoBot will look at Twitter using <strong>TwitterNewsEvaluator</strong> (this requires that the <a class="reference external" href="https://github.com/Drakkar-Software/OctoBot/wiki/Twitter-interface">Twitter interface</a> is setup correctly) and google stats using <strong>GoogleTrendStatsEvaluator</strong>. However, OctoBot will not look a reddit (<code class="docutils literal notranslate"><span class="pre">&quot;RedditForumEvaluator&quot;:</span> <span class="pre">false</span></code>), therefore a <a class="reference external" href="https://github.com/Drakkar-Software/OctoBot/wiki/Reddit-interface">Reddit interface</a> configuration is not necessary.</p></li>
+<li><p>Third part is the social evaluation. Here OctoBot will look at Twitter using <strong>TwitterNewsEvaluator</strong> (this requires that the <a class="reference external" href="Twitter-interface.html">Twitter interface</a> is setup correctly) and google stats using <strong>GoogleTrendStatsEvaluator</strong>. However, OctoBot will not look a reddit (<code class="docutils literal notranslate"><span class="pre">&quot;RedditForumEvaluator&quot;:</span> <span class="pre">false</span></code>), therefore a <a class="reference external" href="Reddit-interface.html">Reddit interface</a> configuration is not necessary.</p></li>
 <li><p>Last part are the strategies to use. Here only one strategy out of two is to be used by OctoBot: <strong>TempFullMixedStrategiesEvaluator</strong>.</p></li>
 </ul>
-<p>Any setting also applies to subclasses of these evaluators. For example if you add an evaluator extending <strong>ADXMomentumEvaluator</strong>, <code class="docutils literal notranslate"><span class="pre">&quot;ADXMomentumEvaluator&quot;:</span> <span class="pre">true</span></code> will tell OctoBot to use the <strong>most advanced ADXMomentumEvaluator</strong> available: if you evaluator extends <strong>ADXMomentumEvaluator</strong>, your evaluator will be considered more advanced than the <strong>basic ADXMomentumEvaluator</strong> and OctoBot will use it. See the  <a class="reference external" href="https://github.com/Drakkar-Software/OctoBot/wiki/Customize-your-OctoBot">Customize your OctoBot page</a> to learn how to add elements to your OctoBot.</p>
+<p>Any setting also applies to subclasses of these evaluators. For example if you add an evaluator extending <strong>ADXMomentumEvaluator</strong>, <code class="docutils literal notranslate"><span class="pre">&quot;ADXMomentumEvaluator&quot;:</span> <span class="pre">true</span></code> will tell OctoBot to use the <strong>most advanced ADXMomentumEvaluator</strong> available: if you evaluator extends <strong>ADXMomentumEvaluator</strong>, your evaluator will be considered more advanced than the <strong>basic ADXMomentumEvaluator</strong> and OctoBot will use it. See the  <a class="reference external" href="Customize-your-OctoBot.html">Customize your OctoBot page</a> to learn how to add elements to your OctoBot.</p>
 <p>This is valid for any evaluator and strategy.</p>
 <p>Please note that any evaluator or strategy that doesn’t extend an element in <strong>evaluator_config.json</strong> has to be added to this file otherwise will be ignored by OctoBot.</p>
 </div>

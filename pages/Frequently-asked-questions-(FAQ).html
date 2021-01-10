@@ -10,15 +10,32 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-        <title>Frequently Asked Questions (FAQ) &mdash; OctoBot</title>
+        <title>Frequently Asked Questions (FAQ) | OctoBot docs</title>
     
 
     
+    
+        <link rel="shortcut icon" href="../_static/favicon.ico"/>
     
     
     
         <link rel="canonical" href="https://github.com/Drakkar-Software/OctoBotpages/Frequently-asked-questions-(FAQ).html"/>
     
+
+    <meta name="keywords" content="octobot, octobot docs, octobot documentation, free, open source, trading, community, cryptocurrency, cryptocurrencies, bitcoin, ethereum" />
+    <meta name="description" content="Documentation for OctoBot: a free and highly customizable open source cryptocurrency trading robot." />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Frequently Asked Questions (FAQ) | OctoBot docs" />
+    <meta name="twitter:description" content="Documentation for OctoBot: a free and highly customizable open source cryptocurrency trading robot." />
+    <meta name="twitter:image" content="https://docs.octobot.online/_static/images/octobot.png" />
+    <meta name="twitter:domain" content="docs.octobot.online" />
+    <meta name="twitter:url" content="https://docs.octobot.online" />
+    <meta property="og:title" content="Frequently Asked Questions (FAQ) | OctoBot docs" />
+    <meta property="og:description" content="Documentation for OctoBot: a free and highly customizable open source cryptocurrency trading robot." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://docs.octobot.online" />
+    <meta property="og:image" content="https://docs.octobot.online/_static/images/octobot.png" />
+    <meta property="og:site_name" content="OctoBot docs" />
 
     
 
@@ -229,7 +246,7 @@
 <p>Before creating any order (using trading simulator or real trading), OctoBot asks the exchange for its minimal (and maximal) requirements for any order. When creating an order (following a buy or sell signal), these order requirements are checked. If the order is not complient, it will not be pushed to the exchange.</p>
 <p>The most common case of signals without created orders is when there is <strong>not enough funds</strong> of the required asset to proceed with an order.</p>
 <p>Example: not enough <strong>USD</strong> to buy BTC for a BTC/<strong>USD</strong> <strong>buy</strong> signal.</p>
-<p>Note: In trading simulator and backtesting modes, OctoBot uses a simulated portfolio called <code class="docutils literal notranslate"><span class="pre">&quot;starting-portfolio&quot;</span></code> that is defined in the <a class="reference external" href="https://github.com/Drakkar-Software/OctoBot/wiki/Simulator#setup-the-trader_simulator">trading simulator configuration</a>.</p>
+<p>Note: In trading simulator and backtesting modes, OctoBot uses a simulated portfolio called <code class="docutils literal notranslate"><span class="pre">&quot;starting-portfolio&quot;</span></code> that is defined in the <a class="reference external" href="Simulator.html#starting-portfolio">trading simulator configuration</a>.</p>
 </div>
 <div class="section" id="how-often-will-my-octobot-trade">
 <h2>How often will my OctoBot trade ?<a class="headerlink" href="#how-often-will-my-octobot-trade" title="Permalink to this headline">¶</a></h2>
@@ -252,7 +269,7 @@ The web interface displays the list of open orders and the list of filled orders
 </div>
 <div class="section" id="how-to-change-the-backtesting-starting-portfolio">
 <h2>How to change the backtesting starting portfolio ?<a class="headerlink" href="#how-to-change-the-backtesting-starting-portfolio" title="Permalink to this headline">¶</a></h2>
-<p>Each backtesting run is using the <a class="reference external" href="https://github.com/Drakkar-Software/OctoBot/wiki/Simulator#starting-portfolio">simulator’s starting portfolio</a> as a base.</p>
+<p>Each backtesting run is using the <a class="reference external" href="Simulator.html#starting-portfolio">simulator’s starting portfolio</a> as a base.</p>
 <p>Note: In 0.3.X, when the reference market is changed during a backtesting, its value will always be 10000. This changes in 0.4.X where it takes the value in starting portfolio.</p>
 </div>
 <div class="section" id="why-is-my-reference-market-changing-in-backtesting">
@@ -266,8 +283,8 @@ The web interface displays the list of open orders and the list of filled orders
 </div>
 <div class="section" id="why-is-backtesting-not-using-all-available-data">
 <h2>Why is backtesting not using all available data ?<a class="headerlink" href="#why-is-backtesting-not-using-all-available-data" title="Permalink to this headline">¶</a></h2>
-<p>OctoBot backtesting is always using the <strong>maximum available data allowing to keep a realistic simulation</strong>.<span class="raw-html-m2r"><br></span>
-However exchange are usually not giving all of their data: they give the last X candles (500 for binance). Therefore a regular backtesting data file has 500 1hour (1h) candles, 500 1minute (1m) candles etc. These candles are always the most recent ones.
+<p>OctoBot backtesting is always using the <strong>maximum available data allowing to keep a realistic simulation</strong>.</p>
+<p>However exchange are usually not giving all of their data: they give the last X candles (500 for binance). Therefore a regular backtesting data file has 500 1hour (1h) candles, 500 1minute (1m) candles etc. These candles are always the most recent ones.
 That means that when running a backtesting on 1h and 1d time frames, the maximum backtesting range is not 1h and 1d with 500 candles each but the time range where <strong>both</strong> 1h and 1d have data: there the past 500 hours (500 1h candles and approximately 20 1d candles).</p>
 <p>As an example, in a backtesting with 1m and 1d candles: the common time range in 1d is <code class="docutils literal notranslate"><span class="pre">500/(60*24)</span> <span class="pre">=</span> <span class="pre">0.35</span></code> which means the whole backtesting is carried out with the data of one day: the last daily candle of the 500 1d candle only while using 100% of the shortest time frame: 1m (which all happened during this one day).</p>
 </div>
