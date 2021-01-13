@@ -311,7 +311,7 @@ docker rm OctoBot
 <ul>
 <li><p>Install <a class="reference external" href="https://docs.docker.com/compose/install/">docker-compose</a></p></li>
 <li><p>Download the <a class="reference external" href="https://github.com/Drakkar-Software/OctoBot/blob/master/docker-compose.yml">docker-compose.yml file</a></p></li>
-<li><p>Start OctoBot with docker-compose :</p>
+<li><p>Start OctoBot with docker-compose (with the previous file <cite>docker-compose.yml</cite> in the current folder) :</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker-compose up -d
 </pre></div>
 </div>
@@ -324,7 +324,7 @@ docker rm OctoBot
 <p class="admonition-title">Warning</p>
 <p>It’s easier to use but it will not be possible to update it without deleting its files.</p>
 </div>
-<p>-v arguments can be removed from previous start commands but your OctoBot local files are managed by docker.</p>
+<p>-v arguments can be removed from previous start commands but OctoBot’s local files will then be managed by docker (and not directly visible).</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker run -itd --name OctoBot -p <span class="m">80</span>:5001 drakkarsoftware/octobot:stable
 </pre></div>
 </div>
@@ -332,6 +332,11 @@ docker rm OctoBot
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker inspect -f <span class="s1">&#39;{{ .Mounts }}&#39;</span> OctoBot
 </pre></div>
 </div>
+<p>To copy files of a directory outside the OctoBot container, for example for logs files :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker cp OctoBot:/octobot/logs/. .
+</pre></div>
+</div>
+<p>Wherer “OctoBot” is your container name</p>
 </div>
 </div>
 
