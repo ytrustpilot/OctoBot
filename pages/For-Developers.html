@@ -281,6 +281,37 @@ $ python3 start.py tentacles --install --all
 <p>There <strong>python3</strong> is refering to your <strong>Python3.8.X</strong> installation, just adapt the commands to match your setup if any different (might be python, python3, python3.8, etc: it depends on your environment).</p>
 </div>
 </div>
+<div class="section" id="with-repo">
+<h2>With Repo<a class="headerlink" href="#with-repo" title="Permalink to this headline">¶</a></h2>
+<p>Repo is a tool built on top of Git. Repo helps manage many Git repositories.</p>
+<p>To create a development OctoBot environment, repo can be used as following :</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://source.android.com/setup/build/downloading#installing-repo">Install repo</a></p></li>
+<li><p>Create a directory for the OctoBot environment</p></li>
+<li><p>Create OctoBot developer environment by running</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>repo init -u https://github.com/Drakkar-Software/OctoBot-Repo-Manifest.git
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Synchronize repositories</p></li>
+</ul>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>repo sync
+</pre></div>
+</div>
+<p>All required OctoBot projects are now available in the current directory :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Async-Channel
+OctoBot
+OctoBot-Backtesting
+OctoBot-Commons
+OctoBot-Evaluators
+OctoBot-Services
+OctoBot-Tentacles
+OctoBot-Tentacles-Manager
+OctoBot-Trading
+</pre></div>
+</div>
+</div>
 </div>
 
 
@@ -337,6 +368,7 @@ $ python3 start.py tentacles --install --all
 <li><a class="reference internal" href="#python3">Python3</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#with-repo">With Repo</a></li>
 </ul>
 </li>
 </ul>
