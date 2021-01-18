@@ -249,6 +249,14 @@
 <h2>Installing docker<a class="headerlink" href="#installing-docker" title="Permalink to this headline">¶</a></h2>
 <p>Please follow the instructions <a class="reference external" href="https://docs.docker.com/install/linux/docker-ce/debian/">here</a> for a debian computer.</p>
 <p>For a raspberry installation please follow <a class="reference external" href="https://phoenixnap.com/kb/docker-on-raspberry-pi">this guide</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Don’t forget to run the following command at the end of the installation (and logout)</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo usermod -aG docker <span class="nv">$USER</span>
+</pre></div>
+</div>
+<p>so you don’t have permission denied each time you use a docker command.</p>
+</div>
 </div>
 <div class="section" id="running-stable-octobot">
 <h2>Running stable OctoBot<a class="headerlink" href="#running-stable-octobot" title="Permalink to this headline">¶</a></h2>
