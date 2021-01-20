@@ -241,10 +241,6 @@
                         
   <div class="section" id="with-python-only">
 <h1>With Python only<a class="headerlink" href="#with-python-only" title="Permalink to this headline">¶</a></h1>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>For unix distribution only</p>
-</div>
 <div class="section" id="requirements">
 <h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
@@ -254,6 +250,9 @@
 <div class="section" id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
 <p><strong>First, make sure you have python3.8 and python3.8-dev and python3.8-pip installed on your computer.</strong></p>
+<div class="section" id="using-the-current-stable-version-master-branch">
+<h3>Using the current stable version (master branch)<a class="headerlink" href="#using-the-current-stable-version-master-branch" title="Permalink to this headline">¶</a></h3>
+<p><strong>This is the recommended python installation.</strong></p>
 <p>Clone the OctoBot repository</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git clone https://github.com/Drakkar-Software/OctoBot
 </pre></div>
@@ -263,6 +262,28 @@
 $ python3 -m pip install -Ur requirements.txt
 $ python3 start.py tentacles --install --all
 </pre></div>
+</div>
+</div>
+<div class="section" id="using-the-latest-version-dev-branch">
+<h3>Using the latest version (dev branch)<a class="headerlink" href="#using-the-latest-version-dev-branch" title="Permalink to this headline">¶</a></h3>
+<p><strong>This is installation allows to use the most up-to-date version of OctoBot but might broken depending
+on the moment it is being done (modules updates might be in progress in this branch).</strong></p>
+<p>Clone the OctoBot repository using the <strong>dev</strong> branch</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git clone https://github.com/Drakkar-Software/OctoBot -b dev
+</pre></div>
+</div>
+<p><em>Or if you already have an OctoBot repository</em></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ git checkout dev
+$ git pull
+</pre></div>
+</div>
+<p>Install python packages :</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> OctoBot
+$ python3 -m pip install -Ur requirements.txt
+$ <span class="nb">export</span> <span class="nv">TENTACLES_URL_TAG</span><span class="o">=</span><span class="s2">&quot;latest&quot;</span>
+$ python3 start.py tentacles --install --all
+</pre></div>
+</div>
 </div>
 </div>
 <div class="section" id="usage">
@@ -323,7 +344,11 @@ $ python3 start.py tentacles --install --all
                         <ul>
 <li><a class="reference internal" href="#">With Python only</a><ul>
 <li><a class="reference internal" href="#requirements">Requirements</a></li>
-<li><a class="reference internal" href="#installation">Installation</a></li>
+<li><a class="reference internal" href="#installation">Installation</a><ul>
+<li><a class="reference internal" href="#using-the-current-stable-version-master-branch">Using the current stable version (master branch)</a></li>
+<li><a class="reference internal" href="#using-the-latest-version-dev-branch">Using the latest version (dev branch)</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#usage">Usage</a></li>
 <li><a class="reference internal" href="#python3">Python3</a></li>
 </ul>
