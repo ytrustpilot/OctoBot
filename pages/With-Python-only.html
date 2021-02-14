@@ -278,9 +278,17 @@ $ git pull
 </pre></div>
 </div>
 <p>Install python packages :</p>
+<p>On Unix systems</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> OctoBot
 $ python3 -m pip install -Ur requirements.txt
 $ <span class="nb">export</span> <span class="nv">TENTACLES_URL_TAG</span><span class="o">=</span><span class="s2">&quot;latest&quot;</span>
+$ python3 start.py tentacles --install --all
+</pre></div>
+</div>
+<p>On Windows systems</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> OctoBot
+$ python3 -m pip install -Ur requirements.txt
+$ SET <span class="nv">TENTACLES_URL_TAG</span><span class="o">=</span>latest
 $ python3 start.py tentacles --install --all
 </pre></div>
 </div>
