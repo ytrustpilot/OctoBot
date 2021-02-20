@@ -287,7 +287,7 @@ To manually add exchange configuration, you can add your info directly into your
 </ul>
 </div>
 <div class="section" id="octobot-officially-supported-exchanges">
-<h2>Octobot officially supported exchanges<a class="headerlink" href="#octobot-officially-supported-exchanges" title="Permalink to this headline">¶</a></h2>
+<h2>OctoBot officially supported exchanges<a class="headerlink" href="#octobot-officially-supported-exchanges" title="Permalink to this headline">¶</a></h2>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 17%" />
@@ -299,9 +299,9 @@ To manually add exchange configuration, you can add your info directly into your
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Exchange</p></th>
-<th class="head"><p>REST</p></th>
+<th class="head"><p>SPOT (REST)</p></th>
 <th class="head"><p>Websocket</p></th>
-<th class="head"><p>Internal tests</p></th>
+<th class="head"><p>Margin &amp; Future</p></th>
 <th class="head"><p>Simulated</p></th>
 <th class="head"><p>Community tested</p></th>
 </tr>
@@ -310,79 +310,89 @@ To manually add exchange configuration, you can add your info directly into your
 <tr class="row-even"><td><p>Binance</p></td>
 <td><p>100%</p></td>
 <td><p>80%</p></td>
-<td><p>100%</p></td>
+<td><p>0%</p></td>
 <td><p>100%</p></td>
 <td><p>yes</p></td>
 </tr>
 <tr class="row-odd"><td><p>Kucoin</p></td>
 <td><p>100%</p></td>
 <td><p>0%</p></td>
-<td><p>100%</p></td>
+<td><p>0%</p></td>
 <td><p>100%</p></td>
 <td><p>yes</p></td>
 </tr>
 <tr class="row-even"><td><p>Coinbase Pro</p></td>
 <td><p>100%</p></td>
 <td><p>0%</p></td>
-<td><p>100%</p></td>
+<td><p>0%</p></td>
 <td><p>100%</p></td>
 <td><p>yes</p></td>
 </tr>
 <tr class="row-odd"><td><p>BitMax</p></td>
 <td><p>100%</p></td>
 <td><p>0%</p></td>
-<td><p>100%</p></td>
+<td><p>0%</p></td>
 <td><p>100%</p></td>
 <td><ul class="simple">
 <li></li>
 </ul>
 </td>
 </tr>
-<tr class="row-even"><td><p>Kraken</p></td>
-<td><p>75%</p></td>
+<tr class="row-even"><td><p>Bybit</p></td>
+<td><p>80%</p></td>
 <td><p>0%</p></td>
-<td><p>20%</p></td>
+<td><p>0%</p></td>
+<td><p>100%</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+</tr>
+<tr class="row-odd"><td><p>Kraken</p></td>
+<td><p>75% (only supplies the total balance)</p></td>
+<td><p>0%</p></td>
+<td><p>0%</p></td>
 <td><p>100%</p></td>
 <td><p>yes</p></td>
 </tr>
-<tr class="row-odd"><td><p>Bitfinex</p></td>
+<tr class="row-even"><td><p>Bitfinex</p></td>
 <td><p>75%</p></td>
 <td><p>0%</p></td>
-<td><p>50%</p></td>
+<td><p>0%</p></td>
 <td><p>100%</p></td>
 <td><ul class="simple">
 <li></li>
 </ul>
 </td>
 </tr>
-<tr class="row-even"><td><p>Bittrex</p></td>
+<tr class="row-odd"><td><p>Bittrex</p></td>
 <td><p>75%</p></td>
 <td><p>0%</p></td>
-<td><p>50%</p></td>
+<td><p>0%</p></td>
 <td><p>100%</p></td>
 <td><ul class="simple">
 <li></li>
 </ul>
 </td>
 </tr>
-<tr class="row-odd"><td><p>Bitmex</p></td>
+<tr class="row-even"><td><p>Bitmex</p></td>
 <td><p>75%</p></td>
 <td><p>30%</p></td>
-<td><p>20%</p></td>
+<td><p>0%</p></td>
 <td><p>90%</p></td>
 <td><ul class="simple">
 <li></li>
 </ul>
 </td>
 </tr>
-<tr class="row-even"><td><p>COSS</p></td>
+<tr class="row-odd"><td><p>COSS</p></td>
 <td><p>75%</p></td>
 <td><p>0%</p></td>
 <td><p>0%</p></td>
 <td><p>100%</p></td>
 <td><p>yes</p></td>
 </tr>
-<tr class="row-odd"><td><p>Bitstamp</p></td>
+<tr class="row-even"><td><p>Bitstamp</p></td>
 <td><p>10%</p></td>
 <td><p>0%</p></td>
 <td><p>0%</p></td>
@@ -392,7 +402,7 @@ To manually add exchange configuration, you can add your info directly into your
 </ul>
 </td>
 </tr>
-<tr class="row-even"><td><p>OKEX</p></td>
+<tr class="row-odd"><td><p>OKEX</p></td>
 <td><p>10%</p></td>
 <td><p>0%</p></td>
 <td><p>0%</p></td>
@@ -402,7 +412,7 @@ To manually add exchange configuration, you can add your info directly into your
 </ul>
 </td>
 </tr>
-<tr class="row-odd"><td><p>Poloniex</p></td>
+<tr class="row-even"><td><p>Poloniex</p></td>
 <td><p>0%</p></td>
 <td><p>0%</p></td>
 <td><p>0%</p></td>
@@ -412,7 +422,7 @@ To manually add exchange configuration, you can add your info directly into your
 </ul>
 </td>
 </tr>
-<tr class="row-even"><td><p>Cryptopia</p></td>
+<tr class="row-odd"><td><p>Cryptopia</p></td>
 <td><p>0%</p></td>
 <td><p>0%</p></td>
 <td><p>0%</p></td>
@@ -483,7 +493,7 @@ To use an exchange in simulation only, you also have to specify its configuratio
 <li><a class="reference internal" href="#">Exchanges</a><ul>
 <li><a class="reference internal" href="#web-interface-configuration">Web interface configuration</a></li>
 <li><a class="reference internal" href="#manual-configuration">Manual configuration</a></li>
-<li><a class="reference internal" href="#octobot-officially-supported-exchanges">Octobot officially supported exchanges</a></li>
+<li><a class="reference internal" href="#octobot-officially-supported-exchanges">OctoBot officially supported exchanges</a></li>
 <li><a class="reference internal" href="#simulated-exchange">Simulated exchange</a></li>
 </ul>
 </li>
