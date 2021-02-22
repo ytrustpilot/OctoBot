@@ -319,8 +319,21 @@ docker rm OctoBot
 <ul>
 <li><p>Install <a class="reference external" href="https://docs.docker.com/compose/install/">docker-compose</a></p></li>
 <li><p>Download the <a class="reference external" href="https://github.com/Drakkar-Software/OctoBot/blob/master/docker-compose.yml">docker-compose.yml file</a></p></li>
+<li><p>Create a <cite>.env</cite> file in the current folder</p></li>
+<li><p>Add <cite>HOST=YOUR_IP_ADDRESS</cite> in the newly created <cite>.env</cite> file. (where YOUR_IP_ADDRESS is the ip address of the computer, can be replaced by <cite>localhost</cite> if it’s a local computer)</p></li>
 <li><p>Start OctoBot with docker-compose (with the previous file <cite>docker-compose.yml</cite> in the current folder) :</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker-compose up -d
+</pre></div>
+</div>
+</li>
+</ul>
+<p>Adding ssl encryption</p>
+<ul>
+<li><p>Create a <cite>ssl</cite> directory in the current folder</p></li>
+<li><p>Move inside the newly created ssl directory</p></li>
+<li><p>Execute the following commands (where YOUR_IP_ADDRESS is the ip address of the computer, can be replaced by <cite>localhost</cite> if it’s a local computer):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>openssl genrsa -des3 -out YOUR_IP_ADDRESS.key <span class="m">4096</span>
+openssl req -new -x509 -days <span class="m">3650</span> -key YOUR_IP_ADDRESS.key -out YOUR_IP_ADDRESS.cert
 </pre></div>
 </div>
 </li>
