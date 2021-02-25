@@ -10,7 +10,7 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-        <title>OctoBot 0.4 | OctoBot docs</title>
+        <title>With Docker on Android | OctoBot docs</title>
     
 
     
@@ -19,18 +19,18 @@
     
     
     
-        <link rel="canonical" href="https://github.com/Drakkar-Software/OctoBotpages/OctoBot-0.4.html"/>
+        <link rel="canonical" href="https://github.com/Drakkar-Software/OctoBotpages/With-Docker-on-Android.html"/>
     
 
     <meta name="keywords" content="octobot, octobot docs, octobot documentation, free, open source, trading, community, cryptocurrency, cryptocurrencies, bitcoin, ethereum"/>
     <meta name="description" content="Documentation for OctoBot: a free and highly customizable open source cryptocurrency trading robot."/>
     <meta name="twitter:card" content="summary"/>
-    <meta name="twitter:title" content="OctoBot 0.4 | OctoBot docs"/>
+    <meta name="twitter:title" content="With Docker on Android | OctoBot docs"/>
     <meta name="twitter:description" content="Documentation for OctoBot: a free and highly customizable open source cryptocurrency trading robot."/>
     <meta name="twitter:image" content="https://docs.octobot.online/_static/images/octobot.png"/>
     <meta name="twitter:domain" content="docs.octobot.online"/>
     <meta name="twitter:url" content="https://docs.octobot.online"/>
-    <meta property="og:title" content="OctoBot 0.4 | OctoBot docs"/>
+    <meta property="og:title" content="With Docker on Android | OctoBot docs"/>
     <meta property="og:description" content="Documentation for OctoBot: a free and highly customizable open source cryptocurrency trading robot."/>
     <meta property="og:type" content="website"/>
     <meta property="og:url" content="https://docs.octobot.online"/>
@@ -41,8 +41,8 @@
 
     <link rel="stylesheet" href="../_static/css/theme.css" type="text/css"/>
     <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
-            <link rel="next" title="Tests" href="Tests.html"/>
-            <link rel="prev" title="Backtesting" href="Backtesting-and-strategy-optimization.html"/> 
+            <link rel="next" title="TradingView webhook" href="TradingView-webhook.html"/>
+            <link rel="prev" title="Developer tips" href="Developers-tips.html"/> 
 
     
     <script src="../_static/js/modernizr.min.js" async></script>
@@ -159,12 +159,12 @@
 <li class="toctree-l1"><a class="reference internal" href="Tentacle-Manager.html">Tentacle Manager</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Backtesting-and-strategy-optimization.html">Backtesting</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Backtesting-and-strategy-optimization.html#strategy-optimizer">Strategy optimizer</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">OctoBot 0.4</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OctoBot-0.4.html">OctoBot 0.4</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Tests.html">Tests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Contribution.html">Contribution</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Developer-Guide.html">Developer</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Developers-tips.html">Developer tips</a></li>
-<li class="toctree-l1"><a class="reference internal" href="With-Docker-on-Android.html">With Docker on Android</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">With Docker on Android</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Webhooks</span></p>
 <ul>
@@ -210,13 +210,13 @@
       </li>
 
         
-      <li>OctoBot 0.4</li>
+      <li>With Docker on Android</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
         
             
-            <a href="../_sources/pages/OctoBot-0.4.rst.txt" rel="nofollow"><img src="../_static/images/view-page-source-icon.svg"></a>
+            <a href="../_sources/pages/With-Docker-on-Android.rst.txt" rel="nofollow"><img src="../_static/images/view-page-source-icon.svg"></a>
           
         
       </li>
@@ -240,176 +240,53 @@
             <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
                     <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
                         
-  <div class="section" id="octobot-0-4">
-<h1>OctoBot 0.4<a class="headerlink" href="#octobot-0-4" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="about-octobot-0-4">
-<h2>About OctoBot 0.4<a class="headerlink" href="#about-octobot-0-4" title="Permalink to this headline">¶</a></h2>
-<p>OctoBot 0.4 is a complete rework of OctoBot, while it doesn’t change a lot on the appearance (for now), its core engine is completely different.</p>
-<p>With 0.4, OctoBot uses an asynchronous producer/consumer design. This enables deep optimizations by removing every downtime and therefore taking every signal opportunity as soon as possible without being overwhelmed by information. This is ideal for websocket connexions and enables the full potential of any strategy.</p>
-<p>To go even further on the optimization path, OctoBot is now using <a class="reference external" href="https://cython.org/">Cython</a> to compile its CPU intensive processes into efficient C code and increase its performances.</p>
+  <div class="section" id="with-docker-on-android">
+<h1>With Docker on Android<a class="headerlink" href="#with-docker-on-android" title="Permalink to this headline">¶</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Experimental installation</p>
 </div>
-<div class="section" id="what-s-new-on-octobot-0-4">
-<h2>What’s new on OctoBot 0.4 ?<a class="headerlink" href="#what-s-new-on-octobot-0-4" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="high-speed-trading">
-<h3>High speed trading<a class="headerlink" href="#high-speed-trading" title="Permalink to this headline">¶</a></h3>
-<p>Thanks to its increased performances, OctoBot is now suitable for arbitrage, leverage trading, future trading, order book analysis and more. Trading on these products is not available yet but it will come in the the near future with dedicated trading strategies.</p>
-<p>This is the main feature of this new version and is paving the way to many more trading strategies and possibilities.</p>
+<div class="section" id="install-termux">
+<h2>Install Termux<a class="headerlink" href="#install-termux" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Install <a class="reference external" href="https://termux.com/">Termux</a> from <a class="reference external" href="https://play.google.com/store/apps/details?id=com.termux">Google play store</a> or from <a class="reference external" href="https://f-droid.org/en/packages/com.termux/">F-Droid</a>.</p></li>
+<li><p>Open Termux when installed</p></li>
+</ul>
 </div>
-<div class="section" id="inifinite-customization">
-<h3>Inifinite customization<a class="headerlink" href="#inifinite-customization" title="Permalink to this headline">¶</a></h3>
-<p>Each and every OctoBot interface is now a tentacle, meaning it can easily be customized and improved. This makes it easy to plug a anything into OctoBot from a system getting data from another website to a websocket exchange connexion or even an sms command interface, basically anything.</p>
-</div>
-<div class="section" id="improved-backtesting">
-<h3>Improved backtesting<a class="headerlink" href="#improved-backtesting" title="Permalink to this headline">¶</a></h3>
-<p>Starting from 0.4, OctoBot will be able to process backtestings with all of its price data based trading strategies. Multi-exchanges backtestings is also possible and accurate.</p>
-</div>
-<div class="section" id="improved-web-interface">
-<h3>Improved web interface<a class="headerlink" href="#improved-web-interface" title="Permalink to this headline">¶</a></h3>
-<p>OctoBot’s web interface now has a much stronger server side, this enabled more reactivity and a smoother user experience.</p>
-</div>
-</div>
-<div class="section" id="from-octobot-0-3-to-0-4">
-<h2>From Octobot 0.3 to 0.4<a class="headerlink" href="#from-octobot-0-3-to-0-4" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="octobot-0-4-installation">
-<h3>OctoBot 0.4 installation<a class="headerlink" href="#octobot-0-4-installation" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="octobot-executable">
-<h4>OctoBot executable<a class="headerlink" href="#octobot-executable" title="Permalink to this headline">¶</a></h4>
-<p>Download and start the OctoBot 0.4.0 executable for your computer from <a class="reference external" href="https://github.com/Drakkar-Software/OctoBot-Binary/releases">https://github.com/Drakkar-Software/OctoBot-Binary/releases</a>.</p>
-<p>The first start will setup your OctoBot environment and download tentacles.</p>
-<blockquote>
-<div><p>This executable version is still experimental for now on 0.4.0.</p>
-</div></blockquote>
-</div>
-<div class="section" id="octobot-cli">
-<h4>OctoBot CLI<a class="headerlink" href="#octobot-cli" title="Permalink to this headline">¶</a></h4>
-<p>To install OctoBot 0.4, the easiest way is to use <a class="reference external" href="https://pypi.org/project/OctoBot-CLI/">the OctoBot CLI</a> to install OctoBot 0.4 either using docker or python directly.</p>
-<ol class="arabic">
-<li><p>Install octobot-cli using the following command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python -m pip install octobot_cli
-</pre></div>
-</div>
-</li>
-<li><p>Go to the directory you want your OctoBot0.4 to be installed</p></li>
-<li><p>Now two possibilities: you can install OctoBot using python (pip and virtual env), it is preferred way for Windows users or using docker if you are familiar with it.</p></li>
-</ol>
-<p>For a python installation open a terminal and type in:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>octobot_cli install --python
-</pre></div>
-</div>
-<p>For a docker installation, open a terminal and type in:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>octobot_cli install --docker
-</pre></div>
-</div>
-<p>Note: if you are on an arm architecture (like on raspberry pie), add the <code class="docutils literal notranslate"><span class="pre">--arm</span></code> argument to the docker command.</p>
-<ol class="arabic">
-<li><p>Start your OctoBot using the following command:
-Python installations:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>octobot_cli start
-</pre></div>
-</div>
-<p>Docker installations:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>octobot_cli start --docker
-</pre></div>
-</div>
-<p>### OctoBot 0.4 update
-To update your OctoBot, use the following command:
-Python installations:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>octobot_cli update
-</pre></div>
-</div>
-<p>Docker installations:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>octobot_cli update --docker
-</pre></div>
-</div>
-<p>This will update your OctoBot with its dependencies and tentacles</p>
-</li>
-</ol>
-</div>
-</div>
-<div class="section" id="manual-installation">
-<h3>Manual installation<a class="headerlink" href="#manual-installation" title="Permalink to this headline">¶</a></h3>
-<p><strong>With the OctoBot executable</strong></p>
-<p>Download and start the latest OctoBot 0.4.0 executable for your computer from <a class="reference external" href="https://github.com/Drakkar-Software/OctoBot-Binary/releases">https://github.com/Drakkar-Software/OctoBot-Binary/releases</a>.</p>
-<p>The first start will setup your OctoBot environment and download tentacles.</p>
-<p><strong>With Docker</strong></p>
-<ol class="arabic">
-<li><p>Get the latest Octobot 0.4 image:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker pull drakkarsoftware/octobot:0.4.0-stable
-</pre></div>
-</div>
-</li>
-<li><p>Run it via</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker run -it -d --name Octobot -p <span class="m">5001</span>:5001 -v <span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>/user:/octobot/user -v <span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>/tentacles:/octobot/tentacles -v <span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>/logs:/octobot/logs drakkarsoftware/octobot:0.4.0-stable
-</pre></div>
-</div>
-</li>
-<li><p>Follow the <a class="reference external" href="With-Docker.html#how-to-look-at-octobot-logs-">docker help docs</a> if you need more details about how to use OctoBot with Docker.</p></li>
-</ol>
-<p><strong>With Python</strong></p>
-<blockquote>
-<div><p>It is strongly advised to install OctoBot in a <strong>virtual env</strong> when installing it from python directly.</p>
-</div></blockquote>
-<ol class="arabic">
-<li><p>Clone the <a class="reference external" href="https://github.com/Drakkar-Software/OctoBot/tree/0.4.0">OctoBot 0.4 branch</a></p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone -b <span class="m">0</span>.4.0 https://github.com/Drakkar-Software/OctoBot
-</pre></div>
-</div>
-</li>
-<li><p>Install the requirements via</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install --prefer-binary -Ur requirements.txt
-</pre></div>
-</div>
-<p><strong>–prefer-binary</strong> is important here otherwise you will have to recompile every module: it requires a c++ compiler and can be very slow.</p>
-</li>
-<li><p>Start your OctoBot using</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python start.py
-</pre></div>
-</div>
-</li>
-</ol>
-<p><strong>Using CentOS</strong></p>
-<p>Requirements</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>yum -y update
-yum install -y git wget sqlite-devel screen
-yum -y groupinstall <span class="s2">&quot;Development Tools&quot;</span>
-yum -y install openssl-devel bzip2-devel libffi-devel
-yum install -y screen
-<span class="nb">cd</span> /root
-wget https://www.python.org/ftp/python/3.8.3/Python-3.8.3.tgz
-tar xvf Python-3.8.3.tgz
-d Python-3.8*/
-./configure --enable-loadable-sqlite-extensions <span class="o">&amp;&amp;</span> make <span class="o">&amp;&amp;</span> sudo make install
-</pre></div>
-</div>
-<p>OctoBot</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/Drakkar-Software/OctoBot.git
-<span class="nb">cd</span> OctoBot/
-git checkout remotes/origin/0.4.0
-python3.8 -m pip install virtualenv
-virtualenv venv
-<span class="nb">source</span> venv/bin/activate
-pip install -Ur requirements.txt
-python start.py tentacles --install --all
-python start.py
+<div class="section" id="installing-alpine-on-termux">
+<h2>Installing alpine on Termux<a class="headerlink" href="#installing-alpine-on-termux" title="Permalink to this headline">¶</a></h2>
+<p>Run the following command to create an alpine file system on Termux</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl -LO https://raw.githubusercontent.com/Hax4us/TermuxAlpine/master/TermuxAlpine.sh
+bash TermuxAlpine.sh
+startalpine
 </pre></div>
 </div>
 </div>
-<div class="section" id="manual-update">
-<h3>Manual update<a class="headerlink" href="#manual-update" title="Permalink to this headline">¶</a></h3>
-<p>To update your OctoBot, use the following commands:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python -m pip install --prefer-binary -Ur requirements.txt
-python start.py tentacles --install --all
+<div class="section" id="installing-udocker">
+<h2>Installing udocker<a class="headerlink" href="#installing-udocker" title="Permalink to this headline">¶</a></h2>
+<p>Install udocker to run OctoBot’s docker container on alpine without root</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>apk update
+apk add python3 curl wget
+wget https://github.com/indigo-dc/udocker/releases/download/devel3_1.2.7/udocker-1.2.7.tar.gz
+tar zxvf udocker-1.2.7.tar.gz
+<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span><span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>/udocker:<span class="nv">$PATH</span>
+sed -i <span class="s1">&#39;s/env python/env python3/g&#39;</span>
+<span class="nb">alias</span> <span class="nv">udocker</span><span class="o">=</span><span class="s2">&quot;udocker --allow-root&quot;</span>
+udocker install
 </pre></div>
 </div>
 </div>
-<div class="section" id="octobot-configuration">
-<h3>OctoBot configuration<a class="headerlink" href="#octobot-configuration" title="Permalink to this headline">¶</a></h3>
-<p>OctoBot 0.4 configuration file uses the same format as the 0.3 one and is also located in <strong>user/config.json</strong>. It is possible to use the same as a current OctoBot 0.3.</p>
+<div class="section" id="running-stable-octobot">
+<h2>Running stable OctoBot<a class="headerlink" href="#running-stable-octobot" title="Permalink to this headline">¶</a></h2>
+<p>Start OctoBot container</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker run --name OctoBot -p <span class="m">88888</span>:5001 -v <span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>/user:/octobot/user -v <span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>/tentacles:/octobot/tentacles -v <span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>/logs:/octobot/logs drakkarsoftware/octobot:stable
+</pre></div>
 </div>
-<div class="section" id="octobot-tentacles">
-<h3>OctoBot tentacles<a class="headerlink" href="#octobot-tentacles" title="Permalink to this headline">¶</a></h3>
-<p>OctoBot will automatically download the 0.4 version of its tentacles during the first launch. Every existing official 0.3 tentacle has an equivalent in 0.4 with similar configuration options. Some tentacles are now much more customizable.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Stable is not currently supporting arm64 needed to run octobot container on Android, the latest compatible container tag is 0.4.0beta2 (drakkarsoftware/octobot:0.4.0beta2).</p>
 </div>
+<p>Open <a class="reference external" href="http://127.0.0.1:88888">http://127.0.0.1:88888</a> with your phone browser to open OctoBot’s web interface.</p>
 </div>
 </div>
 
@@ -421,10 +298,10 @@ python start.py tentacles --install --all
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="Tests.html" class="btn btn-neutral float-right" title="Tests" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="TradingView-webhook.html" class="btn btn-neutral float-right" title="TradingView webhook" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
-        <a href="Backtesting-and-strategy-optimization.html" class="btn btn-neutral" title="Backtesting" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+        <a href="Developers-tips.html" class="btn btn-neutral" title="Developer tips" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
       
     </div>
   
@@ -456,27 +333,11 @@ python start.py tentacles --install --all
                 <div class="pytorch-right-menu" id="pytorch-right-menu">
                     <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
                         <ul>
-<li><a class="reference internal" href="#">OctoBot 0.4</a><ul>
-<li><a class="reference internal" href="#about-octobot-0-4">About OctoBot 0.4</a></li>
-<li><a class="reference internal" href="#what-s-new-on-octobot-0-4">What’s new on OctoBot 0.4 ?</a><ul>
-<li><a class="reference internal" href="#high-speed-trading">High speed trading</a></li>
-<li><a class="reference internal" href="#inifinite-customization">Inifinite customization</a></li>
-<li><a class="reference internal" href="#improved-backtesting">Improved backtesting</a></li>
-<li><a class="reference internal" href="#improved-web-interface">Improved web interface</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#from-octobot-0-3-to-0-4">From Octobot 0.3 to 0.4</a><ul>
-<li><a class="reference internal" href="#octobot-0-4-installation">OctoBot 0.4 installation</a><ul>
-<li><a class="reference internal" href="#octobot-executable">OctoBot executable</a></li>
-<li><a class="reference internal" href="#octobot-cli">OctoBot CLI</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#manual-installation">Manual installation</a></li>
-<li><a class="reference internal" href="#manual-update">Manual update</a></li>
-<li><a class="reference internal" href="#octobot-configuration">OctoBot configuration</a></li>
-<li><a class="reference internal" href="#octobot-tentacles">OctoBot tentacles</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#">With Docker on Android</a><ul>
+<li><a class="reference internal" href="#install-termux">Install Termux</a></li>
+<li><a class="reference internal" href="#installing-alpine-on-termux">Installing alpine on Termux</a></li>
+<li><a class="reference internal" href="#installing-udocker">Installing udocker</a></li>
+<li><a class="reference internal" href="#running-stable-octobot">Running stable OctoBot</a></li>
 </ul>
 </li>
 </ul>
