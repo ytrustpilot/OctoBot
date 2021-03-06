@@ -306,6 +306,25 @@ $ python3 start.py tentacles --install --all
 <h2>Python3<a class="headerlink" href="#python3" title="Permalink to this headline">¶</a></h2>
 <p>There <strong>python3</strong> is refering to your <strong>Python3.8.X</strong> installation, just adapt the commands to match your setup if any different (might be python, python3, python3.8, etc: it depends on your environment).</p>
 </div>
+<div class="section" id="start-in-background">
+<h2>Start in background<a class="headerlink" href="#start-in-background" title="Permalink to this headline">¶</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>For unix distribution only</p>
+</div>
+<p>With the Linux screen command, you can push running terminal applications to the background and pull them forward when you want to see them.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo apt-get install -y screen
+$ screen python3 start.py
+</pre></div>
+</div>
+<p>You need the number from the start of the window name to reattach it. If you forget it, you can always use the -ls (list) option, as shown below, to get a list of the detached windows:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ screen -ls
+$ screen -r <span class="m">23167</span>
+</pre></div>
+</div>
+<p>(23167 is an example value)</p>
+<p>OctoBot has been working away in the background is now brought back to your terminal window as if it had never left.</p>
+</div>
 </div>
 
 
@@ -360,6 +379,7 @@ $ python3 start.py tentacles --install --all
 </li>
 <li><a class="reference internal" href="#usage">Usage</a></li>
 <li><a class="reference internal" href="#python3">Python3</a></li>
+<li><a class="reference internal" href="#start-in-background">Start in background</a></li>
 </ul>
 </li>
 </ul>
