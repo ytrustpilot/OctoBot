@@ -328,17 +328,7 @@ docker rm OctoBot
 </div>
 </li>
 </ul>
-<p>Adding ssl encryption</p>
-<ul>
-<li><p>Create a <cite>ssl</cite> directory in the current folder</p></li>
-<li><p>Move inside the newly created ssl directory</p></li>
-<li><p>Execute the following commands (where YOUR_IP_ADDRESS is the ip address of the computer, can be replaced by <cite>localhost</cite> if it’s a local computer):</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>openssl genrsa -des3 -out YOUR_IP_ADDRESS.key <span class="m">4096</span>
-openssl req -new -x509 -days <span class="m">3650</span> -key YOUR_IP_ADDRESS.key -out YOUR_IP_ADDRESS.cert
-</pre></div>
-</div>
-</li>
-</ul>
+<p>You can now open the OctoBot web interface at <a class="reference external" href="https://YOUR_IP_ADDRESS">https://YOUR_IP_ADDRESS</a>.</p>
 </div>
 <div class="section" id="start-octobot-with-docker-managed-files">
 <h2>Start OctoBot with docker managed files<a class="headerlink" href="#start-octobot-with-docker-managed-files" title="Permalink to this headline">¶</a></h2>
