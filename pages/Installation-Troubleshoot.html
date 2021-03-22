@@ -246,6 +246,30 @@
                         
   <div class="section" id="troubleshoot">
 <h1>Troubleshoot<a class="headerlink" href="#troubleshoot" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="cannot-connect-to-host-www-tentacles-octobot-online-443">
+<h2>Cannot connect to host www.tentacles.octobot.online:443<a class="headerlink" href="#cannot-connect-to-host-www-tentacles-octobot-online-443" title="Permalink to this headline">¶</a></h2>
+<a class="reference external image-reference" href="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/troubleshoot-tentacles-url-error.png"><img alt="tentacles url error" src="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/troubleshoot-tentacles-url-error.png" /></a>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>octobot_tentacles_manager.api.util.tentacles_management Exception during InstallWorker processing: Cannot connect to host www.tentacles.octobot.online:443 ssl:default <span class="o">[</span>No address associated with hostname<span class="o">]</span> <span class="o">(</span>ClientConnectorError<span class="o">)</span>
+</pre></div>
+</div>
+<p>The tentacles server URL has changed, there is no more leading “www”. Starting from 0.4.0b6, OctoBot uses the latest URL.
+To use OctoBot previous versions, please first set this environment variable before downloading tentacles:</p>
+<p>On Unix systems</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">export</span> <span class="nv">TENTACLES_URL</span><span class="o">=</span><span class="s2">&quot;https://tentacles.octobot.online/repository/tentacles/officials/packages/full/base/0.4.0b4/any_platform.zip&quot;</span>
+$ python3 start.py tentacles --install --all
+</pre></div>
+</div>
+<p>On Windows systems</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ SET <span class="nv">TENTACLES_URL</span><span class="o">=</span>https://tentacles.octobot.online/repository/tentacles/officials/packages/full/base/0.4.0b4/any_platform.zip
+$ python3 start.py tentacles --install --all
+</pre></div>
+</div>
+<p>Using Docker</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ docker run -itd --name OctoBot -p <span class="m">80</span>:5001 -e <span class="nv">TENTACLES_URL</span><span class="o">=</span><span class="s2">&quot;https://tentacles.octobot.online/repository/tentacles/officials/packages/full/base/0.4.0b4/any_platform.zip&quot;</span> -v <span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>/user:/octobot/user -v <span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>/tentacles:/octobot/tentacles -v <span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>/logs:/octobot/logs drakkarsoftware/octobot:stable
+</pre></div>
+</div>
+<p>Where 0.4.0b4 is your OctoBot version.</p>
+</div>
 <div class="section" id="windows">
 <h2>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="time-synchronization">
@@ -268,22 +292,6 @@ w32tm /query /status
 <a class="reference external image-reference" href="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/powerShellEditMode.jpg"><img alt="Powershell" src="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/powerShellEditMode.jpg" style="width: 400px;" /></a>
 <a class="reference external image-reference" href="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/cmdQuickEdit.jpg"><img alt="Cmd" src="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/cmdQuickEdit.jpg" style="width: 400px;" /></a>
 <p>To open the properties menu, right click on the terminal window header and select “properties”.</p>
-</div>
-<div class="section" id="web-interface-display-issue-mime-type-text-plain-is-not-executable">
-<h3>Web interface display issue “MIME type (‘text/plain’) is not executable”<a class="headerlink" href="#web-interface-display-issue-mime-type-text-plain-is-not-executable" title="Permalink to this headline">¶</a></h3>
-<p>If the web interface is now correctly displayed and this error (or similar) appears in your browser console: <code class="docutils literal notranslate"><span class="pre">Refused</span> <span class="pre">to</span> <span class="pre">execute</span> <span class="pre">script</span> <span class="pre">from</span> <span class="pre">'&lt;URL&gt;'</span> <span class="pre">because</span> <span class="pre">its</span> <span class="pre">MIME</span> <span class="pre">type</span> <span class="pre">('text/plain')</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">executable,</span> <span class="pre">and</span> <span class="pre">strict</span> <span class="pre">MIME</span> <span class="pre">type</span> <span class="pre">checking</span> <span class="pre">is</span> <span class="pre">enabled.</span></code>, then there might be an issue with your Windows registry. Here is how to solve it:</p>
-<ol class="arabic">
-<li><p>Type <code class="docutils literal notranslate"><span class="pre">regedit</span></code> in the windows start menu</p></li>
-<li><p>Go to <code class="docutils literal notranslate"><span class="pre">\HKEY_CLASSES_ROOT</span></code></p></li>
-<li><p>Check the 2 following key values (they should be somewhat similar to these):</p>
-<a class="reference external image-reference" href="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/regedit-js.png"><img alt="regedit js" src="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/regedit-js.png" /></a>
-<a class="reference external image-reference" href="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/regedit-css.png"><img alt="regedit js" src="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/regedit-css.png" /></a>
-</li>
-<li><p>Check the the following key value in <code class="docutils literal notranslate"><span class="pre">\HKEY_CLASSES_ROOT\MIME\Database\Content</span> <span class="pre">Type</span></code></p>
-<a class="reference external image-reference" href="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/regedit-json.png"><img alt="regedit js" src="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/regedit-json.png" /></a>
-</li>
-<li><p>Restart you OctoBot and reload the full page including cached files (CTRL+F5 or SHIFT+F5 depending on the browser)</p></li>
-</ol>
 </div>
 </div>
 <div class="section" id="linux">
@@ -354,10 +362,10 @@ sudo service ntp start
                     <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
                         <ul>
 <li><a class="reference internal" href="#">Troubleshoot</a><ul>
+<li><a class="reference internal" href="#cannot-connect-to-host-www-tentacles-octobot-online-443">Cannot connect to host www.tentacles.octobot.online:443</a></li>
 <li><a class="reference internal" href="#windows">Windows</a><ul>
 <li><a class="reference internal" href="#time-synchronization">Time synchronization</a></li>
 <li><a class="reference internal" href="#octobot-freeze">OctoBot freeze</a></li>
-<li><a class="reference internal" href="#web-interface-display-issue-mime-type-text-plain-is-not-executable">Web interface display issue “MIME type (‘text/plain’) is not executable”</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#linux">Linux</a><ul>
