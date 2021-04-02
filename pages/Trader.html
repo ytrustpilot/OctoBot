@@ -247,16 +247,23 @@
   <div class="section" id="trader">
 <h1>Trader<a class="headerlink" href="#trader" title="Permalink to this headline">¶</a></h1>
 <a class="reference external image-reference" href="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/trading.jpg"><img alt="trading" src="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/trading.jpg" /></a>
-<p>Open your <strong>user/config.json</strong> file and edit this configuration :</p>
+<p>Open your <strong>user/profiles/&lt;profile_name&gt;/profile.json</strong> file and edit this configuration :</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&quot;trader&quot;:{
-  &quot;enabled&quot;: true
+  &quot;enabled&quot;: true,
+  &quot;load-trade-history&quot;: false
 }
 </pre></div>
 </div>
 <div class="section" id="enabled">
 <h2>Enabled<a class="headerlink" href="#enabled" title="Permalink to this headline">¶</a></h2>
-<p>The <strong>Enabled</strong> parameter is to be set at <strong>true</strong> when OctoBot should trade real cryptocurrencies.
-When <strong>false</strong> OctoBot will never any create a real trade. This <strong>false</strong> value can be used to make OctoBot only use its simulation mode on real market conditions.</p>
+<p>When the <strong>Enabled</strong> parameter is set at <strong>true</strong>, OctoBot will trade using your real funds from your exchange’s accounts.
+When <strong>false</strong> OctoBot will never any create a real trade.</p>
+</div>
+<div class="section" id="load-trade-history">
+<h2>Load trade history<a class="headerlink" href="#load-trade-history" title="Permalink to this headline">¶</a></h2>
+<p>When the <strong>load-trade-history</strong> parameter is set at <strong>true</strong>, OctoBot will load the account’s recent trades for
+the enabled traded pairs at startup. This allows to have a view on your account’s trade history.
+When <strong>false</strong>, OctoBot will only historize trades that happen after the bot startup.</p>
 <div class="section" id="trading-settings">
 <h3>Trading settings<a class="headerlink" href="#trading-settings" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&quot;trading&quot;:{
@@ -266,15 +273,11 @@ When <strong>false</strong> OctoBot will never any create a real trade. This <st
 </pre></div>
 </div>
 </div>
-<div class="section" id="load-trade-history">
-<h3>Load-Trade-History<a class="headerlink" href="#load-trade-history" title="Permalink to this headline">¶</a></h3>
-<p>The <strong>Load-Trade-History</strong> parameter is to be set at <strong>true</strong> when OctoBot should load exchange account trade history.
-Trades will then be displayed on OctoBot dashboard.</p>
-</div>
 </div>
 <div class="section" id="reference-market">
 <h2>Reference-market<a class="headerlink" href="#reference-market" title="Permalink to this headline">¶</a></h2>
-<p>The <strong>Reference-market</strong> parameter defines which currency OctBot should use as a reference, this reference is used to compute profitability.</p>
+<p>The <strong>Reference-market</strong> parameter defines which currency OctBot should use as a reference,
+this reference is used to compute profitability and the portfolio total value</p>
 </div>
 <div class="section" id="risk">
 <h2>Risk<a class="headerlink" href="#risk" title="Permalink to this headline">¶</a></h2>
@@ -336,9 +339,9 @@ Trades will then be displayed on OctoBot dashboard.</p>
                     <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
                         <ul>
 <li><a class="reference internal" href="#">Trader</a><ul>
-<li><a class="reference internal" href="#enabled">Enabled</a><ul>
+<li><a class="reference internal" href="#enabled">Enabled</a></li>
+<li><a class="reference internal" href="#load-trade-history">Load trade history</a><ul>
 <li><a class="reference internal" href="#trading-settings">Trading settings</a></li>
-<li><a class="reference internal" href="#load-trade-history">Load-Trade-History</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#reference-market">Reference-market</a></li>

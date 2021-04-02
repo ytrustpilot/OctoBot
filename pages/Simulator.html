@@ -246,12 +246,18 @@
                         
   <div class="section" id="simulator">
 <h1>Simulator<a class="headerlink" href="#simulator" title="Permalink to this headline">¶</a></h1>
-<p>OctoBot can be used in a simulation mode. In this mode, whether there is a real trading mode enabled or not, OctoBot will simulate trades using the exact same data as with the real trading mode. Real traders and trader_simulators are idependant.</p>
+<p>OctoBot can be used in a simulation mode. In this mode, OctoBot will simulate trades using the exact same process as
+with the real trading mode.</p>
 <a class="reference external image-reference" href="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/trading.jpg"><img alt="trading" src="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/trading.jpg" /></a>
-<p>The only difference with a real trader is in the available portfolio that is to be set in the <strong>user/config.json</strong> file. This portfolio will be managed by OctoBot and simulated orders will be using these available cryptocurrencies as a basis. The trader simulator will use the exchanges’ last trades to figure out if the current orders would have been filled or not. If they would have been filled, the current simulated portfolio is updated accordingly</p>
+<p>The only difference with a real trader is in the starting portfolio that is set in
+the <strong>user/profiles/&lt;profile_name&gt;/profile.json</strong> file. Each profile has its own simulated portfolio.
+This portfolio will be managed by OctoBot and simulated orders will be using these available cryptocurrencies
+as a basis. The trader simulator will use the exchanges’ last trades to figure out if the current orders
+would have been filled or not. If they would have been filled, simulated orders get filled and
+the current simulated portfolio is updated accordingly.</p>
 <div class="section" id="setup-the-trader-simulator">
 <h2>Setup the trader_simulator<a class="headerlink" href="#setup-the-trader-simulator" title="Permalink to this headline">¶</a></h2>
-<p>Create in <strong>user/config.json</strong> the trader_simulator key :</p>
+<p>Find the trader-simulator key in <strong>user/profiles/&lt;profile_name&gt;/profile.json</strong> :</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&quot;trader-simulator&quot;:{
   &quot;enabled&quot;: true,
   &quot;fees&quot;: {
@@ -267,7 +273,7 @@
 </div>
 <div class="section" id="enabled">
 <h3>Enabled<a class="headerlink" href="#enabled" title="Permalink to this headline">¶</a></h3>
-<p>Set <strong>enabled</strong> to true to start a trader simulator when starting OctoBot. A trader simulator can be running with a real trader in a single OctoBot, the only difference between them will be the amount of available cryptocurrencies.</p>
+<p>Set <strong>enabled</strong> to true to start a trader simulator when starting OctoBot.</p>
 </div>
 <div class="section" id="fees">
 <h3>Fees<a class="headerlink" href="#fees" title="Permalink to this headline">¶</a></h3>
@@ -275,7 +281,9 @@
 </div>
 <div class="section" id="starting-portfolio">
 <h3>Starting portfolio<a class="headerlink" href="#starting-portfolio" title="Permalink to this headline">¶</a></h3>
-<p>This is the imaginary portfolio given to the trader simulator to create its orders with. It can contain any amount of any cryptocurrency. If these cryptocurrencies are in the <strong>crypto-currencies</strong> configuration, they will be traded as if they were from a real portfolio.</p>
+<p>This is the imaginary portfolio given to the trader simulator to create its orders with.
+It can contain any amount of any cryptocurrency. If these cryptocurrencies are in
+the <strong>crypto-currencies</strong> configuration, they will be traded as if they were from a real portfolio.</p>
 <p>The starting portfolio is also <strong>used for backtesting</strong>.</p>
 </div>
 </div>

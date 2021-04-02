@@ -244,20 +244,24 @@
             <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
                     <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
                         
-  <p>OctoBot configuration is located in two files:</p>
+  <p>OctoBot configuration is located in the <strong>user</strong> folder:</p>
 <ul class="simple">
-<li><p><strong>user/config.json</strong> is the global configuration file, mostly used to setup the bot exchanges credentials, cryptocurrency pairs, interfaces and the trading risk</p></li>
-<li><p><strong>user/tentacles_config/tentacles_config.json</strong> defines the trade mode, the evaluators and strategies toolkit that the bot is allowed to use. This file is automatically pre-filled when <a class="reference external" href="Tentacle-Manager.html">installing tentacles</a> with OctoBot and when using the configuration web interface.</p></li>
+<li><p><strong>user/config.json</strong> is the global configuration file, mostly used to setup the bot exchanges credentials, interfaces and notification settings.</p></li>
+<li><p><strong>user/profiles/</strong> contains all the <a class="reference external" href="Profiles.html">profiles</a> created and imported in your OctoBot.</p></li>
 </ul>
-<p>OctoBot’s web interface allows to easily edit the configuration, however, it is also possible to manually edit configuration files. Please be careful when manually editing them or OctoBot won’t be able to read them and wont start. Json file are readable and editable using any text editor.</p>
+<p>OctoBot’s web interface allows to easily edit the configuration, however, it is also possible to manually edit configuration files.
+Please be careful when manually editing them or OctoBot won’t be able to read them and wont start.
+Json file are readable and editable using any text editor.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ERROR    root &lt;class &#39;Exception&#39;&gt;: Error when load config
 </pre></div>
 </div>
 <p>This will appear when a configuration file is not a json valid file.</p>
 <div class="section" id="global-configuration">
 <h1>Global configuration<a class="headerlink" href="#global-configuration" title="Permalink to this headline">¶</a></h1>
-<p><strong>user/config.json</strong> is the technical configuration file of OctoBot, an example is available in <strong>octobot/config/default_config.json</strong>.</p>
-<p>To start with OctoBot, use <strong>default_config.json</strong> as an example for your <strong>user/config.json</strong> (copy <strong>default_config.json</strong> into OctoBot’s <strong>root folder/user</strong> and rename the copy into <strong>config.json</strong>). This operation is automatically done when using <a class="reference external" href="../index.html">OctoBot’s installation procedure</a>.</p>
+<p><strong>user/config.json</strong> is the technical configuration file of OctoBot, an example
+is available <a class="reference external" href="https://github.com/Drakkar-Software/OctoBot/blob/master/octobot/config/default_config.json">on github</a>.</p>
+<p>When starting OctoBot, if the <strong>user</strong> folder is missing or incomplete, it will automatically be created or
+completed with default values.</p>
 <div class="section" id="exchanges">
 <h2>Exchanges<a class="headerlink" href="#exchanges" title="Permalink to this headline">¶</a></h2>
 <a class="reference external image-reference" href="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/exchanges.jpg"><img alt="exchanges" src="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/exchanges.jpg" /></a>
@@ -265,7 +269,8 @@
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&quot;exchanges&quot;: {
     &quot;EXCHANGE_NAME&quot;: {
       &quot;api-key&quot;: &quot;&quot;,
-      &quot;api-secret&quot;: &quot;&quot;
+      &quot;api-secret&quot;: &quot;&quot;,
+      &quot;enabled&quot;: false
     }
 }
 </pre></div>
@@ -275,12 +280,14 @@
 <div class="section" id="cryptocurrencies">
 <h2>CryptoCurrencies<a class="headerlink" href="#cryptocurrencies" title="Permalink to this headline">¶</a></h2>
 <a class="reference external image-reference" href="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/currencies.jpg"><img alt="currencies" src="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/currencies.jpg" /></a>
-<p>OctoBot will trade all the cryptocurrencies listed in its configuration. To tell which cryptocurrencies to trade, add the currency in the <strong>crypto-currencies</strong> section in <strong>user/profiles/YOUR-PROFILE/profile.json</strong>.</p>
+<p>OctoBot will trade all the cryptocurrencies listed in its configuration. To tell which cryptocurrencies to trade,
+add the currency in the <strong>crypto-currencies</strong> section in <strong>user/profiles/&lt;profile_name&gt;/profile.json</strong>.</p>
 <p>In order to keep OctoBot working at its full potential, we recommend to trade <strong>between 1 and 5</strong> different assets <strong>not to use more than 10 to 15</strong> different assets at the same time, depending on the size of your available funds.</p>
 <p>Examples:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&quot;crypto-currencies&quot;:{
     &quot;Bitcoin&quot;: {
-      &quot;pairs&quot;: [&quot;BTC/USDT&quot;]
+      &quot;pairs&quot;: [&quot;BTC/USDT&quot;],
+      &quot;enabled&quot;: true
     }
 }
 </pre></div>
@@ -288,18 +295,22 @@
 <p>OctoBot trading only Bitcoin against USDT</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&quot;crypto-currencies&quot;:{
     &quot;Bitcoin&quot;: {
-      &quot;pairs&quot;: [&quot;BTC/USDT&quot;]
+      &quot;pairs&quot;: [&quot;BTC/USDT&quot;],
+      &quot;enabled&quot;: true
     },
     &quot;Ethereum&quot;: {
-      &quot;pairs&quot;: [&quot;ETH/USDT&quot;]
+      &quot;pairs&quot;: [&quot;ETH/USDT&quot;],
+      &quot;enabled&quot;: false
     },
     &quot;NEO&quot;: {
-      &quot;pairs&quot;: [&quot;NEO/BTC&quot;, &quot;NEO/ETH&quot;]
+      &quot;pairs&quot;: [&quot;NEO/BTC&quot;, &quot;NEO/ETH&quot;],
+      &quot;enabled&quot;: true
     }
 }
 </pre></div>
 </div>
-<p>OctoBot trading Bitcoin and Ethereum against USDT as well as NEO against BTC and ETH</p>
+<p>OctoBot trading Bitcoin against USDT as well as NEO against BTC and ETH but not Ethereum against USDT because
+Ethereum is disabled (“enabled”: false)</p>
 <div class="section" id="wildcard">
 <h3>Wildcard<a class="headerlink" href="#wildcard" title="Permalink to this headline">¶</a></h3>
 <p>To tell OctoBot to trade all BTC trading pairs (with BTC as a quote asset), use the wildcard “*” instead of a list for “pairs”:</p>
@@ -329,18 +340,22 @@
 <a class="reference external" href="Simulator.html">Here are the details on how to setup a trader simulator.</a></p></li>
 </ul>
 <a class="reference external image-reference" href="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/trading.jpg"><img alt="trading" src="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/trading.jpg" /></a>
-<p>Any type of trading has its risk parameter. It is a parameter defining the behavior of the trader, similarly to a real human trader. <a class="reference external" href="Trader.html#risk">This **risk** parameter is described here</a></p>
+<p>Any type of trading has its risk parameter. It is a parameter defining the behavior of the trader,
+similarly to a real human trader. <a class="reference external" href="Trader.html#risk">This **risk** parameter is described here</a></p>
 </div>
 </div>
 <div class="section" id="evaluator-and-trading-configuration">
 <h1>Evaluator and trading configuration<a class="headerlink" href="#evaluator-and-trading-configuration" title="Permalink to this headline">¶</a></h1>
 <a class="reference external image-reference" href="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/trading_modes.jpg"><img alt="trading_modes" src="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/trading_modes.jpg" /></a>
-<p><strong>user/tentacles_config/tentacles_config.json</strong> is a configuration file telling OctoBot which evaluators, strategies and trading modes to use. It is automatically kept updated after each <a class="reference external" href="Tentacle-Manager.html">Tentacle Manager</a> usage.</p>
-<p>An example of <strong>user/tentacles_config/tentacles_config.json</strong> is available in the <strong>config</strong> folder: <strong>octobot/config/default_tentacles_config.json</strong>.</p>
-<p>When using OctoBot’s <a class="reference external" href="Tentacle-Manager.html">Tentacle Manager</a>, <strong>default_tentacles_config.json</strong> is automatically used to enable default evaluators configuration when no configuration is already available for a given evaluator. The same process is used for trading_config.</p>
-<p>By default, new evaluators are not used (set to “false”) if not defined otherwise in <strong>octobot/config/default_tentacles_config.json</strong>.</p>
+<p><strong>user/profiles/&lt;profile_name&gt;/tentacles_config.json</strong> is a configuration file telling OctoBot which evaluators,
+strategies and trading modes to use. It is automatically kept updated after each <a class="reference external" href="Tentacle-Manager.html">Tentacle Manager</a> usage.</p>
+<p>An example of <strong>user/profiles/&lt;profile_name&gt;/tentacles_config.json</strong> is available <a class="reference external" href="https://github.com/Drakkar-Software/OctoBot/blob/master/octobot/config/default_tentacles_config.json">as default_tentacles_config.json on github</a>.</p>
+<p>When using OctoBot’s <a class="reference external" href="Tentacle-Manager.html">Tentacle Manager</a>, <strong>default_tentacles_config.json</strong> is automatically
+used to enable default evaluators configuration when no configuration is already available for a given evaluator.
+The same process is used for trading_config.</p>
+<p>By default, new evaluators are not used (set to “false”) if not defined otherwise in <strong>default_tentacles_config.json</strong>.</p>
 <a class="reference external image-reference" href="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/evaluators.jpg"><img alt="evaluators" src="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/evaluators.jpg" /></a>
-<p>Example of <strong>evaluator_config.json</strong>:</p>
+<p>Example of <strong>tentacles_config.json</strong>:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
   <span class="nt">&quot;RSIMomentumEvaluator&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
   <span class="nt">&quot;DoubleMovingAverageTrendEvaluator&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
@@ -378,8 +393,11 @@
 <p>Some evaluators and trading modes can be configured.</p>
 <p>If it is the case, configuration is possible through OctoBot’s web interface.</p>
 <a class="reference external image-reference" href="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/specific_eval_config.jpg"><img alt="evaluators_config" src="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/specific_eval_config.jpg" /></a>
-<p>This edition interface is generated according to the <strong>NameOfTheRelatedClass_schema.json</strong> <a class="reference external" href="https://json-schema.org/understanding-json-schema/">json schema</a> file of the evaluator or trading mode to configure.</p>
-<p>It is also possible to manually edit each configuration file using a text editor for JSON. When configurable, each evaluator or trading mode has a <strong>NameOfTheRelatedClass.json</strong> file in the closest config folder.</p>
+<p>This edition interface is generated according to the
+<strong>NameOfTheRelatedClass_schema.json</strong> <a class="reference external" href="https://json-schema.org/understanding-json-schema/">json schema</a> file
+of the evaluator or trading mode to configure.</p>
+<p>It is also possible to manually edit each configuration file using a text editor for JSON. When configurable,
+each evaluator or trading mode has a <strong>NameOfTheRelatedClass.json</strong> file in <strong>user/profiles/&lt;profile_name&gt;/specific_config</strong>.</p>
 </div>
 
 
