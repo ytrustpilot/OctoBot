@@ -312,8 +312,10 @@
 </div>
 <div class="section" id="how-to-update-octobot">
 <h3>How to update OctoBot ?<a class="headerlink" href="#how-to-update-octobot" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker stop OctoBot
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker pull drakkarsoftware/octobot:stable
+docker stop OctoBot
 docker rm OctoBot
+docker run -itd --name OctoBot -p <span class="m">80</span>:5001 -v <span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>/user:/octobot/user -v <span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>/tentacles:/octobot/tentacles -v <span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>/logs:/octobot/logs drakkarsoftware/octobot:stable
 </pre></div>
 </div>
 </div>
