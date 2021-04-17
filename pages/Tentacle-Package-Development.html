@@ -10,7 +10,7 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-        <title>OctoBot is customizable ! | OctoBot docs</title>
+        <title>Tentacle package development | OctoBot docs</title>
     
 
     
@@ -19,18 +19,18 @@
     
     
     
-        <link rel="canonical" href="https://github.com/Drakkar-Software/OctoBotpages/Customize-your-OctoBot.html"/>
+        <link rel="canonical" href="https://github.com/Drakkar-Software/OctoBotpages/Tentacle-Package-Development.html"/>
     
 
     <meta name="keywords" content="octobot, octobot docs, octobot documentation, free, open source, trading, community, cryptocurrency, cryptocurrencies, bitcoin, ethereum"/>
     <meta name="description" content="Documentation for OctoBot: a free and highly customizable open source cryptocurrency trading robot."/>
     <meta name="twitter:card" content="summary"/>
-    <meta name="twitter:title" content="OctoBot is customizable ! | OctoBot docs"/>
+    <meta name="twitter:title" content="Tentacle package development | OctoBot docs"/>
     <meta name="twitter:description" content="Documentation for OctoBot: a free and highly customizable open source cryptocurrency trading robot."/>
     <meta name="twitter:image" content="https://docs.octobot.online/_static/images/octobot.png"/>
     <meta name="twitter:domain" content="docs.octobot.online"/>
     <meta name="twitter:url" content="https://docs.octobot.online"/>
-    <meta property="og:title" content="OctoBot is customizable ! | OctoBot docs"/>
+    <meta property="og:title" content="Tentacle package development | OctoBot docs"/>
     <meta property="og:description" content="Documentation for OctoBot: a free and highly customizable open source cryptocurrency trading robot."/>
     <meta property="og:type" content="website"/>
     <meta property="og:url" content="https://docs.octobot.online"/>
@@ -41,8 +41,8 @@
 
     <link rel="stylesheet" href="../_static/css/theme.css" type="text/css"/>
     <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
-            <link rel="next" title="Developer startup guide" href="Developer-Guide.html"/>
-            <link rel="prev" title="Using a webhook with OctoBot" href="Using-a-webhook-with-OctoBot.html"/> 
+            <link rel="next" title="Tentacle development" href="Tentacle-Development.html"/>
+            <link rel="prev" title="Developer startup guide" href="Developer-Guide.html"/> 
 
     
     <script src="../_static/js/modernizr.min.js" async></script>
@@ -171,9 +171,9 @@
 </ul>
 <p class="caption"><span class="caption-text">Developers</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">OctoBot is customizable !</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Customize-your-OctoBot.html">OctoBot is customizable !</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Developer-Guide.html">Developer startup guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Tentacle-Package-Development.html">Tentacle package development</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Tentacle package development</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Tentacle-Development.html">Tentacle development</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Tests.html">Tests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Developers-tips.html">Developer tips</a></li>
@@ -218,13 +218,13 @@
       </li>
 
         
-      <li>OctoBot is customizable !</li>
+      <li>Tentacle package development</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
         
             
-            <a href="../_sources/pages/Customize-your-OctoBot.rst.txt" rel="nofollow"><img src="../_static/images/view-page-source-icon.svg"></a>
+            <a href="../_sources/pages/Tentacle-Package-Development.rst.txt" rel="nofollow"><img src="../_static/images/view-page-source-icon.svg"></a>
           
         
       </li>
@@ -248,58 +248,118 @@
             <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
                     <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
                         
-  <div class="section" id="octobot-is-customizable">
-<h1>OctoBot is customizable !<a class="headerlink" href="#octobot-is-customizable" title="Permalink to this headline">¶</a></h1>
-<p>You can easily create or add existing tentacles to your OctoBot.</p>
-<p>Tentacles are evaluators (using social media, trend analysis, news, …), strategies (interpretations of evaluator’s evaluations), analysis tools (implementation of a bollinger bands in depth analysis, twitter posts reader, …) and trading modes.</p>
-<a class="reference external image-reference" href="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/tentacles.jpg"><img alt="tentacles" src="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/tentacles.jpg" /></a>
-<p>OctoBot is available for free with <a class="reference external" href="https://github.com/Drakkar-Software/OctoBot-Tentacles">basic implementations of a lot of different evaluators</a>. The very high modularity in OctoBot’s architecture allows it to automatically look for the most advanced version(s) of all the available tentacles and automatically use them in its trading strategies.</p>
-<p>Therefore, anyone can implement its own version of any evaluator, strategy, analysis tool and trading modes. It’s even possible to use another version provided by someone else !</p>
-<div class="section" id="tentacle-installation">
-<h2>Tentacle installation<a class="headerlink" href="#tentacle-installation" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="default-tentacles">
-<h3>Default tentacles<a class="headerlink" href="#default-tentacles" title="Permalink to this headline">¶</a></h3>
-<p>OctoBot default tentacles are automatically installed when first starting your OctoBot.</p>
-<p>You can re-install them anytime using the following command options to your OctoBot binary or python version:
-<code class="docutils literal notranslate"><span class="pre">tentacles</span> <span class="pre">--install</span> <span class="pre">--all</span></code></p>
-<p>It is also possible to install a tentacles package using the web interface Tentacles tab.</p>
+  <div class="section" id="tentacle-package-development">
+<h1>Tentacle package development<a class="headerlink" href="#tentacle-package-development" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="intro">
+<h2>Intro<a class="headerlink" href="#intro" title="Permalink to this headline">¶</a></h2>
+<p>This page covers tentacle package creation.</p>
+<p>A tentacle package contains one or multiple <a class="reference external" href="Tentacle-Development.html">tentacles</a>.</p>
 </div>
-<div class="section" id="installing-a-tentacles">
-<h3>Installing a tentacles<a class="headerlink" href="#installing-a-tentacles" title="Permalink to this headline">¶</a></h3>
-<p>To install tentacles, OctoBot can either install a tentacle package (zipped bundle of tentacles) or a single tentacle from a local folder.</p>
-<div class="section" id="tentacle-packages">
-<h4>Tentacle packages<a class="headerlink" href="#tentacle-packages" title="Permalink to this headline">¶</a></h4>
-<p>To install a package, use the following options:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>tentacles --install --all --location <span class="s2">&quot;path/to/your/package/package_name.zip&quot;</span>
+<div class="section" id="the-tentacle-package-folder">
+<h2>The tentacle package folder<a class="headerlink" href="#the-tentacle-package-folder" title="Permalink to this headline">¶</a></h2>
+<p>A tentacle package is defined by a folder placed at :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>tentacles/YOUR_TP_CATEGORY/YOUR_TP_SUB_CATEGORY/YOUR_TENTACLE_PACKAGE_NAME/
 </pre></div>
 </div>
-<p>To create a tentacles package from a local folder:</p>
-<ol class="arabic simple">
-<li><p>Make sure it follows the <a class="reference external" href="https://github.com/Drakkar-Software/OctoBot-Tentacles">OctoBot-Tentacles folder architecture</a></p></li>
-<li><p>Call OctoBot with the following options:</p></li>
-</ol>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>tentacles -p <span class="s2">&quot;path/to/your/packed/tentacles/pack_name.zip&quot;</span> -d <span class="s2">&quot;path/to/your/local/tentacles/folder&quot;</span>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>TP is for tentacle package</p>
+</div>
+<ul class="simple">
+<li><p><strong>YOUR_TP_CATEGORY</strong> can be Backtesting, Evaluator, Services or Trading</p></li>
+<li><p><strong>YOUR_TP_SUB_CATEGORY</strong> should be a sub category of <strong>YOUR_TP_CATEGORY</strong> in the existing tentacle architecture</p></li>
+<li><p><strong>YOUR_TENTACLE_PACKAGE_NAME</strong> is the name of your tentacle package, shouldn’t use an existing tentacle package name</p></li>
+</ul>
+</div>
+<div class="section" id="description-file">
+<h2>Description file<a class="headerlink" href="#description-file" title="Permalink to this headline">¶</a></h2>
+<p>A tentacle package contains metadata described in metadata.json file. This file is used to properly install the tentacle and should be carefully written.
+It’s located at the root path of the tentacle package :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>tentacles/YOUR_TP_CATEGORY/YOUR_TP_SUB_CATEGORY/YOUR_TENTACLE_PACKAGE_NAME/metadata.json
 </pre></div>
 </div>
-<p>Once your package is created, you can install it using the command :</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>tentacles --install --all --location <span class="s2">&quot;path/to/your/packed/tentacles/pack_name.zip&quot;</span>
+<p>A tentacle package metadata.json contains :</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;YOUR_TP_VERSION&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;origin_package&quot;</span><span class="p">:</span> <span class="s2">&quot;YOUR_TP_ORIGIN_PACKAGE&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;tentacles&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;YOUR_TP_TENTACLE_1&quot;</span><span class="p">,</span> <span class="s2">&quot;YOUR_TP_TENTACLE_2&quot;</span><span class="p">],</span>
+  <span class="nt">&quot;tentacles-requirements&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;YOUR_TP_TP_REQUIREMENT_1&quot;</span><span class="p">,</span> <span class="s2">&quot;YOUR_TP_TP_REQUIREMENT_2&quot;</span><span class="p">]</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-<p>You can also make it available from an URL and later install it via (for example) :</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>tentacles --install --all --location <span class="s2">&quot;https://my.tentacles.com/pack_name&quot;</span>
+<ul class="simple">
+<li><p><strong>YOUR_TP_VERSION</strong> is your tentacle package version</p></li>
+<li><p><strong>YOUR_TP_ORIGIN_PACKAGE</strong> is the author or the origin repository of the tentacle package</p></li>
+<li><p><strong>YOUR_TP_TENTACLE_1</strong> and <strong>YOUR_TP_TENTACLE_2</strong> are names of your tentacle package tentacles (can have 1 or more).</p></li>
+<li><p><strong>YOUR_TP_TP_REQUIREMENT_1</strong> and <strong>YOUR_TP_TP_REQUIREMENT_2</strong> are the names of required tentacle packages to have installed to run your tentacle package (can have 0 or more)</p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>YOUR_TP_TENTACLE_X</strong> should match python classes to be exposed in the tentacle</p>
+</div>
+<p>Example <em>DailyTradingMode/metadata.json</em> :</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="nt">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;1.2.0&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;origin_package&quot;</span><span class="p">:</span> <span class="s2">&quot;OctoBot-Default-Tentacles&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;tentacles&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;DailyTradingMode&quot;</span><span class="p">],</span>
+  <span class="nt">&quot;tentacles-requirements&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;mixed_strategies_evaluator&quot;</span><span class="p">]</span>
+<span class="p">}</span>
 </pre></div>
 </div>
-<p>Installing a tentacle package will replace any existing source file taht share the same name. It can be used to update sources without changing the version number.</p>
 </div>
-<div class="section" id="single-tentacles">
-<h4>Single tentacles<a class="headerlink" href="#single-tentacles" title="Permalink to this headline">¶</a></h4>
-<p>It is also possible to install a single tentacle from a local folder using the following options:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>tentacles --single-tentacle-install <span class="s2">&quot;path/to/your/tentacle/to/install&quot;</span> Evaluator/TA
+<div class="section" id="tentacle-modules">
+<h2>Tentacle modules<a class="headerlink" href="#tentacle-modules" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="Tentacle-Development.html">Tentacle</a> python modules should be placed at the root path of the tentacle package (can be 1 or more).</p>
+<p>Example with <em>momentum_evaluator</em> :
+The main python module that contains multiple tentacles is located at</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>tentacles/Evaluator/TA/momentum_evaluator/momentum.py
 </pre></div>
 </div>
-<p>Please note that in this command, you also need to provide the type of the tentacle (<code class="docutils literal notranslate"><span class="pre">Evaluator/TA</span></code> in this example) for OctoBot to know how to handle it.</p>
+<p>Every tentacle classes should be imported in the root <strong>__init__.py</strong> file.</p>
+<p>Example with <em>momentum_evaluator</em>’s __init__.py :</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">.momentum</span> <span class="kn">import</span> <span class="n">RSIMomentumEvaluator</span><span class="p">,</span> <span class="n">ADXMomentumEvaluator</span><span class="p">,</span> <span class="n">RSIWeightMomentumEvaluator</span><span class="p">,</span> \
+<span class="n">BBMomentumEvaluator</span><span class="p">,</span> <span class="n">MACDMomentumEvaluator</span><span class="p">,</span> <span class="n">KlingerOscillatorMomentumEvaluator</span><span class="p">,</span> \
+<span class="n">KlingerOscillatorReversalConfirmationMomentumEvaluator</span>
+</pre></div>
 </div>
 </div>
+<div class="section" id="config">
+<h2>Config<a class="headerlink" href="#config" title="Permalink to this headline">¶</a></h2>
+<p>A tentacle package can contain tentacle config. Config files are located in <em>config/</em> folder at :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>tentacles/YOUR_TP_CATEGORY/YOUR_TP_SUB_CATEGORY/YOUR_TENTACLE_PACKAGE_NAME/config/
+</pre></div>
+</div>
+<p>Each tentacles config file should be named with the exact case and name as the exposed tentacle class(es).
+Below an example for <em>MyAwesomeTentacle</em> :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>tentacles/YOUR_TP_CATEGORY/YOUR_TP_SUB_CATEGORY/YOUR_TENTACLE_PACKAGE_NAME/config/MyAwesomeTentacle.json
+</pre></div>
+</div>
+<p>Tentacle configuration interface are generated using configuration schema files and the <a class="reference external" href="https://github.com/json-editor/json-editor">json-editor</a> library.
+Below an example for <em>MyAwesomeTentacle</em> :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>tentacles/YOUR_TP_CATEGORY/YOUR_TP_SUB_CATEGORY/YOUR_TENTACLE_PACKAGE_NAME/config/MyAwesomeTentacle_schema.json
+</pre></div>
+</div>
+</div>
+<div class="section" id="resources">
+<h2>Resources<a class="headerlink" href="#resources" title="Permalink to this headline">¶</a></h2>
+<p>Tentacle package resources are located in the <cite>resources</cite> folder of your tentacle package.</p>
+<p>Tentacles guides can be created for each tentacle in resources/YOUR_TP_TENTACLE_1.md, resources/YOUR_TP_TENTACLE_2.md (the file name should match the tentacle class name)</p>
+<p>A tentacle package can also contain many resources that can be binary files, images…</p>
+<p>Example <em>DailyTradingMode/resources/DailyTradingMode.md</em> :</p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span>DailyTradingMode is a **low risk versatile trading mode** that reacts only the its state changes to
+a state that is different from the previous one and that is not NEUTRAL.
+
+When triggered for a given symbol, it will cancel previously created (and unfilled) orders
+and create new ones according to its new state.
+
+DailyTradingMode will consider every compatible strategy and average their evaluation to create
+each state.
+</pre></div>
+</div>
+</div>
+<div class="section" id="tests">
+<h2>Tests<a class="headerlink" href="#tests" title="Permalink to this headline">¶</a></h2>
+<p>Tentacle should be tested. Tests file are usually located in the <cite>tests</cite> folder of the tentacle package.</p>
 </div>
 </div>
 
@@ -311,10 +371,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="Developer-Guide.html" class="btn btn-neutral float-right" title="Developer startup guide" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="Tentacle-Development.html" class="btn btn-neutral float-right" title="Tentacle development" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
-        <a href="Using-a-webhook-with-OctoBot.html" class="btn btn-neutral" title="Using a webhook with OctoBot" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+        <a href="Developer-Guide.html" class="btn btn-neutral" title="Developer startup guide" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
       
     </div>
   
@@ -346,16 +406,14 @@
                 <div class="pytorch-right-menu" id="pytorch-right-menu">
                     <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
                         <ul>
-<li><a class="reference internal" href="#">OctoBot is customizable !</a><ul>
-<li><a class="reference internal" href="#tentacle-installation">Tentacle installation</a><ul>
-<li><a class="reference internal" href="#default-tentacles">Default tentacles</a></li>
-<li><a class="reference internal" href="#installing-a-tentacles">Installing a tentacles</a><ul>
-<li><a class="reference internal" href="#tentacle-packages">Tentacle packages</a></li>
-<li><a class="reference internal" href="#single-tentacles">Single tentacles</a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li><a class="reference internal" href="#">Tentacle package development</a><ul>
+<li><a class="reference internal" href="#intro">Intro</a></li>
+<li><a class="reference internal" href="#the-tentacle-package-folder">The tentacle package folder</a></li>
+<li><a class="reference internal" href="#description-file">Description file</a></li>
+<li><a class="reference internal" href="#tentacle-modules">Tentacle modules</a></li>
+<li><a class="reference internal" href="#config">Config</a></li>
+<li><a class="reference internal" href="#resources">Resources</a></li>
+<li><a class="reference internal" href="#tests">Tests</a></li>
 </ul>
 </li>
 </ul>

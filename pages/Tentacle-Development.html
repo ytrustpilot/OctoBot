@@ -10,7 +10,7 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-        <title>OctoBot is customizable ! | OctoBot docs</title>
+        <title>Tentacle development | OctoBot docs</title>
     
 
     
@@ -19,18 +19,18 @@
     
     
     
-        <link rel="canonical" href="https://github.com/Drakkar-Software/OctoBotpages/Customize-your-OctoBot.html"/>
+        <link rel="canonical" href="https://github.com/Drakkar-Software/OctoBotpages/Tentacle-Development.html"/>
     
 
     <meta name="keywords" content="octobot, octobot docs, octobot documentation, free, open source, trading, community, cryptocurrency, cryptocurrencies, bitcoin, ethereum"/>
     <meta name="description" content="Documentation for OctoBot: a free and highly customizable open source cryptocurrency trading robot."/>
     <meta name="twitter:card" content="summary"/>
-    <meta name="twitter:title" content="OctoBot is customizable ! | OctoBot docs"/>
+    <meta name="twitter:title" content="Tentacle development | OctoBot docs"/>
     <meta name="twitter:description" content="Documentation for OctoBot: a free and highly customizable open source cryptocurrency trading robot."/>
     <meta name="twitter:image" content="https://docs.octobot.online/_static/images/octobot.png"/>
     <meta name="twitter:domain" content="docs.octobot.online"/>
     <meta name="twitter:url" content="https://docs.octobot.online"/>
-    <meta property="og:title" content="OctoBot is customizable ! | OctoBot docs"/>
+    <meta property="og:title" content="Tentacle development | OctoBot docs"/>
     <meta property="og:description" content="Documentation for OctoBot: a free and highly customizable open source cryptocurrency trading robot."/>
     <meta property="og:type" content="website"/>
     <meta property="og:url" content="https://docs.octobot.online"/>
@@ -41,8 +41,8 @@
 
     <link rel="stylesheet" href="../_static/css/theme.css" type="text/css"/>
     <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
-            <link rel="next" title="Developer startup guide" href="Developer-Guide.html"/>
-            <link rel="prev" title="Using a webhook with OctoBot" href="Using-a-webhook-with-OctoBot.html"/> 
+            <link rel="next" title="Tests" href="Tests.html"/>
+            <link rel="prev" title="Tentacle package development" href="Tentacle-Package-Development.html"/> 
 
     
     <script src="../_static/js/modernizr.min.js" async></script>
@@ -171,10 +171,10 @@
 </ul>
 <p class="caption"><span class="caption-text">Developers</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">OctoBot is customizable !</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Customize-your-OctoBot.html">OctoBot is customizable !</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Developer-Guide.html">Developer startup guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Tentacle-Package-Development.html">Tentacle package development</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Tentacle-Development.html">Tentacle development</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Tentacle development</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Tests.html">Tests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Developers-tips.html">Developer tips</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Contribution.html">Contribution</a></li>
@@ -218,13 +218,13 @@
       </li>
 
         
-      <li>OctoBot is customizable !</li>
+      <li>Tentacle development</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
         
             
-            <a href="../_sources/pages/Customize-your-OctoBot.rst.txt" rel="nofollow"><img src="../_static/images/view-page-source-icon.svg"></a>
+            <a href="../_sources/pages/Tentacle-Development.rst.txt" rel="nofollow"><img src="../_static/images/view-page-source-icon.svg"></a>
           
         
       </li>
@@ -248,57 +248,144 @@
             <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
                     <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
                         
-  <div class="section" id="octobot-is-customizable">
-<h1>OctoBot is customizable !<a class="headerlink" href="#octobot-is-customizable" title="Permalink to this headline">¶</a></h1>
-<p>You can easily create or add existing tentacles to your OctoBot.</p>
-<p>Tentacles are evaluators (using social media, trend analysis, news, …), strategies (interpretations of evaluator’s evaluations), analysis tools (implementation of a bollinger bands in depth analysis, twitter posts reader, …) and trading modes.</p>
-<a class="reference external image-reference" href="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/tentacles.jpg"><img alt="tentacles" src="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/tentacles.jpg" /></a>
-<p>OctoBot is available for free with <a class="reference external" href="https://github.com/Drakkar-Software/OctoBot-Tentacles">basic implementations of a lot of different evaluators</a>. The very high modularity in OctoBot’s architecture allows it to automatically look for the most advanced version(s) of all the available tentacles and automatically use them in its trading strategies.</p>
-<p>Therefore, anyone can implement its own version of any evaluator, strategy, analysis tool and trading modes. It’s even possible to use another version provided by someone else !</p>
-<div class="section" id="tentacle-installation">
-<h2>Tentacle installation<a class="headerlink" href="#tentacle-installation" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="default-tentacles">
-<h3>Default tentacles<a class="headerlink" href="#default-tentacles" title="Permalink to this headline">¶</a></h3>
-<p>OctoBot default tentacles are automatically installed when first starting your OctoBot.</p>
-<p>You can re-install them anytime using the following command options to your OctoBot binary or python version:
-<code class="docutils literal notranslate"><span class="pre">tentacles</span> <span class="pre">--install</span> <span class="pre">--all</span></code></p>
-<p>It is also possible to install a tentacles package using the web interface Tentacles tab.</p>
+  <div class="section" id="tentacle-development">
+<h1>Tentacle development<a class="headerlink" href="#tentacle-development" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="intro">
+<h2>Intro<a class="headerlink" href="#intro" title="Permalink to this headline">¶</a></h2>
+<p>This page covers tentacle development.</p>
+<p>A tentacle is a part of a <a class="reference external" href="Tentacle-Package-Development.html">tentacle package</a>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This page is deprecated for latest versions of OctoBot (v0.4 and superior)</p>
 </div>
-<div class="section" id="installing-a-tentacles">
-<h3>Installing a tentacles<a class="headerlink" href="#installing-a-tentacles" title="Permalink to this headline">¶</a></h3>
-<p>To install tentacles, OctoBot can either install a tentacle package (zipped bundle of tentacles) or a single tentacle from a local folder.</p>
-<div class="section" id="tentacle-packages">
-<h4>Tentacle packages<a class="headerlink" href="#tentacle-packages" title="Permalink to this headline">¶</a></h4>
-<p>To install a package, use the following options:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>tentacles --install --all --location <span class="s2">&quot;path/to/your/package/package_name.zip&quot;</span>
+<div class="section" id="tentacle-customization-octobot-v0-3">
+<h3>Tentacle customization (OctoBot v0.3)<a class="headerlink" href="#tentacle-customization-octobot-v0-3" title="Permalink to this headline">¶</a></h3>
+<p>All you need to do, to improve a tentacle, is to extend the existing one you want to improve and re-implement the methods you want to change.</p>
+<p>Examples:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#. **TwitterNewsEvaluator** is a simple Twitter evaluator available by default in ``tentacles/Evaluator/Social/Default/new_evaluator.py``. To improve it, all you need to do is to create a file, let&#39;s say ``advanced_twitter_news_evaluator.py`` containing a class extending the simple evaluator:</span>
+
+<span class="kn">from</span> <span class="nn">tentacles.Evaluator.Social</span> <span class="kn">import</span> <span class="n">TwitterNewsEvaluator</span>
+
+<span class="k">class</span> <span class="nc">AdvancedTwitterNewsEvaluator</span><span class="p">(</span><span class="n">TwitterNewsEvaluator</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>To create a tentacles package from a local folder:</p>
-<ol class="arabic simple">
-<li><p>Make sure it follows the <a class="reference external" href="https://github.com/Drakkar-Software/OctoBot-Tentacles">OctoBot-Tentacles folder architecture</a></p></li>
-<li><p>Call OctoBot with the following options:</p></li>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># let&#39;s say we want to change this method</span>
+<span class="k">def</span> <span class="nf">get_tweet_sentiment</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tweet</span><span class="p">):</span>
+    <span class="n">sentiment</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="c1"># some advanced tweet analysis to set sentiment value</span>
+    <span class="k">return</span> <span class="n">sentiment</span>
+</pre></div>
+</div>
+<p><strong>StatisticAnalysis</strong> is a simple Statistic analysis tool available by default in <code class="docutils literal notranslate"><span class="pre">`tentacles/Evaluator/Util/Default/statistics_analysis.py`</span></code>. To improve it, all you need to do is to create a file, let’s say <code class="docutils literal notranslate"><span class="pre">`advanced_statistics_analysis.py`</span></code> containing a class extending the simple analyser:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">tentacles.Evaluator.Util</span> <span class="kn">import</span> <span class="n">StatisticAnalysis</span>
+
+
+<span class="k">class</span> <span class="nc">AdvancedStatisticAnalysis</span><span class="p">(</span><span class="n">StatisticAnalysis</span><span class="p">):</span>
+
+    <span class="c1"># let&#39;s say we want to change this method</span>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">analyse_recent_trend_changes</span><span class="p">(</span><span class="n">data_frame</span><span class="p">,</span> <span class="n">delta_function</span><span class="p">):</span>
+        <span class="n">changes</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="c1"># some advanced trend change detection here</span>
+        <span class="k">return</span> <span class="n">changes</span>
+</pre></div>
+</div>
+<p><strong>InstantSocialReactionMixedStrategiesEvaluator</strong> is a simple strategy tool available by default in <code class="docutils literal notranslate"><span class="pre">tentacles/Evaluator/Strategies/Default/mixed_strategies_evaluator.py</span></code>. To improve it, all you need to do is to create a file, let’s say <code class="docutils literal notranslate"><span class="pre">advanced_instant_strategy_evaluator.py</span></code> containing a class extending the simple strategy:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">tentacles.Evaluator.Strategies</span> <span class="kn">import</span> <span class="n">InstantSocialReactionMixedStrategiesEvaluator</span>
+
+<span class="k">class</span> <span class="nc">AdvancedInstantSocialReactionMixedStrategiesEvaluator</span><span class="p">(</span><span class="n">InstantSocialReactionMixedStrategiesEvaluator</span><span class="p">):</span>
+
+
+   <span class="c1"># eval_impl is the methods called when OctoBot is asking for a strategy evaluation</span>
+   <span class="k">async</span> <span class="k">def</span> <span class="nf">eval_impl</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+       <span class="n">final_evaluation</span> <span class="o">=</span> <span class="mi">0</span>
+       <span class="c1"># some advanced computations to set final_evaluation value</span>
+
+       <span class="c1"># finally, update self.eval_note to store the strategy result</span>
+       <span class="bp">self</span><span class="o">.</span><span class="n">eval_note</span> <span class="o">=</span> <span class="n">final_evaluation</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="manual-installation">
+<h2>Manual installation<a class="headerlink" href="#manual-installation" title="Permalink to this headline">¶</a></h2>
+<p>Only 3 steps are necessary to install a new tentacle:</p>
+<ol class="arabic">
+<li><p>Store the tentacle in the <code class="docutils literal notranslate"><span class="pre">Advanced</span></code> folder contained in the folder of the basic version of the tentacle</p></li>
+<li><p>In this <code class="docutils literal notranslate"><span class="pre">Advanced</span></code> folder, create or update the <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> file to add the following line:
+.. code-block:: python</p>
+<blockquote>
+<div><p>from .file_containing_new_implementation_name import *</p>
+</div></blockquote>
+</li>
+<li><p>Add the class of your evaluator into your <code class="docutils literal notranslate"><span class="pre">tentacles/Evaluator/evaluator_config.json</span></code> or <code class="docutils literal notranslate"><span class="pre">tentacles/Trading/trading_config.json</span></code> file (depending on the type of tentacle) alongside the others. This will allow OctoBot to see it.</p></li>
 </ol>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>tentacles -p <span class="s2">&quot;path/to/your/packed/tentacles/pack_name.zip&quot;</span> -d <span class="s2">&quot;path/to/your/local/tentacles/folder&quot;</span>
-</pre></div>
+<p>Examples with the tentacles created in the <strong>Tentacle customization</strong> section:</p>
+<ol class="arabic simple">
+<li><p><strong>TwitterNewsEvaluator</strong></p></li>
+</ol>
+<ul>
+<li><p>Store the tentacle file: <code class="docutils literal notranslate"><span class="pre">advanced_twitter_news_evaluator.py</span></code> in <code class="docutils literal notranslate"><span class="pre">tentacles/Evaluator/Social/Advanced</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">tentacles/Evaluator/Social/Advanced</span></code>, create or edit the <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> file and add the following line:
+.. code-block:: python</p>
+<blockquote>
+<div><p>from .advanced_twitter_news_evaluator import *</p>
+</div></blockquote>
+</li>
+</ul>
+<ol class="arabic simple">
+<li><p><strong>StatisticAnalysis</strong></p></li>
+</ol>
+<ul>
+<li><p>Store the tentacle file: <code class="docutils literal notranslate"><span class="pre">advanced_statistics_analysis.py</span></code> in <code class="docutils literal notranslate"><span class="pre">tentacles/Evaluator/Util/Advanced</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">tentacles/Evaluator/Util/Advanced</span></code>, create or edit the <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> file and add the following line:
+.. code-block:: python</p>
+<blockquote>
+<div><p>from .advanced_statistics_analysis import *</p>
+</div></blockquote>
+</li>
+</ul>
+<ol class="arabic simple">
+<li><p><strong>InstantSocialReactionMixedStrategiesEvaluator</strong></p></li>
+</ol>
+<ul>
+<li><p>Store the tentacle file: <code class="docutils literal notranslate"><span class="pre">advanced_instant_strategy_evaluator.py</span></code> in <code class="docutils literal notranslate"><span class="pre">tentacles/Evaluator/Strategies/Advanced</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">In</span> <span class="pre">tentacles/Evaluator/Strategies/Advanced</span></code>, create or edit the <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> file and add the following line:
+.. code-block:: python</p>
+<blockquote>
+<div><p>from .advanced_instant_strategy_evaluator import *</p>
+</div></blockquote>
+</li>
+</ul>
+<div class="section" id="advanced-evaluator-and-strategy-creation-octobot-v0-3">
+<h3>Advanced: Evaluator and Strategy creation (OctoBot v0.3)<a class="headerlink" href="#advanced-evaluator-and-strategy-creation-octobot-v0-3" title="Permalink to this headline">¶</a></h3>
+<p>With OctoBot, everyone can create it’s own evaluators and strategies, even if it’s not already existing already in a simple version.</p>
+<p>In order to add a new type of evaluator, you need to respect the following rules:</p>
+<ul class="simple">
+<li><p>Evaluators extend any type of <em>implementation</em> of <strong>RealTimeEvaluator</strong>, <strong>SocialEvaluator</strong> or <strong>TAEvaluator</strong></p></li>
+</ul>
+<p>Example: RSIMomentumEvaluator extends <em>MomentumEvaluator</em> which extends <strong>TAEvaluator</strong>. Here RSIMomentumEvaluator is an evaluator extending <strong>TAEvaluator</strong>‘s implementation <em>MomentumEvaluator</em></p>
+<p>In order to add a new type of strategy, you need to respect the following rules:</p>
+<ul class="simple">
+<li><p>Strategies extend any type of <em>implementation</em> of <strong>StrategiesEvaluator</strong></p></li>
+</ul>
+<p>Example: InstantSocialReactionMixedStrategiesEvaluator extends <em>MixedStrategiesEvaluator</em> which extends <strong>StrategiesEvaluator</strong>. Here InstantSocialReactionMixedStrategiesEvaluator is a strategy extending <strong>StrategiesEvaluator</strong>‘s implementation <em>MixedStrategiesEvaluator</em></p>
+<ul class="simple">
+<li><p>Evaluators and strategies have to implement all the <code class="docutils literal notranslate"><span class="pre">&#64;abstractmethod</span></code> methods.</p></li>
+<li><p>Evaluators other than the ones extending <strong>TAEvaluator</strong> can be threaded, in this case <code class="docutils literal notranslate"><span class="pre">self.is_threaded</span></code> should be set to true. Strategies can’t be threaded.</p></li>
+<li><p>Evaluators and strategies have to set <code class="docutils literal notranslate"><span class="pre">self.eval_note</span></code> to a value between -1 and 1 (-1 for buy and 1 for sell) to be considered.</p></li>
+<li><p>Evaluators are ignored if <code class="docutils literal notranslate"><span class="pre">self.enabled</span></code> is not set to true.</p></li>
+<li><p>Evaluators and strategy files have to be included in the <code class="docutils literal notranslate"><span class="pre">__init__.py</span></code> file using the following line:
+<code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">.evaluator_file</span> <span class="pre">import</span> <span class="pre">*</span></code>.</p></li>
+</ul>
+<p>Including a new evaluator or strategy will automatically tell OctoBot to load this evaluator or strategy.</p>
 </div>
-<p>Once your package is created, you can install it using the command :</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>tentacles --install --all --location <span class="s2">&quot;path/to/your/packed/tentacles/pack_name.zip&quot;</span>
-</pre></div>
-</div>
-<p>You can also make it available from an URL and later install it via (for example) :</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>tentacles --install --all --location <span class="s2">&quot;https://my.tentacles.com/pack_name&quot;</span>
-</pre></div>
-</div>
-<p>Installing a tentacle package will replace any existing source file taht share the same name. It can be used to update sources without changing the version number.</p>
-</div>
-<div class="section" id="single-tentacles">
-<h4>Single tentacles<a class="headerlink" href="#single-tentacles" title="Permalink to this headline">¶</a></h4>
-<p>It is also possible to install a single tentacle from a local folder using the following options:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>tentacles --single-tentacle-install <span class="s2">&quot;path/to/your/tentacle/to/install&quot;</span> Evaluator/TA
-</pre></div>
-</div>
-<p>Please note that in this command, you also need to provide the type of the tentacle (<code class="docutils literal notranslate"><span class="pre">Evaluator/TA</span></code> in this example) for OctoBot to know how to handle it.</p>
-</div>
+<div class="section" id="join-the-octobot-community">
+<h3>Join the OctoBot community !<a class="headerlink" href="#join-the-octobot-community" title="Permalink to this headline">¶</a></h3>
+<p>After creating your own evaluators, strategies, utilitary tools, or trading modes you can share them with the OctoBot community !</p>
+<p>The OctoBot team will be delighted to add new tentacles to the project and update the <a class="reference external" href="https://github.com/Drakkar-Software/OctoBot-Tentacles">default OctoBot evaluation and strategies tentacles package</a> !</p>
 </div>
 </div>
 </div>
@@ -311,10 +398,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="Developer-Guide.html" class="btn btn-neutral float-right" title="Developer startup guide" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="Tests.html" class="btn btn-neutral float-right" title="Tests" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
-        <a href="Using-a-webhook-with-OctoBot.html" class="btn btn-neutral" title="Using a webhook with OctoBot" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+        <a href="Tentacle-Package-Development.html" class="btn btn-neutral" title="Tentacle package development" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
       
     </div>
   
@@ -346,14 +433,14 @@
                 <div class="pytorch-right-menu" id="pytorch-right-menu">
                     <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
                         <ul>
-<li><a class="reference internal" href="#">OctoBot is customizable !</a><ul>
-<li><a class="reference internal" href="#tentacle-installation">Tentacle installation</a><ul>
-<li><a class="reference internal" href="#default-tentacles">Default tentacles</a></li>
-<li><a class="reference internal" href="#installing-a-tentacles">Installing a tentacles</a><ul>
-<li><a class="reference internal" href="#tentacle-packages">Tentacle packages</a></li>
-<li><a class="reference internal" href="#single-tentacles">Single tentacles</a></li>
+<li><a class="reference internal" href="#">Tentacle development</a><ul>
+<li><a class="reference internal" href="#intro">Intro</a><ul>
+<li><a class="reference internal" href="#tentacle-customization-octobot-v0-3">Tentacle customization (OctoBot v0.3)</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#manual-installation">Manual installation</a><ul>
+<li><a class="reference internal" href="#advanced-evaluator-and-strategy-creation-octobot-v0-3">Advanced: Evaluator and Strategy creation (OctoBot v0.3)</a></li>
+<li><a class="reference internal" href="#join-the-octobot-community">Join the OctoBot community !</a></li>
 </ul>
 </li>
 </ul>
