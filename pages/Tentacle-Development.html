@@ -314,14 +314,14 @@ based on <code class="docutils literal notranslate"><span class="pre">tentacles/
                              <span class="n">cryptocurrency</span><span class="p">,</span>
                              <span class="n">symbol</span><span class="p">,</span>
                              <span class="n">time_frame</span><span class="p">):</span>
-   <span class="n">final_evaluation</span> <span class="o">=</span> <span class="mi">0</span>
-   <span class="c1"># some advanced computations to set final_evaluation value</span>
+       <span class="n">final_evaluation</span> <span class="o">=</span> <span class="mi">0</span>
+       <span class="c1"># some advanced computations to set final_evaluation value</span>
 
-   <span class="c1"># update self.eval_note to store the strategy result</span>
-   <span class="bp">self</span><span class="o">.</span><span class="n">eval_note</span> <span class="o">=</span> <span class="n">final_evaluation</span>
-   <span class="c1"># finally, call self.strategy_completed to notify that</span>
-   <span class="c1"># trading modes should wake up after this update</span>
-   <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">strategy_completed</span><span class="p">(</span><span class="n">cryptocurrency</span><span class="p">,</span> <span class="n">symbol</span><span class="p">)</span>
+       <span class="c1"># update self.eval_note to store the strategy result</span>
+       <span class="bp">self</span><span class="o">.</span><span class="n">eval_note</span> <span class="o">=</span> <span class="n">final_evaluation</span>
+       <span class="c1"># finally, call self.strategy_completed to notify that</span>
+       <span class="c1"># trading modes should wake up after this update</span>
+       <span class="k">await</span> <span class="bp">self</span><span class="o">.</span><span class="n">strategy_completed</span><span class="p">(</span><span class="n">cryptocurrency</span><span class="p">,</span> <span class="n">symbol</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
