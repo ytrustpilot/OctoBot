@@ -10,7 +10,7 @@
     
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-        <title>Frequently Asked Questions (FAQ) | OctoBot docs</title>
+        <title>Profile configuration | OctoBot docs</title>
     
 
     
@@ -19,18 +19,18 @@
     
     
     
-        <link rel="canonical" href="https://github.com/Drakkar-Software/OctoBotpages/Frequently-asked-questions-(FAQ).html"/>
+        <link rel="canonical" href="https://github.com/Drakkar-Software/OctoBotpages/Profile-Configuration.html"/>
     
 
     <meta name="keywords" content="octobot, octobot docs, octobot documentation, free, open source, trading, community, cryptocurrency, cryptocurrencies, bitcoin, ethereum"/>
     <meta name="description" content="Documentation for OctoBot: a free and highly customizable open source cryptocurrency trading robot."/>
     <meta name="twitter:card" content="summary"/>
-    <meta name="twitter:title" content="Frequently Asked Questions (FAQ) | OctoBot docs"/>
+    <meta name="twitter:title" content="Profile configuration | OctoBot docs"/>
     <meta name="twitter:description" content="Documentation for OctoBot: a free and highly customizable open source cryptocurrency trading robot."/>
     <meta name="twitter:image" content="https://docs.octobot.online/_static/images/octobot.png"/>
     <meta name="twitter:domain" content="docs.octobot.online"/>
     <meta name="twitter:url" content="https://docs.octobot.online"/>
-    <meta property="og:title" content="Frequently Asked Questions (FAQ) | OctoBot docs"/>
+    <meta property="og:title" content="Profile configuration | OctoBot docs"/>
     <meta property="og:description" content="Documentation for OctoBot: a free and highly customizable open source cryptocurrency trading robot."/>
     <meta property="og:type" content="website"/>
     <meta property="og:url" content="https://docs.octobot.online"/>
@@ -41,8 +41,8 @@
 
     <link rel="stylesheet" href="../_static/css/theme.css" type="text/css"/>
     <!-- <link rel="stylesheet" href="../_static/pygments.css" type="text/css" /> -->
-            <link rel="next" title="Web interface" href="Web-interface.html"/>
-            <link rel="prev" title="Profitability in OctoBot" href="Understanding-profitability.html"/> 
+            <link rel="next" title="Accounts" href="Accounts.html"/>
+            <link rel="prev" title="Profiles" href="Profiles.html"/> 
 
     
     <script src="../_static/js/modernizr.min.js" async></script>
@@ -134,18 +134,18 @@
 <li class="toctree-l1"><a class="reference internal" href="Installation-Troubleshoot.html">Troubleshoot</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Configuration</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="Profiles.html">Profiles</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Profile-Configuration.html">Profile configuration</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Profile configuration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Accounts.html">Accounts</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Custom-Profile.html">Custom Profile</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Usage</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="Simulator.html">Simulator</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Exchanges.html">Exchanges</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Understanding-profitability.html">Profitability in OctoBot</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Frequently Asked Questions (FAQ)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Frequently-asked-questions-%28FAQ%29.html">Frequently Asked Questions (FAQ)</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Interfaces</span></p>
 <ul>
@@ -216,13 +216,13 @@
       </li>
 
         
-      <li>Frequently Asked Questions (FAQ)</li>
+      <li>Profile configuration</li>
     
     
       <li class="pytorch-breadcrumbs-aside">
         
             
-            <a href="../_sources/pages/Frequently-asked-questions-(FAQ).rst.txt" rel="nofollow"><img src="../_static/images/view-page-source-icon.svg"></a>
+            <a href="../_sources/pages/Profile-Configuration.rst.txt" rel="nofollow"><img src="../_static/images/view-page-source-icon.svg"></a>
           
         
       </li>
@@ -246,54 +246,148 @@
             <div role="main" class="main-content" itemscope="itemscope" itemtype="http://schema.org/Article">
                     <article itemprop="articleBody" id="pytorch-article" class="pytorch-article">
                         
-  <div class="section" id="frequently-asked-questions-faq">
-<h1>Frequently Asked Questions (FAQ)<a class="headerlink" href="#frequently-asked-questions-faq" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="why-is-my-octobot-not-creating-orders">
-<h2>Why is my OctoBot not creating orders ?<a class="headerlink" href="#why-is-my-octobot-not-creating-orders" title="Permalink to this headline">¶</a></h2>
-<p>Before creating any order (using trading simulator or real trading), OctoBot asks the exchange for its minimal (and maximal) requirements for any order. When creating an order (following a buy or sell signal), these order requirements are checked. If the order is not complient, it will not be pushed to the exchange.</p>
-<p>The most common case of signals without created orders is when there is <strong>not enough funds</strong> of the required asset to proceed with an order.</p>
-<p>Example: not enough <strong>USD</strong> to buy BTC for a BTC/<strong>USD</strong> <strong>buy</strong> signal.</p>
-<p>Note: In trading simulator and backtesting modes, OctoBot uses a simulated portfolio called <code class="docutils literal notranslate"><span class="pre">&quot;starting-portfolio&quot;</span></code> that is defined in the <a class="reference external" href="Simulator.html#starting-portfolio">trading simulator configuration</a>.</p>
+  <p>OctoBot configuration is located in the <strong>user</strong> folder:</p>
+<ul class="simple">
+<li><p><strong>user/config.json</strong> is the global configuration file, mostly used to setup the bot exchanges credentials, interfaces and notification settings.</p></li>
+<li><p><strong>user/profiles/</strong> contains all the <a class="reference external" href="Profiles.html">profiles</a> created and imported in your OctoBot.</p></li>
+</ul>
+<p>OctoBot’s web interface allows to easily edit the configuration, however, it is also possible to manually edit configuration files.
+Please be careful when manually editing them or OctoBot won’t be able to read them and wont start.
+Json file are readable and editable using any text editor.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ERROR    root &lt;class &#39;Exception&#39;&gt;: Error when load config
+</pre></div>
 </div>
-<div class="section" id="how-often-will-my-octobot-trade">
-<h2>How often will my OctoBot trade ?<a class="headerlink" href="#how-often-will-my-octobot-trade" title="Permalink to this headline">¶</a></h2>
-<p>It can be once in a week or 5 times a minute, this depends on the strategy your OctoBot is using.</p>
-<p>For example: when using the default settings, the simple mixed strategy evaluator is using the 1 hour timeframe as the shortest one. Since it’s a technical evaluator based strategy, it will update every hour. In this setup, your OctoBot will create new trades every hour it sees an opportunity. There might be hours with no opportunity and no order creation.</p>
+<p>This will appear when a configuration file is not a json valid file.</p>
+<div class="section" id="profile-configuration">
+<h1>Profile configuration<a class="headerlink" href="#profile-configuration" title="Permalink to this headline">¶</a></h1>
+<p><strong>user/config.json</strong> is the technical configuration file of OctoBot, an example
+is available <a class="reference external" href="https://github.com/Drakkar-Software/OctoBot/blob/master/octobot/config/default_config.json">on github</a>.</p>
+<p>When starting OctoBot, if the <strong>user</strong> folder is missing or incomplete, it will automatically be created or
+completed with default values.</p>
+<div class="section" id="strategies">
+<h2>Strategies<a class="headerlink" href="#strategies" title="Permalink to this headline">¶</a></h2>
+<p>Default profiles can’t be edited, you can duplicate them to be able to customize them.
+On default profiles strategy and trading mode description are displayed instead of selectors to customize the profile.</p>
+<a class="reference external image-reference" href="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/profile_strategies.png"><img alt="profile_strategies" src="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/profile_strategies.png" /></a>
+<p>When the configured profile is a custom profile, it can be configured, <a class="reference external" href="Custom-Profile.html">see custom profile page</a></p>
+<div class="section" id="specific-evaluator-configuration">
+<h3>Specific evaluator configuration<a class="headerlink" href="#specific-evaluator-configuration" title="Permalink to this headline">¶</a></h3>
+<p>Some evaluators and trading modes can be configured.</p>
+<p>If it is the case, configuration is possible through OctoBot’s web interface.</p>
+<a class="reference external image-reference" href="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/specific_eval_config.jpg"><img alt="evaluators_config" src="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/specific_eval_config.jpg" /></a>
+<p>This edition interface is generated according to the
+<strong>NameOfTheRelatedClass_schema.json</strong> <a class="reference external" href="https://json-schema.org/understanding-json-schema/">json schema</a> file
+of the evaluator or trading mode to configure.</p>
+<p>It is also possible to manually edit each configuration file using a text editor for JSON. When configurable,
+each evaluator or trading mode has a <strong>NameOfTheRelatedClass.json</strong> file in <strong>user/profiles/&lt;profile_name&gt;/specific_config</strong>.</p>
 </div>
-<div class="section" id="i-updated-my-octobot-and-now-it-s-not-starting-anymore">
-<h2>I updated my OctoBot and now it’s not starting anymore.<a class="headerlink" href="#i-updated-my-octobot-and-now-it-s-not-starting-anymore" title="Permalink to this headline">¶</a></h2>
-<p>This is probably due to an issue in your <strong>tentacles</strong> folder. Try removing it and restarting your OctoBot, it will download the latest versions of each tentacle and should fix the problem.</p>
 </div>
-<div class="section" id="how-to-follow-my-octobot-s-trading-activity">
-<h2>How to follow my OctoBot’s trading activity ?<a class="headerlink" href="#how-to-follow-my-octobot-s-trading-activity" title="Permalink to this headline">¶</a></h2>
-<p>When your OctoBot places an order or has a order that is filled, it will appear on the web interface.
-The web interface displays the list of open orders and the list of filled orders.</p>
-<p>You can also receive Telegram, Twitter and soon Discord notifications on orders placement and trades.</p>
+<div class="section" id="currencies">
+<h2>Currencies<a class="headerlink" href="#currencies" title="Permalink to this headline">¶</a></h2>
+<a class="reference external image-reference" href="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/profile_currencies.png"><img alt="currencies" src="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/profile_currencies.png" /></a>
+<p>OctoBot will trade all the cryptocurrencies listed in its configuration. To tell which cryptocurrencies to trade,
+add the currency in the <strong>crypto-currencies</strong> section in <strong>user/profiles/&lt;profile_name&gt;/profile.json</strong>.</p>
+<p>In order to keep OctoBot working at its full potential, we recommend to trade <strong>between 1 and 5</strong> different assets <strong>not to use more than 10 to 15</strong> different assets at the same time, depending on the size of your available funds.</p>
+<p>Examples:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&quot;crypto-currencies&quot;:{
+    &quot;Bitcoin&quot;: {
+      &quot;pairs&quot;: [&quot;BTC/USDT&quot;],
+      &quot;enabled&quot;: true
+    }
+}
+</pre></div>
 </div>
-<div class="section" id="what-part-of-my-portoflio-will-be-traded-by-octobot">
-<h2>What part of my portoflio will be traded by OctoBot ?<a class="headerlink" href="#what-part-of-my-portoflio-will-be-traded-by-octobot" title="Permalink to this headline">¶</a></h2>
-<p>OctoBot will consider it can trade 100% of the portfolio you give it. However how this funds will be used (size of orders, orders frequency, …) depends on your risk setting and the trading mode you are using.</p>
+<p>OctoBot trading only Bitcoin against USDT</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&quot;crypto-currencies&quot;:{
+    &quot;Bitcoin&quot;: {
+      &quot;pairs&quot;: [&quot;BTC/USDT&quot;],
+      &quot;enabled&quot;: true
+    },
+    &quot;Ethereum&quot;: {
+      &quot;pairs&quot;: [&quot;ETH/USDT&quot;],
+      &quot;enabled&quot;: false
+    },
+    &quot;NEO&quot;: {
+      &quot;pairs&quot;: [&quot;NEO/BTC&quot;, &quot;NEO/ETH&quot;],
+      &quot;enabled&quot;: true
+    }
+}
+</pre></div>
 </div>
-<div class="section" id="how-to-change-the-backtesting-starting-portfolio">
-<h2>How to change the backtesting starting portfolio ?<a class="headerlink" href="#how-to-change-the-backtesting-starting-portfolio" title="Permalink to this headline">¶</a></h2>
-<p>Each backtesting run is using the <a class="reference external" href="Simulator.html#starting-portfolio">simulator’s starting portfolio</a> as a base.</p>
-<p>Note: In 0.3.X, when the reference market is changed during a backtesting, its value will always be 10000. This changes in 0.4.X where it takes the value in starting portfolio.</p>
+<p>OctoBot trading Bitcoin against USDT as well as NEO against BTC and ETH but not Ethereum against USDT because
+Ethereum is disabled (“enabled”: false)</p>
+<div class="section" id="wildcard">
+<h3>Wildcard<a class="headerlink" href="#wildcard" title="Permalink to this headline">¶</a></h3>
+<p>To tell OctoBot to trade all BTC trading pairs (with BTC as a quote asset), use the wildcard “*” instead of a list for “pairs”:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&quot;crypto-currencies&quot;:{
+    &quot;Bitcoin&quot;: {
+      &quot;pairs&quot;: [&quot;*&quot;],
+      &quot;quote&quot;: &quot;BTC&quot;
+    }
+}
+</pre></div>
 </div>
-<div class="section" id="why-is-my-reference-market-changing-in-backtesting">
-<h2>Why is my reference market changing in backtesting ?<a class="headerlink" href="#why-is-my-reference-market-changing-in-backtesting" title="Permalink to this headline">¶</a></h2>
-<p>The reference market is automatically switched to the base of the traded pair in backtesting to compute more accurate profitability.</p>
-<p>Example: a backtesting on ETH/<strong>BNB</strong> would make <strong>BNB</strong> the temporary reference market for this backtesting.</p>
+<p>A “quote” is required to specify the name of the currency to trade with.</p>
 </div>
-<div class="section" id="how-much-of-my-exchange-funds-will-be-traded-by-octobot">
-<h2>How much of my exchange funds will be traded by OctoBot ?<a class="headerlink" href="#how-much-of-my-exchange-funds-will-be-traded-by-octobot" title="Permalink to this headline">¶</a></h2>
-<p>For now, OctoBot uses all the available funds to trade. Therefore it’s possible that 100% of the exchange funds on an account will be traded.</p>
 </div>
-<div class="section" id="why-is-backtesting-not-using-all-available-data">
-<h2>Why is backtesting not using all available data ?<a class="headerlink" href="#why-is-backtesting-not-using-all-available-data" title="Permalink to this headline">¶</a></h2>
-<p>OctoBot backtesting is always using the <strong>maximum available data allowing to keep a realistic simulation</strong>.</p>
-<p>However exchange are usually not giving all of their data: they give the last X candles (500 for binance). Therefore a regular backtesting data file has 500 1hour (1h) candles, 500 1minute (1m) candles etc. These candles are always the most recent ones.
-That means that when running a backtesting on 1h and 1d time frames, the maximum backtesting range is not 1h and 1d with 500 candles each but the time range where <strong>both</strong> 1h and 1d have data: there the past 500 hours (500 1h candles and approximately 20 1d candles).</p>
-<p>As an example, in a backtesting with 1m and 1d candles: the common time range in 1d is <code class="docutils literal notranslate"><span class="pre">500/(60*24)</span> <span class="pre">=</span> <span class="pre">0.35</span></code> which means the whole backtesting is carried out with the data of one day: the last daily candle of the 500 1d candle only while using 100% of the shortest time frame: 1m (which all happened during this one day).</p>
+<div class="section" id="exchanges">
+<h2>Exchanges<a class="headerlink" href="#exchanges" title="Permalink to this headline">¶</a></h2>
+<a class="reference external image-reference" href="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/profile_exchanges.png"><img alt="trading" src="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/profile_exchanges.png" /></a>
+<p>Open your <strong>user/profiles/&lt;profile_name&gt;/profile.json</strong> file and edit this configuration :</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&quot;trader&quot;:{
+  &quot;enabled&quot;: true,
+  &quot;load-trade-history&quot;: false
+}
+</pre></div>
+</div>
+<div class="section" id="enabled">
+<h3>Enabled<a class="headerlink" href="#enabled" title="Permalink to this headline">¶</a></h3>
+<p>When the <strong>Enabled</strong> parameter is set at <strong>true</strong>, OctoBot will trade using your real funds from your exchange’s accounts.
+When <strong>false</strong> OctoBot will never any create a real trade.</p>
+</div>
+<div class="section" id="load-trade-history">
+<h3>Load trade history<a class="headerlink" href="#load-trade-history" title="Permalink to this headline">¶</a></h3>
+<p>When the <strong>load-trade-history</strong> parameter is set at <strong>true</strong>, OctoBot will load the account’s recent trades for
+the enabled traded pairs at startup. This allows to have a view on your account’s trade history.
+When <strong>false</strong>, OctoBot will only historize trades that happen after the bot startup.</p>
+</div>
+</div>
+<div class="section" id="trading">
+<h2>Trading<a class="headerlink" href="#trading" title="Permalink to this headline">¶</a></h2>
+<p>OctoBot can process two types of trading:</p>
+<ul class="simple">
+<li><p>Real trading using your exchanges’ portfolio.</p></li>
+<li><p>Simulated trading using any imaginary portfolio.</p></li>
+</ul>
+<a class="reference external image-reference" href="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/profile_trading.png"><img alt="trading" src="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/profile_trading.png" /></a>
+<p>Or edit the trader key in <strong>user/profiles/&lt;profile_name&gt;/profile.json</strong> :</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&quot;trading&quot;:{
+  &quot;reference-market&quot;: &quot;BTC&quot;,
+  &quot;risk&quot;: 0.8
+}
+</pre></div>
+</div>
+<div class="section" id="reference-market">
+<h3>Reference-market<a class="headerlink" href="#reference-market" title="Permalink to this headline">¶</a></h3>
+<p>The <strong>Reference-market</strong> parameter defines which currency OctBot should use as a reference,
+this reference is used to compute profitability and the portfolio total value</p>
+</div>
+<div class="section" id="risk-parameter">
+<h3>Risk parameter<a class="headerlink" href="#risk-parameter" title="Permalink to this headline">¶</a></h3>
+<p>Any type of trading has its risk parameter. It is a parameter defining the behavior of the trader,
+similarly to a real human trader.</p>
+<p>The <strong>Risk</strong> parameter defines the behaviour of OctoBot in an optimism manner.</p>
+<p>It is a value between 0 and 1:</p>
+<ul class="simple">
+<li><p>A low risk (closer to 0) will make OctoBot a very safe trader with few bold moves and mostly small trades. A 0 risk bot is very pessimistic (regarding its orders creation) and does not expect big market moves.</p></li>
+<li><p>A high risk (closer to 1) will make OctoBot a very active and heavy trader. A 1 risk bot is very optimistic (regarding its orders creation) and is expecting significative market moves.</p></li>
+</ul>
+</div>
+<div class="section" id="trader-simulator">
+<h3>Trader simulator<a class="headerlink" href="#trader-simulator" title="Permalink to this headline">¶</a></h3>
+<p>Additionally to the real trading system, a trading simulator is available in OctoBot.</p>
+<p><a class="reference external" href="Simulator.html">Here is the article describing the simulator feature of OctoBot</a></p>
+</div>
 </div>
 </div>
 
@@ -305,10 +399,10 @@ That means that when running a backtesting on 1h and 1d time frames, the maximum
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="Web-interface.html" class="btn btn-neutral float-right" title="Web interface" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
+        <a href="Accounts.html" class="btn btn-neutral float-right" title="Accounts" accesskey="n" rel="next">Next <img src="../_static/images/chevron-right-orange.svg" class="next-page"></a>
       
       
-        <a href="Understanding-profitability.html" class="btn btn-neutral" title="Profitability in OctoBot" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
+        <a href="Profiles.html" class="btn btn-neutral" title="Profiles" accesskey="p" rel="prev"><img src="../_static/images/chevron-right-orange.svg" class="previous-page"> Previous</a>
       
     </div>
   
@@ -340,16 +434,26 @@ That means that when running a backtesting on 1h and 1d time frames, the maximum
                 <div class="pytorch-right-menu" id="pytorch-right-menu">
                     <div class="pytorch-side-scroll" id="pytorch-side-scroll-right">
                         <ul>
-<li><a class="reference internal" href="#">Frequently Asked Questions (FAQ)</a><ul>
-<li><a class="reference internal" href="#why-is-my-octobot-not-creating-orders">Why is my OctoBot not creating orders ?</a></li>
-<li><a class="reference internal" href="#how-often-will-my-octobot-trade">How often will my OctoBot trade ?</a></li>
-<li><a class="reference internal" href="#i-updated-my-octobot-and-now-it-s-not-starting-anymore">I updated my OctoBot and now it’s not starting anymore.</a></li>
-<li><a class="reference internal" href="#how-to-follow-my-octobot-s-trading-activity">How to follow my OctoBot’s trading activity ?</a></li>
-<li><a class="reference internal" href="#what-part-of-my-portoflio-will-be-traded-by-octobot">What part of my portoflio will be traded by OctoBot ?</a></li>
-<li><a class="reference internal" href="#how-to-change-the-backtesting-starting-portfolio">How to change the backtesting starting portfolio ?</a></li>
-<li><a class="reference internal" href="#why-is-my-reference-market-changing-in-backtesting">Why is my reference market changing in backtesting ?</a></li>
-<li><a class="reference internal" href="#how-much-of-my-exchange-funds-will-be-traded-by-octobot">How much of my exchange funds will be traded by OctoBot ?</a></li>
-<li><a class="reference internal" href="#why-is-backtesting-not-using-all-available-data">Why is backtesting not using all available data ?</a></li>
+<li><a class="reference internal" href="#">Profile configuration</a><ul>
+<li><a class="reference internal" href="#strategies">Strategies</a><ul>
+<li><a class="reference internal" href="#specific-evaluator-configuration">Specific evaluator configuration</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#currencies">Currencies</a><ul>
+<li><a class="reference internal" href="#wildcard">Wildcard</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#exchanges">Exchanges</a><ul>
+<li><a class="reference internal" href="#enabled">Enabled</a></li>
+<li><a class="reference internal" href="#load-trade-history">Load trade history</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#trading">Trading</a><ul>
+<li><a class="reference internal" href="#reference-market">Reference-market</a></li>
+<li><a class="reference internal" href="#risk-parameter">Risk parameter</a></li>
+<li><a class="reference internal" href="#trader-simulator">Trader simulator</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
