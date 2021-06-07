@@ -269,6 +269,34 @@
 </pre></div>
 </div>
 </div>
+<div class="section" id="start-multiple-octobots">
+<h2>Start multiple OctoBots<a class="headerlink" href="#start-multiple-octobots" title="Permalink to this headline">¶</a></h2>
+<p>To run a second OctoBot on the same computer :</p>
+<ol class="arabic simple">
+<li><p>Create a new directory and enter it</p></li>
+<li><p>Start OctoBot and stop it after 1-2min to let it create default files</p></li>
+<li><p>Open user/config.json file</p></li>
+<li><p>Change web config lines</p></li>
+</ol>
+<p>FROM</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&quot;web&quot;: {
+    &quot;auto-open-in-web-browser&quot;: true
+}
+</pre></div>
+</div>
+<p>TO</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&quot;web&quot;: {
+    &quot;auto-open-in-web-browser&quot;: true,
+    &quot;port&quot;: 8000
+}
+</pre></div>
+</div>
+<p>In this example, the second OctoBot’s web interface is accessible at <a class="reference external" href="http://127.0.0.1:8000">http://127.0.0.1:8000</a>.</p>
+<p>Any port can be used except those already used by another OctoBot or any software on your system.</p>
+<ol class="arabic simple" start="5">
+<li><p>Start the new OctoBot</p></li>
+</ol>
+</div>
 </div>
 
 
@@ -318,6 +346,7 @@
 <li><a class="reference internal" href="#requirements">Requirements</a></li>
 <li><a class="reference internal" href="#installation">Installation</a></li>
 <li><a class="reference internal" href="#usage">Usage</a></li>
+<li><a class="reference internal" href="#start-multiple-octobots">Start multiple OctoBots</a></li>
 </ul>
 </li>
 </ul>

@@ -338,6 +338,19 @@ docker run -itd --name OctoBot -p <span class="m">80</span>:5001 -v <span class=
 </ul>
 <p>You can now open the OctoBot web interface at <a class="reference external" href="https://YOUR_IP_ADDRESS">https://YOUR_IP_ADDRESS</a>.</p>
 </div>
+<div class="section" id="start-multiple-octobots-with-docker">
+<h2>Start multiple OctoBots with docker<a class="headerlink" href="#start-multiple-octobots-with-docker" title="Permalink to this headline">¶</a></h2>
+<p>To run a second OctoBot on the same computer :</p>
+<ol class="arabic simple">
+<li><p>Create a new directory and enter it</p></li>
+<li><p>Start OctoBot’s web interface on a new port by changing “-p” option</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker run -itd --name OctoBot -p <span class="m">8000</span>:5001 -v <span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>/user:/octobot/user -v <span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>/tentacles:/octobot/tentacles -v <span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>/logs:/octobot/logs drakkarsoftware/octobot:stable
+</pre></div>
+</div>
+<p>In this example, the second OctoBot’s web interface is accessible at <a class="reference external" href="http://127.0.0.1:8000">http://127.0.0.1:8000</a>.</p>
+<p>Any port can be used except those already used by another OctoBot or any software on your system.</p>
+</div>
 <div class="section" id="start-octobot-with-docker-managed-files">
 <h2>Start OctoBot with docker managed files<a class="headerlink" href="#start-octobot-with-docker-managed-files" title="Permalink to this headline">¶</a></h2>
 <div class="admonition warning">
@@ -414,6 +427,7 @@ docker run -itd --name OctoBot -p <span class="m">80</span>:5001 -v <span class=
 </ul>
 </li>
 <li><a class="reference internal" href="#running-with-docker-compose">Running with docker-compose</a></li>
+<li><a class="reference internal" href="#start-multiple-octobots-with-docker">Start multiple OctoBots with docker</a></li>
 <li><a class="reference internal" href="#start-octobot-with-docker-managed-files">Start OctoBot with docker managed files</a></li>
 </ul>
 </li>
