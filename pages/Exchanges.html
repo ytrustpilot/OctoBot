@@ -275,8 +275,7 @@ To manually add exchange configuration, you can add your info directly into your
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span>&quot;exchanges&quot;: {
     &quot;binance&quot;: {
         &quot;api-key&quot;: &quot;YOUR_BINANCE_API_KEY_ENCRYPTED&quot;,
-        &quot;api-secret&quot;: &quot;YOUR_BINANCE_API_SECRET_ENCRYPTED&quot;,
-        &quot;web-socket&quot;: true
+        &quot;api-secret&quot;: &quot;YOUR_BINANCE_API_SECRET_ENCRYPTED&quot;
     },
     &quot;coinbasepro&quot;: {
         &quot;api-key&quot;: &quot;YOUR_EXCHANGE_API_KEY_ENCRYPTED&quot;,
@@ -290,7 +289,6 @@ To manually add exchange configuration, you can add your info directly into your
 <li><p><strong>api-key</strong> is your exchange account API key</p></li>
 <li><p><strong>api-secret</strong> is your exchange account API secret</p></li>
 <li><p><strong>api-password</strong> is your exchange account API password if this exchange is requiring a password. Leave empty otherwise</p></li>
-<li><p><strong>web-socket</strong> is a setting telling OctoBot whether or not to try to use websockets interfaces (websockets are used to get close to real-time data update but it’s using more bandwidth). Moreover, RealTime evaluators are much better with websockets enabled.</p></li>
 </ul>
 </div>
 <div class="section" id="octobot-officially-supported-exchanges">
