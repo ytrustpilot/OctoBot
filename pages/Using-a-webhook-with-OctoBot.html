@@ -254,14 +254,28 @@
 <h2>Setting up your OctoBot’s webhook<a class="headerlink" href="#setting-up-your-octobot-s-webhook" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic">
 <li><p>In OctoBot configuration, add the webhook service.</p></li>
-<li><p>To get your OctoBot’s webhook address (the url other websites will use to send messages to your OctoBot), create an account on <a class="reference external" href="https://ngrok.com/">https://ngrok.com/</a> and enter your ngrok token into your webhook service configuration.</p></li>
+<li><p>To set up your webhook configuration</p>
+<ul class="simple">
+<li><p>Option 1: If your OctoBot is not exposed to the Internet you have to :</p></li>
+</ul>
+<blockquote>
+<div><ul class="simple">
+<li><p>enable ngrok</p></li>
+<li><p>create an account on <a class="reference external" href="https://ngrok.com/">https://ngrok.com/</a></p></li>
+<li><p>enter your ngrok token into your OctoBot’s webhook service configuration.</p></li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><p>Option 2: If your OctoBot is exposed to the Internet you can disable ngrok and set the listening port and ip for the webhook</p></li>
+</ul>
+</li>
 <li><p>Activate a tentacle using a webhook service (like the trading view signals trading mode).</p></li>
 <li><p>Restart your OctoBot.</p></li>
 <li><p>The webhook address will be displayed on your OctoBot configuration and printed in your logs.</p>
 <a class="reference external image-reference" href="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/webhook_config.jpg"><img alt="webhook and tradingview config" src="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/webhook_config.jpg" /></a>
 <a class="reference external image-reference" href="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/webhook_log.jpg"><img alt="webhook log" src="https://raw.githubusercontent.com/Drakkar-Software/OctoBot/assets/wiki_resources/webhook_log.jpg" /></a>
 <p>## About ngrok.com
-You can use ngrok with a free account, the only drawback of having a free version is that your webhoob address will change at every OctoBot restart, you will have to update it on your message sender (like <a class="reference external" href="https://www.tradingview.com">https://www.tradingview.com</a>)</p>
+You can use ngrok with a free account, the only drawback of having a free version is that your webhook address will change at every OctoBot restart, you will have to update it on your message sender (like <a class="reference external" href="https://www.tradingview.com">https://www.tradingview.com</a>)</p>
 </li>
 </ol>
 </div>
