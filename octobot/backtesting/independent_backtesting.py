@@ -154,6 +154,9 @@ class IndependentBacktesting:
                                                     common_constants.CONFIG_STARTING_PORTFOLIO])
         self.fees_config = copy.deepcopy(self.octobot_origin_config[common_constants.CONFIG_SIMULATOR][
                                              common_constants.CONFIG_SIMULATOR_FEES])
+        self.exchange_config = copy.deepcopy(self.octobot_origin_config[common_constants.CONFIG_EXCHANGES])
+        self._clear_exchange_config()
+
         if evaluator_constants.CONFIG_FORCED_TIME_FRAME in self.octobot_origin_config:
             self.forced_time_frames = copy.deepcopy(self.octobot_origin_config[
                                                         evaluator_constants.CONFIG_FORCED_TIME_FRAME])
@@ -175,6 +178,17 @@ class IndependentBacktesting:
             trading_mode = "Error when reading trading mode"
         report = self._get_exchanges_report(reference_market, trading_mode)
         return report
+
+    def _clear_exchange_config(self):
+        if self.exchange_config:
+            for exchange in self.exchange_config.keys():
+                # clear exchange credentials
+                self.exchange_config[exchange].pop(common_constants.CONFIG_EXCHANGE_KEY, None)
+                self.exchange_config[exchange].pop(common_constants.CONFIG_EXCHANGE_SECRET, None)
+                self.exchange_config[exchange].pop(common_constants.CONFIG_EXCHANGE_PASSWORD, None)
+
+                # clear exchange params
+                self.exchange_config[exchange].pop(common_constants.CONFIG_EXCHANGE_SANDBOXED, False)
 
     def _get_exchanges_report(self, reference_market, trading_mode):
         SYMBOL_REPORT = "symbol_report"
@@ -274,6 +288,7 @@ class IndependentBacktesting:
             common_constants.CONFIG_STARTING_PORTFOLIO] = self.starting_portfolio
         self.backtesting_config[common_constants.CONFIG_SIMULATOR][
             common_constants.CONFIG_SIMULATOR_FEES] = self.fees_config
+        self.backtesting_config[common_constants.CONFIG_EXCHANGES] = self.exchange_config
         if self.forced_time_frames:
             self.backtesting_config[evaluator_constants.CONFIG_FORCED_TIME_FRAME] = self.forced_time_frames
         self._add_config_default_backtesting_values()

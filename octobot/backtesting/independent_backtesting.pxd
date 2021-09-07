@@ -34,6 +34,7 @@ cdef class IndependentBacktesting:
     cdef public double risk
     cdef public dict starting_portfolio
     cdef public dict fees_config
+    cdef public dict exchange_config
     cdef public bint stopped
 
     cdef public object post_backtesting_task
@@ -46,6 +47,7 @@ cdef class IndependentBacktesting:
 
     cdef void _post_backtesting_start(self)
     cdef void _init_default_config_values(self)
+    cdef void _clear_exchange_config(self)
     cdef dict _get_exchanges_report(self, str reference_market, object trading_mode)
     cdef void _log_trades_history(self, object exchange_manager, str exchange_name)
     cdef void _log_symbol_report(self, str symbol, object exchange_manager, object min_time_frame)

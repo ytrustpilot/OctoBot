@@ -196,8 +196,8 @@ class OctoBotBacktesting:
                                                                         exchange_ids=self.exchange_manager_ids,
                                                                         matrix_id=self.matrix_id,
                                                                         data_files=self.backtesting_files)
-        # modify_backtesting_channels before creating exchanges as they require the current backtesting time to
-        # initialize
+        # modify_backtesting_channels before creating exchanges
+        # as they require the current backtesting time to initialize
         await backtesting_api.adapt_backtesting_channels(self.backtesting,
                                                          self.backtesting_config,
                                                          importers.ExchangeDataImporter,
@@ -207,10 +207,8 @@ class OctoBotBacktesting:
             exchange_builder = trading_api.create_exchange_builder(self.backtesting_config, exchange_class_string) \
                 .has_matrix(self.matrix_id) \
                 .use_tentacles_setup_config(self.tentacles_setup_config) \
-                .set_bot_id(self.bot_id) \
-                .is_simulated() \
-                .is_rest_only() \
-                .is_backtesting(self.backtesting)
+                .set_bot_id(self.bot_id)
+            trading_api.set_exchange_builder_details(exchange_builder, self.backtesting_config, self.backtesting)
             try:
                 await exchange_builder.build()
             finally:
